@@ -5,7 +5,7 @@
     "plugin:prettier/recommended"
   ],
   "parserOptions": {
-    "ecmaVersion": "lastest",
+    "ecmaVersion": "latest",
     "sourceType": "module"
   },
   "rules": {
