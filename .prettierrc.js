@@ -7,4 +7,5 @@ module.exports = {
   backtick: true,
   trailingComma: 'all',
   semi: true,
+  endOfLine: 'lf',
 };
