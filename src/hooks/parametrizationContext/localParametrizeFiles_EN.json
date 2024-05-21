@@ -1,0 +1,11 @@
+{
+    "version": "0.0.1",
+    "pages": {
+        "home": {
+            "welcome": "Welcome to the home page"
+        }
+    },
+    "images": {
+        "logo": "http://www.example.com/logo.png"
+    }
+}
