@@ -1,20 +1,8 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
-import {SafeAreaView, Text, useColorScheme} from 'react-native';
+import { GlobalStack } from './src/navigation/global-stack';
 
 function App(): React.JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <SafeAreaView>
-      <Text>Welcome {isDarkMode}</Text>
-    </SafeAreaView>
-  );
+  return <GlobalStack></GlobalStack>;
 }
 
 export default App;
