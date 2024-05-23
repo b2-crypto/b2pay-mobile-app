@@ -11,6 +11,7 @@ import com.facebook.react.defaults.DefaultReactHost.getDefaultReactHost
 import com.facebook.react.defaults.DefaultReactNativeHost
 import com.facebook.soloader.SoLoader
 import com.rnfs.RNFSPackage;
+import com.zoontek.rnpermissions.RNPermissionsPackage;
 
 class MainApplication : Application(), ReactApplication {
 

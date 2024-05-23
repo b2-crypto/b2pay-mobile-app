@@ -7,3 +7,4 @@ export const BACKEND_ROUTES: backendRoutesTypes = {
   },
 };
 export const ALWAYS_PARAMETRIZE_TEXT_VERSION: string = '0';
+export const ALWAYS_PARAMETRIZE_TEXT_VERSION_ON_SERVER: string = '0.0.2';

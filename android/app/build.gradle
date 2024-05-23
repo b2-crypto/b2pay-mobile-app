@@ -109,7 +109,8 @@ dependencies {
     implementation("com.facebook.react:react-android")
 
     implementation project(':react-native-fs')
-    
+    implementation project(':react-native-permissions')
+
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
     } else {
