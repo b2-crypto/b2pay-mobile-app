@@ -6,15 +6,28 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as pages from '../app/pages';
 import { PagesNames } from './pagesNames';
 import GlobalContextWrapper from '../hooks';
+import Layout from '../app/elements';
+import Header from '../app/components/header';
 
 const Stack = createNativeStackNavigator();
+
+const LayoutRoot = (navigation: ReactNavigation.RootParamList, Component: React.FC) => {
+  return (
+    <Layout navigation={navigation}>
+      <Component></Component>
+    </Layout>
+  );
+};
 
 export const GlobalStack: React.FC = () => (
   <GlobalContextWrapper>
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name={PagesNames.Home} component={pages.HomePage} />
+      <Stack.Navigator screenOptions={{ header: Header }}>
+        <Stack.Screen name={PagesNames.Home} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.HomePage)}
+        </Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   </GlobalContextWrapper>
 );
+35;
