@@ -1,0 +1,105 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Geologica-Black.ttf",
+      "sha1": "ff45c63081ae7e8352aebb0b15e054f63b4368da"
+    },
+    {
+      "path": "assets/fonts/Geologica-BlackItalic.ttf",
+      "sha1": "139da2c32175169122e7b30363eececdc2e8b662"
+    },
+    {
+      "path": "assets/fonts/Geologica-Bold.ttf",
+      "sha1": "2c30b2ba77bcf2a939afa1919a6ab04bc55b4925"
+    },
+    {
+      "path": "assets/fonts/Geologica-BoldItalic.ttf",
+      "sha1": "c0d6e741ad89dd68b9f5547155993bca1fbcdbcc"
+    },
+    {
+      "path": "assets/fonts/Geologica-ExtraBold.ttf",
+      "sha1": "253f548f8629a033c3d98485dcc88b1b1a2d11e8"
+    },
+    {
+      "path": "assets/fonts/Geologica-ExtraBoldItalic.ttf",
+      "sha1": "dfc7d8b838935c8da606b343b0beadeed4e49745"
+    },
+    {
+      "path": "assets/fonts/Geologica-ExtraLight.ttf",
+      "sha1": "147679676b2b7c7663aa915526c7cd8ad10cabb9"
+    },
+    {
+      "path": "assets/fonts/Geologica-ExtraLightItalic.ttf",
+      "sha1": "2ec0f936a212fd7c4b6a71ac46688623ca5691ca"
+    },
+    {
+      "path": "assets/fonts/Geologica-Italic.ttf",
+      "sha1": "8cf2ab88f2680d572fc6ddb17cc250d12d322516"
+    },
+    {
+      "path": "assets/fonts/Geologica-Light.ttf",
+      "sha1": "c8dfb152b9006b1f6656a6baf34b2a2757cdd444"
+    },
+    {
+      "path": "assets/fonts/Geologica-LightItalic.ttf",
+      "sha1": "1d1c92826b4982c18c335406ccbc55749a96a576"
+    },
+    {
+      "path": "assets/fonts/Geologica-Medium.ttf",
+      "sha1": "243292a3178c6fc9a685b4a96d4ef384f0106d96"
+    },
+    {
+      "path": "assets/fonts/Geologica-MediumItalic.ttf",
+      "sha1": "0d1516944c49c60ccb166f98f0259eb98d765f08"
+    },
+    {
+      "path": "assets/fonts/Geologica-Regular.ttf",
+      "sha1": "48c05b9fd670cc00de69ed3eb8ea90de0de70d8f"
+    },
+    {
+      "path": "assets/fonts/Geologica-SemiBold.ttf",
+      "sha1": "725c5629aaad81f33091d3f3f337e4d2f4f77f5d"
+    },
+    {
+      "path": "assets/fonts/Geologica-SemiBoldItalic.ttf",
+      "sha1": "184e1fad355873587f9ae447cd50f4921b9fdb1e"
+    },
+    {
+      "path": "assets/fonts/Geologica-Thin.ttf",
+      "sha1": "c3966ddce243f08192f98cd290dc387a614f8ba1"
+    },
+    {
+      "path": "assets/fonts/Geologica-ThinItalic.ttf",
+      "sha1": "ad43ff768b2ee229864d8a158cd7f63efd68aacd"
+    },
+    {
+      "path": "assets/fonts/GeologicaCRSVSHRPslntwght.ttf",
+      "sha1": "509866f158a1e222e40ecbea1c703ad266f5e937"
+    },
+    {
+      "path": "assets/fonts/Tektur-Black.ttf",
+      "sha1": "e6576b2d0dbdecaddeb97e4c113ebbd99d993172"
+    },
+    {
+      "path": "assets/fonts/Tektur-Bold.ttf",
+      "sha1": "c0ef3aa7e0896aee485517ffd09c2527c8419c11"
+    },
+    {
+      "path": "assets/fonts/Tektur-ExtraBold.ttf",
+      "sha1": "2fd34213cd1b454ca82c15eb85d4440c80f56021"
+    },
+    {
+      "path": "assets/fonts/Tektur-Medium.ttf",
+      "sha1": "4923140961f7fbb3a7fbecf47fa5e5c38c7a782f"
+    },
+    {
+      "path": "assets/fonts/Tektur-Regular.ttf",
+      "sha1": "4d3f894bf62d9debb336da2893f397e2287f0be4"
+    },
+    {
+      "path": "assets/fonts/Tektur-SemiBold.ttf",
+      "sha1": "6a3f5a8bcd993bdbc1d4a9decdf3e0529ce4c2ce"
+    }
+  ]
+}

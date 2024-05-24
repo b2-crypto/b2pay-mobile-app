@@ -1,6 +1,11 @@
 import RNFS from 'react-native-fs';
 import { Language, parametrizeText } from './types';
-import { ALWAYS_PARAMETRIZE_TEXT_VERSION, BACKEND_ROUTES, BACKEND_URL } from '../../constants/_backConstants';
+import {
+  ALWAYS_PARAMETRIZE_TEXT_VERSION,
+  ALWAYS_PARAMETRIZE_TEXT_VERSION_ON_SERVER,
+  BACKEND_ROUTES,
+  BACKEND_URL,
+} from '../../constants/_backConstants';
 import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
 import localParametrizeFiles_EN from './localParametrizeFiles_EN.json';
 export default class Parametrization {
@@ -33,12 +38,13 @@ export default class Parametrization {
   async getVersion(): Promise<string | boolean> {
     //Verify if the file exists
     if (!(await this.exists())) return ALWAYS_PARAMETRIZE_TEXT_VERSION;
+
     const data: typeof localParametrizeFiles_ES = await RNFS.readFile(this.path, 'utf8')
       .then(data => {
         return JSON.parse(data);
       })
       .catch(error => {
-        console.error('no read file' + error);
+        console.error('no read file ' + error);
         return { version: ALWAYS_PARAMETRIZE_TEXT_VERSION };
       });
     return data.version;
@@ -65,7 +71,6 @@ export default class Parametrization {
         console.error('no write file' + error);
         return false;
       });
-
     return write;
   }
 
@@ -86,6 +91,8 @@ export default class Parametrization {
         }
       });
 
+    if (data) await this.writeParametrization(data);
+
     return data;
   }
 
@@ -96,7 +103,7 @@ export default class Parametrization {
       .then(response => response.json())
       .then(data => data.version)
       .catch(() => {
-        return ALWAYS_PARAMETRIZE_TEXT_VERSION;
+        return ALWAYS_PARAMETRIZE_TEXT_VERSION_ON_SERVER;
       });
 
     //Verify if the file exists

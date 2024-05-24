@@ -16,6 +16,8 @@ end
 
 target 'b2pay_mobile_app' do
   config = use_native_modules!
+  
+  pod 'RNPermissions', :path => '../node_modules/react-native-permissions'  
 
   use_react_native!(
     :path => config[:reactNativePath],
