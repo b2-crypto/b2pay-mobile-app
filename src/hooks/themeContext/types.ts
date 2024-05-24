@@ -1,4 +1,5 @@
 import { light } from './colors';
+import fonts from './fonts';
 
 export type themeContextProviderProps = {
   children: React.ReactNode;
@@ -6,5 +7,6 @@ export type themeContextProviderProps = {
 
 export type themeContextType = {
   theme: typeof light;
+  themeFonts: typeof fonts;
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };

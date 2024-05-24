@@ -10,6 +10,8 @@ export const light = {
       '700': '#940048',
       '800': '#700036',
       '900': '#4D0024',
+      'rose-11': '#e8318238',
+      'rose-12': '#e831821c',
     },
 
     darkPurple: {
@@ -40,11 +42,12 @@ export const light = {
       '900': '#4D4100',
     },
     neutral: {
+      'button-background': '#D9D9D9',
       'navbar-bg': '#EEEBF1',
       '000x000': '#FFFFFF',
       '000': '#120C29',
       '100': '#EEEBF1',
-      '20066%': '#DEDAE1',
+      '20066%': '#dedae1a8',
       '200-logo-bg': '#DEDAE1',
       '200': '#DEDAE1',
       '300': '#BFBBC2',
@@ -107,6 +110,8 @@ export const dark = {
       '300': '#940048',
       '200': '#700036',
       '100': '#4D0024',
+      'rose-11': '#e8318238',
+      'rose-12': '#e831821c',
     },
 
     darkPurple: {
@@ -137,6 +142,7 @@ export const dark = {
       '900': '#4D4100',
     },
     neutral: {
+      'button-background': '#D9D9D9',
       'navbar-bg': '#050213',
       '000x000': '#FFFFFF',
       '000': '#120C29',

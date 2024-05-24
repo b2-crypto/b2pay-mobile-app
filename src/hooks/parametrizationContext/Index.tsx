@@ -4,7 +4,6 @@ import { NativeModules, Platform } from 'react-native';
 import { Language, parametrizationContextType, parametrizationProviderProps } from './types';
 import Parametrization from './parametrization';
 import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
-import { appPermission } from '../appPermisson.js';
 
 export const parametrizationContext = createContext<parametrizationContextType>({ t: undefined });
 
@@ -25,7 +24,6 @@ const ParametrizationProvider: React.FC<parametrizationProviderProps> = ({ child
 
   const generateParametrization = async () => {
     const haveANewParametrization = await ParametrizationClass.checkIfTheVersionChanged();
-    console.log('haveANewParametrization', haveANewParametrization);
     if (!haveANewParametrization && (await ParametrizationClass.exists()))
       return setParametrization(await ParametrizationClass.getText());
     // If the version changed, get the new parametrization
@@ -36,10 +34,7 @@ const ParametrizationProvider: React.FC<parametrizationProviderProps> = ({ child
 
   // // Find if the parametrization file have a new version
   useEffect(() => {
-    // generateParametrization();
-    appPermission.check(['readFiles', 'writeFiles']).then(havePermission => {
-      if (havePermission) generateParametrization();
-    });
+    generateParametrization();
   }, []);
 
   const value: parametrizationContextType = {

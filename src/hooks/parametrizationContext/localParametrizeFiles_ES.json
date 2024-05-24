@@ -3,6 +3,12 @@
     "pages": {
         "home": {
             "welcome": "Welcome to the home page"
+        },
+        "buttons": {
+            "clickMe": "Click Me"
         }
+    },
+    "images": {
+        "logo": "http://www.example.com/logo.png"
     }
 }
