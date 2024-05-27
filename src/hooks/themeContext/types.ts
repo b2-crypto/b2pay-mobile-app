@@ -8,5 +8,6 @@ export type themeContextProviderProps = {
 export type themeContextType = {
   theme: typeof light;
   themeFonts: typeof fonts;
+  isDarkMode: boolean;
   setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
 };
