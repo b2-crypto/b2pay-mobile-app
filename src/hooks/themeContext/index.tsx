@@ -7,6 +7,7 @@ import fonts from './fonts';
 const initContext: themeContextType = {
   theme: light,
   themeFonts: fonts,
+  isDarkMode: false,
   setDarkMode: () => false,
 };
 
@@ -24,6 +25,7 @@ const ThemeProvider: React.FC<themeContextProviderProps> = ({ children }): React
   const value: themeContextType = {
     theme,
     themeFonts,
+    isDarkMode,
     setDarkMode,
   };
 
