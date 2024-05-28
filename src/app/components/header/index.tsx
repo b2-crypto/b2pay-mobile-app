@@ -2,21 +2,16 @@ import { View, Text, Pressable } from 'react-native';
 import Icon from '../icon';
 import { useContext, useState } from 'react';
 import { parametrizationContext } from '../../../hooks/parametrizationContext';
-import { NavigationProp, NavigationState } from '@react-navigation/native';
 import styles from './styles';
 import ChangeLanguagePopUp from '../changeLanguageCheckbox';
+import { headerParametersContext } from '../../../hooks/headerParameters';
+import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 
-type HeaderProps = {
-  title: string;
-  showBackButton?: boolean;
-  showConfigButton?: boolean;
-  onBackPress?: () => void;
-  navigation: NavigationProp<NavigationState>;
-};
-
-const Header: React.FC<HeaderProps> = props => {
+const Header: React.FC<NativeStackHeaderProps> = props => {
+  const { navigation } = props;
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
-  const { title, onBackPress, showBackButton = true, showConfigButton = true, navigation } = props;
+  const { headerParameters } = useContext(headerParametersContext);
+  const { title, onBackPress, showBackButton, showConfigButton } = headerParameters;
   const { t } = useContext(parametrizationContext);
 
   return (
@@ -39,8 +34,8 @@ const Header: React.FC<HeaderProps> = props => {
           <Pressable style={{ height: 24, width: 24 }} onPress={() => setShowPopUp(!showPopUp)}>
             <Icon
               name={!showPopUp ? 'config' : 'expandLess'}
-              height={!showPopUp ? 24 : 15}
-              sx={{ maxWidth: !showPopUp ? 24 : 15 }}
+              height={!showPopUp ? 24 : 20}
+              sx={{ maxWidth: !showPopUp ? 24 : 20 }}
             />
           </Pressable>
         )}
