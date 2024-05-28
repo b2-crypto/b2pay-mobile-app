@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',
-    width: 141,
+    width: '33%',
     height: 68,
   },
   backWrapper: {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    width: 141,
+    width: '33%',
     height: 68,
   },
   titleText: {
@@ -44,9 +44,9 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-end',
-    width: 138,
+    width: '33%',
     height: 68,
-    paddingRight: 16,
+    marginRight: 20,
   },
 });
 

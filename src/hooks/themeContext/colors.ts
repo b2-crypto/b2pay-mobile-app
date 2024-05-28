@@ -45,7 +45,7 @@ export const light = {
       'button-background': '#D9D9D9',
       'navbar-bg': '#EEEBF1',
       '000x000': '#FFFFFF',
-      '000': '#120C29',
+      '000': '#FFFFFF',
       '100': '#EEEBF1',
       '20066%': '#dedae1a8',
       '200-logo-bg': '#DEDAE1',
@@ -144,7 +144,7 @@ export const dark = {
     neutral: {
       'button-background': '#D9D9D9',
       'navbar-bg': '#050213',
-      '000x000': '#FFFFFF',
+      '000x000': '#120C29',
       '000': '#120C29',
       '100': '#050213',
       '20066%': '#120C29',

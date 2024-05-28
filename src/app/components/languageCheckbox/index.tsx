@@ -12,7 +12,7 @@ const LanguageCheckBox: React.FC<LanguageCheckboxProps> = props => {
     <Pressable onPress={select}>
       <View
         style={[
-          { backgroundColor: checked ? theme.primary.rose['rose-11'] : theme.secondary.neutral['000x000'] },
+          { backgroundColor: checked ? theme.primary.rose['rose-11'] : theme.secondary.neutral['000'] },
           styles.wrapper,
         ]}>
         <Text style={styles.text}>{language}</Text>

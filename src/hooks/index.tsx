@@ -1,6 +1,7 @@
 import React, { ReactElement } from 'react';
 import ParametrizationProvider from './parametrizationContext';
 import ThemeProvider from './themeContext';
+import HeaderParametersProvider from './headerParameters';
 
 type HooksWrapperProps = {
   children: React.ReactNode;
@@ -9,7 +10,9 @@ type HooksWrapperProps = {
 const GlobalContextWrapper: React.FC<HooksWrapperProps> = ({ children }): ReactElement => {
   return (
     <ThemeProvider>
-      <ParametrizationProvider>{children}</ParametrizationProvider>
+      <ParametrizationProvider>
+        <HeaderParametersProvider>{children}</HeaderParametersProvider>
+      </ParametrizationProvider>
     </ThemeProvider>
   );
 };
