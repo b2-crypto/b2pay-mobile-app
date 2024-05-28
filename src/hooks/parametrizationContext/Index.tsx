@@ -5,7 +5,7 @@ import { Language, parametrizationContextType, parametrizationProviderProps } fr
 import Parametrization from './parametrization';
 import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
 
-export const parametrizationContext = createContext<parametrizationContextType>({ t: undefined });
+export const parametrizationContext = createContext<parametrizationContextType>({ t: undefined, language: 'es' });
 
 const getDeviceLanguage = (): Language => {
   //Contents the device language
@@ -17,12 +17,12 @@ const getDeviceLanguage = (): Language => {
   return language;
 };
 
-const ParametrizationClass = new Parametrization(getDeviceLanguage());
-
 const ParametrizationProvider: React.FC<parametrizationProviderProps> = ({ children }): ReactElement => {
   const [parametrization, setParametrization] = useState<typeof localParametrizeFiles_ES | undefined>(undefined);
+  const [language, setLanguage] = useState<Language>(getDeviceLanguage());
 
   const generateParametrization = async () => {
+    const ParametrizationClass = new Parametrization(language);
     const haveANewParametrization = await ParametrizationClass.checkIfTheVersionChanged();
     if (!haveANewParametrization && (await ParametrizationClass.exists()))
       return setParametrization(await ParametrizationClass.getText());
@@ -35,10 +35,12 @@ const ParametrizationProvider: React.FC<parametrizationProviderProps> = ({ child
   // // Find if the parametrization file have a new version
   useEffect(() => {
     generateParametrization();
-  }, []);
+  }, [language]);
 
   const value: parametrizationContextType = {
     t: parametrization,
+    language,
+    setLanguage,
   };
 
   return <parametrizationContext.Provider value={value}>{children}</parametrizationContext.Provider>;

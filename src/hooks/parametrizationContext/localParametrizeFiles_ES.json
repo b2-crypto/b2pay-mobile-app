@@ -8,6 +8,19 @@
             "clickMe": "Click Me"
         }
     },
+    "header": {
+        "backButton": "Volver"
+    },
+    "languages": [
+        {
+            "value": "es",
+            "label": "Español"
+        },
+        {
+            "value": "en",
+            "label": "English"
+        }
+    ],
     "images": {
         "logo": "http://www.example.com/logo.png"
     }

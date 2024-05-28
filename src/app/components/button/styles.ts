@@ -59,7 +59,6 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       justifyContent: 'center',
       alignItems: 'center',
       overflow: 'hidden',
-      marginTop: 20,
     },
     buttonBackground: {
       backgroundColor: color,
