@@ -1,7 +1,10 @@
+import React, { Dispatch, SetStateAction } from 'react';
 import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
 
 export type parametrizationContextType = {
-  t: typeof localParametrizeFiles_ES | undefined;
+  t?: typeof localParametrizeFiles_ES | undefined;
+  language: Language;
+  setLanguage?: Dispatch<SetStateAction<Language>>;
 };
 
 export type parametrizationProviderProps = {

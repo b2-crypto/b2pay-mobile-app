@@ -22,10 +22,18 @@ const LayoutRoot = (navigation: ReactNavigation.RootParamList, Component: React.
 export const GlobalStack: React.FC = () => (
   <GlobalContextWrapper>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ header: Header }}>
+      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.InitPage}>
+        {/* Start Init Page */}
+        <Stack.Screen name={PagesNames.InitPage} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.InitPage)}
+        </Stack.Screen>
+        {/* End Init Page */}
+
+        {/* Start Home Page */}
         <Stack.Screen name={PagesNames.Home} options={{ headerShadowVisible: false }}>
           {nav => LayoutRoot(nav, pages.HomePage)}
         </Stack.Screen>
+        {/* En Home page*/}
       </Stack.Navigator>
     </NavigationContainer>
   </GlobalContextWrapper>

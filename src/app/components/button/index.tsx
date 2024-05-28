@@ -79,7 +79,7 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>({
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[300] : theme.secondary.neutral['button-background'],
+    color: disabled ? theme.secondary.neutral[300] : theme.secondary.neutral['100'],
     borderColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],

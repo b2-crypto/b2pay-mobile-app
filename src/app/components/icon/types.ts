@@ -1,8 +1,8 @@
 import { ViewStyle } from 'react-native';
-import { lightIcons } from './icons';
+import light from './icons/light';
 
 export type IconProps = {
-  name: keyof typeof lightIcons;
+  name: keyof typeof light;
   onClick?: () => void;
   size?: number;
   height?: number;
