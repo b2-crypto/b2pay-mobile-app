@@ -1,44 +1,27 @@
-import React from 'react';
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import React, { useContext, useEffect } from 'react';
+import { ScrollView, Text, View } from 'react-native';
 import Icon from '../components/icon';
 import { Button } from '../components/button';
+import styles from './styles/initPage';
+import { parametrizationContext } from '../../hooks/parametrizationContext';
+import { headerParametersContext } from '../../hooks/headerParameters';
+import { pageProps } from './types';
 
-const styles = StyleSheet.create({
-  container: {
-    width: '100%',
-    height: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
-  },
-  logo: {
-    width: 325,
-    height: 400,
-  },
-  buttonWrapper: {
-    width: '100%',
-    flexDirection: 'column',
-    alignItems: 'center',
-    marginTop: 56,
-  },
-  registerButtonWrapper: {
-    flexDirection: 'column',
-    alignItems: 'center',
-    justifyContent: 'center',
-    marginTop: 40,
-  },
-  registerText: {
-    fontSize: 11,
-    fontFamily: 'Geologica-Regular',
-    marginBottom: 8,
-    lineHeight: 16,
-  },
-  generalWrapper: {
-    width: '100%',
-    height: '100%',
-  },
-});
-export const pageName = 'initPage';
-const InitPage: React.FC = () => {
+const InitPage: React.FC<pageProps> = ({ navigation }) => {
+  const { t } = useContext(parametrizationContext);
+  const { changeHeaderParameters } = useContext(headerParametersContext);
+
+  //Used when the component is focused
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      changeHeaderParameters({
+        showLogo: false,
+        showBackButton: false,
+      });
+    });
+    return unsubscribe;
+  }, [navigation]);
+
   return (
     <ScrollView style={styles.generalWrapper}>
       <View style={styles.container}>
@@ -47,10 +30,13 @@ const InitPage: React.FC = () => {
         </View>
 
         <View style={styles.buttonWrapper}>
-          <Button text={'Login'} onClick={() => {}}></Button>
+          <Button text={t?.pages.initPage['login-button']} onClick={() => {}}></Button>
           <View style={styles.registerButtonWrapper}>
-            <Text style={styles.registerText}>Don't have an account?</Text>
-            <Button text={'Sign up'} onClick={() => {}} type="secondary"></Button>
+            <Text style={styles.registerText}>{t?.pages.initPage['forget-title']}</Text>
+            <Button
+              text={t?.pages.initPage['register-button']}
+              onClick={() => navigation.navigate('RegisterStep1')}
+              type="secondary"></Button>
           </View>
         </View>
       </View>

@@ -1,4 +1,4 @@
-import { logo, back, bigLogo, config, expandLess } from './light/index.ts';
+import { logo, back, bigLogo, config, expandLess, stepSelected, stepNoSelected } from './light/index.ts';
 
 export default {
   logo,
@@ -6,4 +6,6 @@ export default {
   config,
   expandLess,
   bigLogo,
+  stepNoSelected,
+  stepSelected,
 };

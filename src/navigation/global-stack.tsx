@@ -6,15 +6,16 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import * as pages from '../app/pages';
 import { PagesNames } from './pagesNames';
 import GlobalContextWrapper from '../hooks';
-import Layout from '../app/elements';
+import Layout from '../app/elements/Layout';
 import Header from '../app/components/header';
+import { navigationLayout, pageProps } from '../app/pages/types';
 
 const Stack = createNativeStackNavigator();
 
-const LayoutRoot = (navigation: ReactNavigation.RootParamList, Component: React.FC) => {
+const LayoutRoot = (nav: navigationLayout, Component: React.FC<pageProps>) => {
   return (
-    <Layout navigation={navigation}>
-      <Component></Component>
+    <Layout navigation={nav.navigation}>
+      <Component navigation={nav.navigation} route={nav.route}></Component>
     </Layout>
   );
 };
@@ -28,6 +29,12 @@ export const GlobalStack: React.FC = () => (
           {nav => LayoutRoot(nav, pages.InitPage)}
         </Stack.Screen>
         {/* End Init Page */}
+
+        {/* Register Step 1 */}
+        <Stack.Screen name={PagesNames.RegisterStep1} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.RegisterStep1)}
+        </Stack.Screen>
+        {/* Register Step 1 */}
 
         {/* Start Home Page */}
         <Stack.Screen name={PagesNames.Home} options={{ headerShadowVisible: false }}>

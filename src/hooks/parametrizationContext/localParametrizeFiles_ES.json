@@ -1,6 +1,28 @@
 {
     "version": "0.0.1",
     "pages": {
+        "initPage": {
+            "login-button": "Login",
+            "register-button": "Register",
+            "forget-title": "Don’t have an account?"
+        },
+        "registerStep1": {
+            "title": "Register",
+            "subtitle": "Name",
+            "description": "Para abrir tu cuenta, por favor elige el tipo de registro.",
+            "password": "Password",
+            "checkBox-List": [
+                {
+                    "label": "individual",
+                    "value": "individual"
+                },
+                {
+                    "label": "Cooporativo",
+                    "value": "company"
+                }
+            ],
+            "continue-button": "Continue"
+        },
         "home": {
             "welcome": "Welcome to the home page"
         },
@@ -9,7 +31,7 @@
         }
     },
     "header": {
-        "backButton": "Volver"
+        "backButton": "Back"
     },
     "languages": [
         {

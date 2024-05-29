@@ -63,7 +63,7 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 
   useEffect(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, disabled]);
 
   return (
     <Pressable
@@ -241,16 +241,16 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
 };
 
 export const CustomButton: React.FC<ButtonProps> = props => {
-  const { type, onClick, size, text } = props;
+  const { type, onClick, size, text, disabled } = props;
   switch (type) {
     case 'primary':
-      return <DefaultButton text={text} onClick={onClick} size={size} />;
+      return <DefaultButton text={text} onClick={onClick} size={size} disabled={disabled} />;
     case 'secondary':
-      return <SecondaryButton text={text} onClick={onClick} size={size} />;
+      return <SecondaryButton text={text} onClick={onClick} size={size} disabled={disabled} />;
     case 'tertiary':
-      return <TertiaryButton text={text} onClick={onClick} size={size} />;
+      return <TertiaryButton text={text} onClick={onClick} size={size} disabled={disabled} />;
     default:
-      return <DefaultButton text={text} onClick={onClick} size={size} />;
+      return <DefaultButton text={text} onClick={onClick} size={size} disabled={disabled} />;
   }
 };
 

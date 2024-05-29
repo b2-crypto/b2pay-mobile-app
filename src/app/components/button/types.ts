@@ -3,6 +3,7 @@ export type ButtonProps = {
   onClick?: () => void;
   size?: 'extra small' | 'small' | 'medium' | 'large' | 'thin';
   text?: string;
+  disabled?: boolean;
 };
 
 export type buttonDefaultProps = {

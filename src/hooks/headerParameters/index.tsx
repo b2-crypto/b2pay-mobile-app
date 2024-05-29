@@ -3,21 +3,28 @@ import { headerParametersContextType, headerParametersProps, headerParametersPro
 
 export const headerParametersContext = createContext<headerParametersContextType>({
   headerParameters: {
-    showBackButton: true,
+    showBackButton: false,
     showConfigButton: true,
+    showLogo: false,
   },
   setHeaderParameters: () => false,
+  changeHeaderParameters: () => false,
 });
 
 const HeaderParametersProvider: React.FC<headerParametersProviderProps> = ({ children }) => {
   const [headerParameters, setHeaderParameters] = useState<headerParametersProps>({
-    showBackButton: true,
+    showBackButton: false,
     showConfigButton: true,
   });
+
+  const changeHeaderParameters = (newHeaderParameters: headerParametersProps) => {
+    setHeaderParameters({ ...headerParameters, ...newHeaderParameters });
+  };
 
   const value: headerParametersContextType = {
     headerParameters,
     setHeaderParameters,
+    changeHeaderParameters,
   };
 
   return <headerParametersContext.Provider value={value}>{children}</headerParametersContext.Provider>;

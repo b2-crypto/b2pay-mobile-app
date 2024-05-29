@@ -1,6 +1,27 @@
 {
     "version": "0.0.1",
     "pages": {
+        "initPage": {
+            "login-button": "Login",
+            "register-button": "Register",
+            "forget-title": "Don’t have an account?"
+        },
+        "registerStep1": {
+            "title": "Register",
+            "subtitle": "Section 1: Registration type.",
+            "description": "To open your account, please choose the registration type.",
+            "checkBox-List": [
+                {
+                    "label": "individual",
+                    "value": "individual"
+                },
+                {
+                    "label": "corporate",
+                    "value": "company"
+                }
+            ],
+            "continue-button": "Continue"
+        },
         "home": {
             "welcome": "Welcome to the home page"
         },
@@ -14,7 +35,7 @@
     "languages": [
         {
             "value": "es",
-            "label": "Español"
+            "label": "Spanish"
         },
         {
             "value": "en",

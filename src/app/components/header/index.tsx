@@ -11,15 +11,15 @@ const Header: React.FC<NativeStackHeaderProps> = props => {
   const { navigation } = props;
   const [showPopUp, setShowPopUp] = useState<boolean>(false);
   const { headerParameters } = useContext(headerParametersContext);
-  const { title, onBackPress, showBackButton, showConfigButton } = headerParameters;
+  const { title, showBackButton = false, showConfigButton = false, showLogo = false } = headerParameters;
   const { t } = useContext(parametrizationContext);
 
   return (
     <View style={styles.container}>
       <View style={styles.logWrapper}>
-        <Icon name={'logo'} height={showBackButton ? 40 : 64} width={136} />
+        {showLogo && <Icon name={'logo'} height={showBackButton ? 40 : 64} width={136} />}
         {showBackButton && (
-          <Pressable onPress={onBackPress ? onBackPress : navigation.goBack}>
+          <Pressable onPress={() => navigation.canGoBack() && navigation.goBack()}>
             <View style={styles.backWrapper}>
               <Icon name={'back'} height={24} sx={{ maxWidth: 24 }} />
               <Text style={styles.backText}>{t?.header.backButton}</Text>
@@ -39,7 +39,7 @@ const Header: React.FC<NativeStackHeaderProps> = props => {
             />
           </Pressable>
         )}
-        <ChangeLanguagePopUp show={showPopUp}></ChangeLanguagePopUp>
+        <ChangeLanguagePopUp show={showPopUp} close={() => setShowPopUp(false)}></ChangeLanguagePopUp>
       </View>
     </View>
   );

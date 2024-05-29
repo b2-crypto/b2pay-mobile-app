@@ -14,7 +14,7 @@ const Icon: React.FC<IconProps> = props => {
   const iconsList: typeof light = isDarkMode ? dark : light;
 
   const icon = (
-    <View style={[styles.container, sx]}>
+    <View style={[styles.container, sx, { maxWidth: width }]}>
       <SvgXml xml={iconsList[name]} width={width || size} height={height || size} />
     </View>
   );

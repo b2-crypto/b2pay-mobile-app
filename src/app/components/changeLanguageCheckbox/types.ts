@@ -1,5 +1,6 @@
 export type ChangeLanguagePopUpProps = {
   show: boolean;
+  close: () => void;
 };
 
 export type languageList = {
