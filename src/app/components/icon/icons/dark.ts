@@ -1,6 +1,17 @@
-import { logo, back, bigLogo, config, expandLess } from './dark/index.ts';
-import stepNoSelected from './light/stepNoSelected.ts';
-import stepSelected from './light/stepSelected.ts';
+import {
+  logo,
+  back,
+  bigLogo,
+  config,
+  expandLess,
+  infoDanger,
+  infoGrey,
+  stepNoSelected,
+  stepSelected,
+  checked,
+  infoGreen,
+  infoYellow,
+} from './dark/index.ts';
 
 export default {
   logo,
@@ -10,4 +21,9 @@ export default {
   bigLogo,
   stepNoSelected,
   stepSelected,
+  infoDanger,
+  infoGrey,
+  infoGreen,
+  infoYellow,
+  checked,
 };

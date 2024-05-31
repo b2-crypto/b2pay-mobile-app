@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { buttonDefaultStyles } from './styles';
 import { ButtonProps, buttonDefaultProps, buttonDefaultStylesProps, handleChangeColor } from './types';
@@ -132,7 +132,7 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 
   useEffect(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, disabled]);
 
   return (
     <Pressable
@@ -158,25 +158,21 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 const TertiaryButton: React.FC<buttonDefaultProps> = props => {
   const { text, disabled, onClick, size } = props;
   const { theme, themeFonts } = useContext(themeContext);
+  const backgroundColor = theme.secondary.neutral['100'];
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[300] : theme.secondary.neutral['button-background'],
+    color: backgroundColor,
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    backgroundColor: theme.secondary.neutral['100'],
+    backgroundColor: backgroundColor,
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
 
   const handleChangeColor: handleChangeColor = (type: 'focus' | 'press' | 'hover', pressed) => {
-    if (!pressed)
-      return setButtonProps({
-        ...buttonProps,
-        color: theme.secondary.neutral['button-background'],
-        textColor: theme.primary.rose[600],
-      });
+    if (!pressed) return setButtonProps(initialButtonProps);
     switch (type) {
       case 'focus':
         setButtonProps({
@@ -196,20 +192,15 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
           ...buttonProps,
           color: theme.primary.rose['rose-12'],
         });
-      default:
-        setButtonProps({
-          ...buttonProps,
-          color: theme.primary.darkPurple[500],
-        });
         break;
     }
   };
 
   const buttonStyles = buttonDefaultStyles(buttonProps);
 
-  useEffect(() => {
+  useMemo(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, disabled]);
 
   return (
     <Pressable

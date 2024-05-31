@@ -52,9 +52,9 @@ const RegisterStep1: React.FC<pageProps> = ({ navigation }) => {
         <Button
           text={t?.pages.registerStep1['continue-button']}
           disabled={selected === ''}
-          // onPress={() => {
-          //   navigation.navigate('RegisterStep2');
-          // }}
+          onClick={() => {
+            navigation.navigate('RegisterStep2');
+          }}
         />
       </View>
       <RegisterStep selected={1} />

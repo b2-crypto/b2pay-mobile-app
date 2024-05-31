@@ -5,3 +5,8 @@ export { default as bigLogo } from './bigLogo';
 export { default as expandLess } from './expandLess';
 export { default as stepNoSelected } from './stepNoSelected';
 export { default as stepSelected } from './stepSelected';
+export { default as infoDanger } from './infoDanger';
+export { default as infoGrey } from './infoGrey';
+export { default as checked } from './checked';
+export { default as infoGreen } from './infoGreen';
+export { default as infoYellow } from './infoYellow';
