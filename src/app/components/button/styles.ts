@@ -6,7 +6,7 @@ export const text = () => {
 };
 
 export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
-  const { heigh, color, fontFamily, textColor, fontSize, backgroundColor, borderColor } = props;
+  const { heigh, color, fontFamily, textColor, fontSize, borderBackGround, borderColor } = props;
   const heightValues = {
     right: '-18%',
     top: '-10%',
@@ -77,7 +77,7 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       borderLeftColor: borderColor,
     },
     borderTopLeft: {
-      backgroundColor: backgroundColor,
+      backgroundColor: borderBackGround,
       width: 100,
       height: '50%',
       position: 'absolute',
@@ -89,7 +89,7 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       transform: [{ rotate: '-45deg' }],
     },
     borderBottomLeft: {
-      backgroundColor: backgroundColor,
+      backgroundColor: borderBackGround,
       borderTopColor: borderColor,
       borderTopWidth: heightValues.borderWidth,
       width: 100,
@@ -101,7 +101,7 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       transform: [{ rotate: '45deg' }],
     },
     borderTopRight: {
-      backgroundColor: backgroundColor,
+      backgroundColor: borderBackGround,
       width: 100,
       height: '50%',
       position: 'absolute',
@@ -115,7 +115,7 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       borderRightWidth: heightValues.borderWidth,
     },
     borderBottomRight: {
-      backgroundColor: backgroundColor,
+      backgroundColor: borderBackGround,
       width: 100,
       height: '50%',
       position: 'absolute',

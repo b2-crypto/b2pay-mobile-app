@@ -19,4 +19,14 @@ export default (backgroundColor: string) =>
       shadowRadius: 6.68,
       elevation: 11,
     },
+    close: {
+      position: 'absolute',
+      top: 10,
+      right: 10,
+      zIndex: 99,
+      backgroundColor: 'transparent',
+      width: 1000,
+      height: 1000,
+      overflow: 'hidden',
+    },
   });

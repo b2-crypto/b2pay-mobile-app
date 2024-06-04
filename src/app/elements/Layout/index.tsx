@@ -3,7 +3,7 @@ import { StatusBar } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 import { FocusAwareStatusBarProps, LayoutProps } from './types';
 import createStyles from './styles';
-import { themeContext } from '../../hooks/themeContext';
+import { themeContext } from '../../../hooks/themeContext';
 import { useContext } from 'react';
 
 const FocusAwareStatusBar = (props: FocusAwareStatusBarProps) => {
@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const styles = createStyles(theme.secondary.neutral[100], inserts);
   return (
     <SafeAreaView style={styles.container}>
-      <FocusAwareStatusBar barStyle="dark-content" backgroundColor="#ecf0f1" />
+      <FocusAwareStatusBar barStyle="dark-content" backgroundColor={theme.secondary.neutral['100']} />
       {children}
     </SafeAreaView>
   );

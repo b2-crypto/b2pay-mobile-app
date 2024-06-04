@@ -3,6 +3,7 @@ export type ButtonProps = {
   onClick?: () => void;
   size?: 'extra small' | 'small' | 'medium' | 'large' | 'thin';
   text?: string;
+  disabled?: boolean;
 };
 
 export type buttonDefaultProps = {
@@ -19,6 +20,6 @@ export type buttonDefaultStylesProps = {
   fontFamily: string;
   textColor: string;
   fontSize: number;
-  backgroundColor: string;
+  borderBackGround: string;
   borderColor?: string;
 };

@@ -1,4 +1,17 @@
-import { logo, back, bigLogo, config, expandLess } from './light/index.ts';
+import {
+  logo,
+  back,
+  bigLogo,
+  config,
+  expandLess,
+  stepSelected,
+  stepNoSelected,
+  infoDanger,
+  infoGrey,
+  checked,
+  infoGreen,
+  infoYellow,
+} from './light/index.ts';
 
 export default {
   logo,
@@ -6,4 +19,11 @@ export default {
   config,
   expandLess,
   bigLogo,
+  stepNoSelected,
+  stepSelected,
+  infoDanger,
+  infoGrey,
+  infoGreen,
+  infoYellow,
+  checked,
 };

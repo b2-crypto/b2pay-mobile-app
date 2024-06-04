@@ -1,11 +1,70 @@
 {
     "version": "0.0.1",
     "pages": {
-        "home": {
-            "welcome": "Welcome to the home page"
+        "initPage": {
+            "login-button": "Login",
+            "register-button": "Register",
+            "forget-title": "Don’t have an account?"
         },
-        "buttons": {
-            "clickMe": "Click Me"
+        "registerStep1": {
+            "title": "Register",
+            "subtitle": "Section 1: Registration type.",
+            "description": "To open your account, please choose the registration type.",
+            "checkBox-List": [
+                {
+                    "label": "individual",
+                    "value": "individual"
+                },
+                {
+                    "label": "corporate",
+                    "value": "company"
+                }
+            ],
+            "continue-button": "Continue"
+        },
+        "registerStep2": {
+            "title": "Register",
+            "subtitle": "Section 2: Contact Information.",
+            "description": "Enter your email address for account notifications and recovery.",
+            "policy-description": "I have read and fully understand the contents of this document:",
+            "email": "Email",
+            "email-exists": "An account is already associated with this email address.",
+            "email-invalid": "Invalid email address.",
+            "no-email": "Email is required.",
+            "policy-link": {
+                "label": "Privacy Policy",
+                "url": "InitPage"
+            },
+            "continue-button": "Continue"
+        },
+        "registerStep3": {
+            "title": "Register",
+            "subtitle": "Section 4: Password set up.",
+            "description": "Please create a password and confirm it below to continue.",
+            "policy-description": "I have read and fully understand the contents of this document:",
+            "continue-button": "Verify",
+            "resend-button": "Resend code",
+            "code": "Verification code",
+            "counter-alert": "If you haven't received an email by the time the timer expires, please request a new email below.",
+            "counter-error": "Now you're able to request a new email.",
+            "counter-alert-2": "You will be able to request a new code once it expires."
+        },
+        "registerStep4": {
+            "title": "Register",
+            "subtitle": "Section 4: Password set up.",
+            "description": "Please create a password and confirm it below to continue.",
+            "password-label": "Password",
+            "confirm-password-label": "Confirm Password",
+            "password-rule-1": "At least 8 characters",
+            "password-rule-2": "At least 1 uppercase letter",
+            "password-rule-3": "At least 1 lowercase letter",
+            "password-rule-4": "At least 1 number",
+            "password-rule-5": "At least 1 special character",
+            "password-secure-1": "Weak",
+            "password-secure-2": "Medium",
+            "password-secure-3": "Strong",
+            "continue-button": "Register",
+            "password-no-match": "Passwords do not match. Please try again."
         }
     },
     "header": {
@@ -14,7 +73,7 @@
     "languages": [
         {
             "value": "es",
-            "label": "Español"
+            "label": "Spanish"
         },
         {
             "value": "en",

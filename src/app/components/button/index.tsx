@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 import { buttonDefaultStyles } from './styles';
 import { ButtonProps, buttonDefaultProps, buttonDefaultStylesProps, handleChangeColor } from './types';
@@ -11,11 +11,11 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[500] : theme.primary.rose[500],
+    color: disabled ? theme.secondary.neutral[200] : theme.primary.rose[500],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
-    textColor: theme.secondary.neutral[100],
+    textColor: disabled ? theme.secondary.neutral[500] : theme.secondary.neutral[100],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    backgroundColor: theme.secondary.neutral['100'],
+    borderBackGround: theme.secondary.neutral['100'],
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
@@ -25,14 +25,14 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
       return setButtonProps({
         ...buttonProps,
         color: theme.primary.rose[500],
-        backgroundColor: theme.secondary.neutral['100'],
+        borderBackGround: theme.secondary.neutral['100'],
       });
     switch (type) {
       case 'focus':
         setButtonProps({
           ...buttonProps,
           color: theme.primary.darkPurple[400],
-          backgroundColor: theme.secondary.neutral['100'],
+          borderBackGround: theme.secondary.neutral['100'],
         });
         break;
 
@@ -40,20 +40,20 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
         setButtonProps({
           ...buttonProps,
           color: theme.primary.rose[700],
-          backgroundColor: theme.secondary.neutral['100'],
+          borderBackGround: theme.secondary.neutral['100'],
         });
         break;
       case 'hover':
         setButtonProps({
           ...buttonProps,
           color: theme.primary.darkPurple[200],
-          backgroundColor: theme.secondary.neutral['100'],
+          borderBackGround: theme.secondary.neutral['100'],
         });
       default:
         setButtonProps({
           ...buttonProps,
           color: theme.primary.darkPurple[500],
-          backgroundColor: theme.secondary.neutral['100'],
+          borderBackGround: theme.secondary.neutral['100'],
         });
         break;
     }
@@ -63,7 +63,7 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 
   useEffect(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, disabled]);
 
   return (
     <Pressable
@@ -89,16 +89,16 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 const SecondaryButton: React.FC<buttonDefaultProps> = props => {
   const { text, disabled, onClick, size } = props;
   const { theme, themeFonts } = useContext(themeContext);
-  const backgroundColor = theme.secondary.neutral['100'];
+  const borderBackGround = theme.secondary.neutral['100'];
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[300] : backgroundColor,
+    color: disabled ? theme.secondary.neutral[300] : borderBackGround,
     borderColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    backgroundColor: backgroundColor,
+    borderBackGround: borderBackGround,
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
@@ -132,7 +132,7 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 
   useEffect(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, disabled]);
 
   return (
     <Pressable
@@ -158,25 +158,21 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 const TertiaryButton: React.FC<buttonDefaultProps> = props => {
   const { text, disabled, onClick, size } = props;
   const { theme, themeFonts } = useContext(themeContext);
+  const borderBackGround = theme.secondary.neutral['100'];
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[300] : theme.secondary.neutral['button-background'],
+    color: borderBackGround,
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    backgroundColor: theme.secondary.neutral['100'],
+    borderBackGround: borderBackGround,
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
 
   const handleChangeColor: handleChangeColor = (type: 'focus' | 'press' | 'hover', pressed) => {
-    if (!pressed)
-      return setButtonProps({
-        ...buttonProps,
-        color: theme.secondary.neutral['button-background'],
-        textColor: theme.primary.rose[600],
-      });
+    if (!pressed) return setButtonProps(initialButtonProps);
     switch (type) {
       case 'focus':
         setButtonProps({
@@ -196,20 +192,15 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
           ...buttonProps,
           color: theme.primary.rose['rose-12'],
         });
-      default:
-        setButtonProps({
-          ...buttonProps,
-          color: theme.primary.darkPurple[500],
-        });
         break;
     }
   };
 
   const buttonStyles = buttonDefaultStyles(buttonProps);
 
-  useEffect(() => {
+  useMemo(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, disabled]);
 
   return (
     <Pressable
@@ -241,16 +232,16 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
 };
 
 export const CustomButton: React.FC<ButtonProps> = props => {
-  const { type, onClick, size, text } = props;
+  const { type, onClick, size, text, disabled } = props;
   switch (type) {
     case 'primary':
-      return <DefaultButton text={text} onClick={onClick} size={size} />;
+      return <DefaultButton text={text} onClick={onClick} size={size} disabled={disabled} />;
     case 'secondary':
-      return <SecondaryButton text={text} onClick={onClick} size={size} />;
+      return <SecondaryButton text={text} onClick={onClick} size={size} disabled={disabled} />;
     case 'tertiary':
-      return <TertiaryButton text={text} onClick={onClick} size={size} />;
+      return <TertiaryButton text={text} onClick={onClick} size={size} disabled={disabled} />;
     default:
-      return <DefaultButton text={text} onClick={onClick} size={size} />;
+      return <DefaultButton text={text} onClick={onClick} size={size} disabled={disabled} />;
   }
 };
 

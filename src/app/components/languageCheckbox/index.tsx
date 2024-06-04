@@ -7,7 +7,7 @@ import { themeContext } from '../../../hooks/themeContext';
 const LanguageCheckBox: React.FC<LanguageCheckboxProps> = props => {
   const { checked = true, language, select } = props;
   const { theme } = useContext(themeContext);
-  const styles = styleSheetFunc(theme.primary.darkPurple[700], theme.primary.darkPurple[600]);
+  const styles = styleSheetFunc();
   return (
     <Pressable onPress={select}>
       <View
