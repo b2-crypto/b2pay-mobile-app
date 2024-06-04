@@ -1,7 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { themeContext } from '../../../hooks/themeContext';
+import { useContext } from 'react';
 
-export default (fontColor: string, CheckColor: string) =>
-  StyleSheet.create({
+export default () => {
+  const { theme } = useContext(themeContext);
+  return StyleSheet.create({
     wrapper: {
       width: '100%',
       height: 40,
@@ -16,22 +19,24 @@ export default (fontColor: string, CheckColor: string) =>
     text: {
       fontSize: 16,
       fontFamily: 'Geologica-Regular',
-      color: fontColor,
+      color: theme.primary.darkPurple[700],
     },
     checkBorder: {
       width: 24,
       height: 24,
+      borderRadius: 12,
       borderWidth: 2,
-      borderColor: CheckColor,
+      borderColor: theme.primary.darkPurple[500],
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
     },
 
     checked: {
-      width: 16,
-      height: 16,
-      backgroundColor: CheckColor,
+      width: 14,
+      height: 14,
+      backgroundColor: theme.primary.darkPurple[500],
       borderRadius: 8,
     },
   });
+};

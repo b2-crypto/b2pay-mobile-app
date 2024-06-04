@@ -8,7 +8,7 @@ import { Button } from '../components/button';
 import RegisterStep from '../components/registerStep';
 import Input from '../components/inputPassword';
 import Icon from '../components/icon';
-import Animated, { interpolateColor, useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 import { themeContext } from '../../hooks/themeContext';
 
 const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
@@ -27,6 +27,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
   });
 
   const [isPasswordFocused, setIsPasswordFocused] = useState(false);
+  const [isConfirmPasswordFocused, setIsConfirmPasswordFocused] = useState(false);
 
   const windowHeight = Dimensions.get('window').height;
 
@@ -35,14 +36,18 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
 
   const offset = useSharedValue<number>(0);
 
-  const animatedStyles = useAnimatedStyle(() => ({
-    width: (offset.value + '%') as DimensionValue,
-    backgroundColor: interpolateColor(
-      offset.value,
-      [0, 40, 100],
-      [theme.informative.red, theme.informative.yellow, theme.informative.green],
-    ),
-  }));
+  const animatedStyles = useAnimatedStyle(() => {
+    const handleChangeStrongColor = (value: number) => {
+      const colors = [theme.informative.red, theme.informative.yellow, theme.informative.green];
+      if (value < 40) return colors[0];
+      if (value < 90) return colors[1];
+      return colors[2];
+    };
+    return {
+      width: (offset.value + '%') as DimensionValue,
+      backgroundColor: handleChangeStrongColor(offset.value),
+    };
+  });
 
   //Used when the component is focused
   useEffect(() => {
@@ -75,7 +80,6 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
   const numberOfValidRules = Object.values(passwordRules).filter(Boolean).length;
   const matchPassword = password === confirmPassword;
   const canRegister = numberOfValidRules === 5 && matchPassword;
-  console.log(password, confirmPassword, canRegister);
   return (
     <View style={styles.parent}>
       <ScrollView style={styles.container}>
@@ -83,7 +87,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
           <Text style={styles.title}>{t?.pages.registerStep4.title}</Text>
           <Text style={styles.subtitle}>{t?.pages.registerStep4.subtitle}</Text>
           <Text style={styles.description}>{t?.pages.registerStep4.description}</Text>
-          <View style={styles.passwordWrapper}>
+          <View style={[styles.passwordWrapper, { marginBottom: !isPasswordFocused ? 24 : 0 }]}>
             <Input
               label={t?.pages.registerStep4['password-label']}
               onChangeText={onPasswordChange}
@@ -157,7 +161,11 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
             </View>
           )}
 
-          <Input label={t?.pages.registerStep4['confirm-password-label']} onChangeText={t => setConfirmPassword(t)} />
+          <Input
+            label={t?.pages.registerStep4['confirm-password-label']}
+            onChangeText={t => setConfirmPassword(t)}
+            onFocus={setIsConfirmPasswordFocused}
+          />
           {password && confirmPassword && !matchPassword && (
             <View style={styles.securePasswordWrapper}>
               <Icon name={'infoDanger'} width={24} height={24} />
@@ -168,7 +176,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
           )}
         </View>
       </ScrollView>
-      {windowHeight < 800 && false ? (
+      {windowHeight < 800 || isPasswordFocused || isConfirmPasswordFocused ? (
         <></>
       ) : (
         <>

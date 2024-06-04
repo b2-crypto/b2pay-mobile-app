@@ -46,11 +46,18 @@ const Input: React.FC<TextInputProps> = props => {
           onFocus && onFocus(false);
         }}
         onEndEditing={onEndEditing}
-        mode="outlined"
-        style={[styles.Input, { borderWidth: isFocused ? 2 : 0 }]}
+        mode="flat"
+        style={[styles.Input, { borderWidth: isFocused ? 1.5 : 0 }]}
+        underlineStyle={styles.underlineStyle}
+        contentStyle={{ color: theme.primary.darkPurple['500'] }}
+        cursorColor={theme.primary.darkPurple['500']}
+        underlineColor={theme.primary.darkPurple['500']}
         textColor={theme.primary.darkPurple['500']}
-        outlineColor={theme.primary.darkPurple['500']}
-        outlineStyle={[styles.outlinedStyle, { borderTopWidth: isFocused ? 2 : 0 }]}
+        activeOutlineColor={theme.primary.darkPurple['500']}
+        selectionColor={theme.primary.darkPurple['500']}
+        selectionHandleColor={theme.primary.darkPurple['500']}
+        underlineColorAndroid={theme.primary.darkPurple['500']}
+        activeUnderlineColor={theme.primary.darkPurple['500']}
       />
       {errorMessage && (
         <View style={styles.danger}>

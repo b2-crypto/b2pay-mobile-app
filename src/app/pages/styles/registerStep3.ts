@@ -52,11 +52,13 @@ export default () => {
     buttonWrapper: {
       marginTop: 40,
       marginBottom: 40,
+      paddingHorizontal: 40,
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
       bottom: 0,
+      backgroundColor: theme.secondary.neutral['navbar-bg'],
     },
 
     policyWrapper: {

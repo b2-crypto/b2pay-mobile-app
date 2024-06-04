@@ -48,11 +48,13 @@ export default () => {
     buttonWrapper: {
       marginTop: 40,
       marginBottom: 40,
+      paddingHorizontal: 40,
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
       bottom: 0,
+      backgroundColor: theme.secondary.neutral['navbar-bg'],
     },
     rules: {
       width: '100%',
@@ -63,7 +65,6 @@ export default () => {
     rule: {
       flexDirection: 'row',
       alignItems: 'center',
-      marginBottom: 8,
     },
     ruleText: {
       fontFamily: 'Geologica-Regular',
@@ -84,8 +85,6 @@ export default () => {
       width: '100%',
       height: 8,
       backgroundColor: theme.secondary.neutral[200],
-      marginBottom: 16,
-      marginTop: 8,
     },
     bar: {
       width: '0%',
@@ -95,7 +94,6 @@ export default () => {
       flexDirection: 'row',
       alignItems: 'center',
       justifyContent: 'flex-start',
-      marginBottom: 16,
       width: '100%',
     },
     securePasswordText: {
@@ -103,7 +101,6 @@ export default () => {
       fontSize: 13,
       fontStyle: 'normal',
       lineHeight: 20,
-      marginRight: 8,
     },
     grate: {
       color: theme.informative.green,
@@ -120,7 +117,7 @@ export default () => {
     passwordWrapper: {
       width: '100%',
       height: 'auto',
-      marginBottom: 24,
+      marginBottom: 5,
       justifyContent: 'flex-start',
     },
   });

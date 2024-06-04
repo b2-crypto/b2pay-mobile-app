@@ -15,6 +15,7 @@ type OTPProps = {
 
 const OTP: React.FC<OTPProps> = props => {
   const [isFocused, setIsFocused] = useState(false);
+  const [focusedInput, setFocusedInput] = useState<number>(1);
   const [otp, setOtp] = useState<(string | undefined)[]>([undefined, undefined, undefined, undefined, undefined]);
 
   const styles = stylesOTP();
@@ -78,30 +79,152 @@ const OTP: React.FC<OTPProps> = props => {
 
   const inputProps: TextInputProps = {
     keyboardType: 'numeric',
-    placeholderTextColor: theme.primary.darkPurple['500'],
-    onFocus: () => {
-      setIsFocused(true);
-      onFocus && onFocus(true);
-    },
-    onBlur: () => {
-      setIsFocused(false);
-      onFocus && onFocus(false);
-    },
+    placeholderTextColor: theme.primary.darkPurple[700],
     onEndEditing: onEndEditing,
     mode: 'outlined',
-    style: [styles.Input, { borderWidth: isFocused ? 2 : 0 }],
-    textColor: theme.primary.darkPurple['500'],
-    outlineColor: theme.primary.darkPurple['500'],
-    outlineStyle: [styles.outlinedStyle, { borderTopWidth: isFocused ? 2 : 0 }],
+    style: styles.Input,
+    textColor: theme.primary.darkPurple[700],
+    outlineColor: theme.primary.darkPurple[700],
+    outlineStyle: [
+      styles.outlinedStyle,
+      {
+        borderTopWidth: isFocused ? 2 : 0,
+      },
+    ],
   };
 
   return (
     <View style={styles.container}>
-      <TextInput {...inputProps} value={otp[0]} onChangeText={t => handleTextChange(t, 0)} ref={refInput1} />
-      <TextInput {...inputProps} value={otp[1]} onChangeText={t => handleTextChange(t, 1)} ref={refInput2} />
-      <TextInput {...inputProps} value={otp[2]} onChangeText={t => handleTextChange(t, 2)} ref={refInput3} />
-      <TextInput {...inputProps} value={otp[3]} onChangeText={t => handleTextChange(t, 3)} ref={refInput4} />
-      <TextInput {...inputProps} value={otp[4]} onChangeText={t => handleTextChange(t, 4)} ref={refInput5} />
+      <TextInput
+        {...inputProps}
+        style={[
+          inputProps.style,
+          {
+            borderWidth: focusedInput === 0 ? 2 : 0,
+            backgroundColor:
+              focusedInput === 0
+                ? theme.secondary.neutral['text-input-focus']
+                : theme.secondary.neutral['text-input-default'],
+          },
+        ]}
+        value={otp[0]}
+        onChangeText={t => handleTextChange(t, 0)}
+        ref={refInput1}
+        onFocus={() => {
+          setFocusedInput(0);
+          setIsFocused(true);
+          onFocus && onFocus(true);
+        }}
+        onBlur={() => {
+          setFocusedInput(6);
+          setIsFocused(false);
+          onFocus && onFocus(false);
+        }}
+      />
+      <TextInput
+        {...inputProps}
+        style={[
+          inputProps.style,
+          {
+            borderWidth: focusedInput === 1 ? 2 : 0,
+            backgroundColor:
+              focusedInput === 1
+                ? theme.secondary.neutral['text-input-focus']
+                : theme.secondary.neutral['text-input-default'],
+          },
+        ]}
+        value={otp[1]}
+        onChangeText={t => handleTextChange(t, 1)}
+        ref={refInput2}
+        onFocus={() => {
+          setFocusedInput(1);
+          setIsFocused(true);
+          onFocus && onFocus(true);
+        }}
+        onBlur={() => {
+          setFocusedInput(6);
+          setIsFocused(false);
+          onFocus && onFocus(false);
+        }}
+      />
+      <TextInput
+        {...inputProps}
+        style={[
+          inputProps.style,
+          {
+            borderWidth: focusedInput === 2 ? 2 : 0,
+            backgroundColor:
+              focusedInput === 2
+                ? theme.secondary.neutral['text-input-focus']
+                : theme.secondary.neutral['text-input-default'],
+          },
+        ]}
+        value={otp[2]}
+        onChangeText={t => handleTextChange(t, 2)}
+        ref={refInput3}
+        onFocus={() => {
+          setFocusedInput(2);
+          setIsFocused(true);
+          onFocus && onFocus(true);
+        }}
+        onBlur={() => {
+          setFocusedInput(6);
+          setIsFocused(false);
+          onFocus && onFocus(false);
+        }}
+      />
+      <TextInput
+        {...inputProps}
+        style={[
+          inputProps.style,
+          {
+            borderWidth: focusedInput === 3 ? 2 : 0,
+            backgroundColor:
+              focusedInput === 3
+                ? theme.secondary.neutral['text-input-focus']
+                : theme.secondary.neutral['text-input-default'],
+          },
+        ]}
+        value={otp[3]}
+        onChangeText={t => handleTextChange(t, 3)}
+        ref={refInput4}
+        onFocus={() => {
+          setFocusedInput(3);
+          setIsFocused(true);
+          onFocus && onFocus(true);
+        }}
+        onBlur={() => {
+          setFocusedInput(6);
+          setIsFocused(false);
+          onFocus && onFocus(false);
+        }}
+      />
+      <TextInput
+        {...inputProps}
+        style={[
+          inputProps.style,
+          {
+            borderWidth: focusedInput === 4 ? 2 : 0,
+            backgroundColor:
+              focusedInput === 4
+                ? theme.secondary.neutral['text-input-focus']
+                : theme.secondary.neutral['text-input-default'],
+          },
+        ]}
+        value={otp[4]}
+        onChangeText={t => handleTextChange(t, 4)}
+        ref={refInput5}
+        onFocus={() => {
+          setFocusedInput(4);
+          setIsFocused(true);
+          onFocus && onFocus(true);
+        }}
+        onBlur={() => {
+          setFocusedInput(6);
+          setIsFocused(false);
+          onFocus && onFocus(false);
+        }}
+      />
     </View>
   );
 };

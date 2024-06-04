@@ -20,6 +20,6 @@ export type buttonDefaultStylesProps = {
   fontFamily: string;
   textColor: string;
   fontSize: number;
-  backgroundColor: string;
+  borderBackGround: string;
   borderColor?: string;
 };

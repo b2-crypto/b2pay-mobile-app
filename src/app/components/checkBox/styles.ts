@@ -1,12 +1,18 @@
 import { StyleSheet } from 'react-native';
+import { themeContext } from '../../../hooks/themeContext';
+import { useContext } from 'react';
 
-export default (fontColor: string, CheckColor: string) =>
-  StyleSheet.create({
+export default () => {
+  const { theme } = useContext(themeContext);
+  const fontColor = theme.primary.darkPurple[500];
+  const CheckColor = theme.primary.darkPurple[500];
+
+  return StyleSheet.create({
     wrapper: {
       width: '100%',
       minWidth: 300,
       height: 72,
-      marginBottom: 8,
+      marginBottom: 24,
       justifyContent: 'flex-start',
       alignItems: 'center',
       flexDirection: 'row',
@@ -27,11 +33,12 @@ export default (fontColor: string, CheckColor: string) =>
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      borderRadius: 12,
     },
 
     checked: {
-      width: 16,
-      height: 16,
+      width: 14,
+      height: 14,
       backgroundColor: CheckColor,
       borderRadius: 8,
     },
@@ -39,3 +46,4 @@ export default (fontColor: string, CheckColor: string) =>
       width: '100%',
     },
   });
+};

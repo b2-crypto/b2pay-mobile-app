@@ -1,7 +1,11 @@
+import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
+import { themeContext } from '../../../hooks/themeContext';
 
-export default (subtitleFontColor: string, descriptionFontColor: string, titleFontColor: string) =>
-  StyleSheet.create({
+export default (subtitleFontColor: string, descriptionFontColor: string, titleFontColor: string) => {
+  const { theme } = useContext(themeContext);
+
+  return StyleSheet.create({
     parent: {
       flex: 1,
       width: '100%',
@@ -49,10 +53,13 @@ export default (subtitleFontColor: string, descriptionFontColor: string, titleFo
     buttonWrapper: {
       marginTop: 40,
       marginBottom: 40,
+      paddingHorizontal: 40,
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
       position: 'absolute',
+      backgroundColor: theme.secondary.neutral['navbar-bg'],
       bottom: 0,
     },
   });
+};

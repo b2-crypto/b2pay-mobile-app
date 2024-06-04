@@ -16,6 +16,7 @@ export default StyleSheet.create({
     width: '100%',
     flexDirection: 'column',
     alignItems: 'center',
+    paddingHorizontal: 40,
     marginTop: 56,
   },
   registerButtonWrapper: {
@@ -23,6 +24,7 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 40,
+    width: '100%',
   },
   registerText: {
     fontSize: 11,

@@ -18,7 +18,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
   const styles = createStyles(theme.secondary.neutral[100], inserts);
   return (
     <SafeAreaView style={styles.container}>
-      <FocusAwareStatusBar barStyle="dark-content" backgroundColor={theme.secondary.neutral['000']} />
+      <FocusAwareStatusBar barStyle="dark-content" backgroundColor={theme.secondary.neutral['100']} />
       {children}
     </SafeAreaView>
   );

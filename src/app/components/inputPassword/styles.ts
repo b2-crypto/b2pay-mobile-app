@@ -12,6 +12,19 @@ export default () => {
       width: '100%',
       borderWidth: 0,
       fontFamily: 'Tecktur-Regular',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowOpacity: 0.22,
+      shadowRadius: 2.22,
+      elevation: 3,
+      borderRadius: 5,
+      marginBottom: 7,
+    },
+    underlineStyle: {
+      borderWidth: 0,
     },
     container: {
       width: '100%',

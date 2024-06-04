@@ -25,7 +25,7 @@ export default () => {
       justifyContent: 'center',
       alignItems: 'center',
       textAlign: 'center',
-      fontFamily: 'Tecktur-Regular',
+      fontFamily: 'Tektur-ExtraBold',
     },
 
     outlinedStyle: {

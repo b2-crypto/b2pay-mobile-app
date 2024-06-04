@@ -43,7 +43,7 @@ export const light = {
     },
     neutral: {
       'button-background': '#D9D9D9',
-      'navbar-bg': '#EEEBF1',
+      'navbar-bg': '#eeebf138',
       '000x000': '#FFFFFF',
       '000': '#FFFFFF',
       '100': '#EEEBF1',
@@ -58,6 +58,8 @@ export const light = {
       '700': '#413F43',
       '800': '#222123',
       '900': '#020202',
+      'text-input-default': '#ffffff70',
+      'text-input-focus': '#ffffff8c',
     },
     purple: {
       '100': '#E3B3E8',

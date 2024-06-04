@@ -12,19 +12,25 @@ export default () => {
       width: '100%',
       borderWidth: 0,
       fontFamily: 'Tecktur-Regular',
+      justifyContent: 'center',
+      shadowColor: '#000',
+      shadowOffset: {
+        width: 0,
+        height: 1,
+      },
+      shadowOpacity: 0.22,
+      shadowRadius: 2.22,
+      elevation: 3,
+      borderRadius: 5,
+      marginBottom: 7,
+    },
+    underlineStyle: {
+      borderWidth: 0,
     },
     container: {
       width: '100%',
       marginBottom: 20,
     },
-    outlinedStyle: {
-      borderWidth: 0,
-      borderBlockColor: theme.primary.darkPurple['700'],
-      borderColor: theme.primary.darkPurple['700'],
-      position: 'absolute',
-      top: -2,
-    },
-
     danger: {
       flexDirection: 'column',
       marginTop: 15,
