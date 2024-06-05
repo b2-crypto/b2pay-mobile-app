@@ -14,7 +14,7 @@ const RegisterStep3: React.FC<pageProps> = ({ navigation }) => {
   const [changeOTP, setChangeOPT] = React.useState('');
   const [otpIsFocused, setOtpIsFocused] = React.useState(false);
   const [canRequest, setCanRequest] = useState(false);
-  const [counter, setCounter] = useState(60);
+  const [counter, setCounter] = useState(3);
   const [isFirstTime, setIsFirstTime] = useState(true);
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
 
@@ -42,7 +42,7 @@ const RegisterStep3: React.FC<pageProps> = ({ navigation }) => {
 
   const handleNewRequest = () => {
     setCanRequest(false);
-    setCounter(60);
+    setCounter(3);
   };
 
   useEffect(() => {

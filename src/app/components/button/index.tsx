@@ -3,6 +3,13 @@ import { Pressable, Text, View } from 'react-native';
 import { buttonDefaultStyles } from './styles';
 import { ButtonProps, buttonDefaultProps, buttonDefaultStylesProps, handleChangeColor } from './types';
 import { themeContext } from '../../../hooks/themeContext';
+import { SvgXml } from 'react-native-svg';
+import borderDefault from './border/default';
+import borderDefaultThin from './border/default-thin';
+import borderSecondary from './border/secondary';
+import borderSecondaryThin from './border/secondary-thin';
+import borderTertiary from './border/tertiary-default';
+import borderTertiaryThin from './border/tertiary-thin';
 
 //Contains the button default
 const DefaultButton: React.FC<buttonDefaultProps> = props => {
@@ -11,11 +18,10 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[200] : theme.primary.rose[500],
+    backGroundColor: disabled ? theme.secondary.neutral[200] : theme.primary.rose[500],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.secondary.neutral[100],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    borderBackGround: theme.secondary.neutral['100'],
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
@@ -24,36 +30,31 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
     if (!pressed)
       return setButtonProps({
         ...buttonProps,
-        color: theme.primary.rose[500],
-        borderBackGround: theme.secondary.neutral['100'],
+        backGroundColor: theme.primary.rose[500],
       });
     switch (type) {
       case 'focus':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.darkPurple[400],
-          borderBackGround: theme.secondary.neutral['100'],
+          backGroundColor: theme.primary.darkPurple[400],
         });
         break;
 
       case 'press':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.rose[700],
-          borderBackGround: theme.secondary.neutral['100'],
+          backGroundColor: theme.primary.rose[700],
         });
         break;
       case 'hover':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.darkPurple[200],
-          borderBackGround: theme.secondary.neutral['100'],
+          backGroundColor: theme.primary.darkPurple[200],
         });
       default:
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.darkPurple[500],
-          borderBackGround: theme.secondary.neutral['100'],
+          backGroundColor: theme.primary.darkPurple[500],
         });
         break;
     }
@@ -74,13 +75,27 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
       onHoverIn={() => handleChangeColor('hover', true)}
       onPressIn={() => handleChangeColor('press', true)}
       onPressOut={() => handleChangeColor('press', false)}>
-      <View style={buttonStyles.borderTopLeft}></View>
-      <View style={buttonStyles.borderBottomLeft}></View>
-      <View style={buttonStyles.buttonBackground}>
+      <View style={[buttonStyles.backGroundWrapper, buttonStyles.leftPosition]}>
+        <SvgXml
+          xml={
+            size === 'thin' || size === 'small'
+              ? borderDefaultThin(buttonProps.backGroundColor)
+              : borderDefault(buttonProps.backGroundColor)
+          }
+        />
+      </View>
+      <View style={buttonStyles.textWrapper}>
         <Text style={buttonStyles.text}>{text}</Text>
       </View>
-      <View style={buttonStyles.borderTopRight}></View>
-      <View style={buttonStyles.borderBottomRight}></View>
+      <View style={[buttonStyles.backGroundWrapper, buttonStyles.rightPosition]}>
+        <SvgXml
+          xml={
+            size === 'thin' || size === 'small'
+              ? borderDefaultThin(buttonProps.backGroundColor)
+              : borderDefault(buttonProps.backGroundColor)
+          }
+        />
+      </View>
     </Pressable>
   );
 };
@@ -89,16 +104,14 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 const SecondaryButton: React.FC<buttonDefaultProps> = props => {
   const { text, disabled, onClick, size } = props;
   const { theme, themeFonts } = useContext(themeContext);
-  const borderBackGround = theme.secondary.neutral['100'];
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: disabled ? theme.secondary.neutral[300] : borderBackGround,
-    borderColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
+    backGroundColor: disabled ? theme.secondary.neutral[200] : theme.secondary.neutral[100],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    borderBackGround: borderBackGround,
+    borderColor: theme.primary.rose[500],
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
@@ -109,20 +122,20 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
       case 'focus':
         setButtonProps({
           ...buttonProps,
-          color: theme.secondary.neutral['20066%'],
+          backGroundColor: theme.secondary.neutral['20066%'],
         });
         break;
 
       case 'press':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.rose['rose-11'],
+          backGroundColor: theme.primary.rose['rose-11'],
         });
         break;
       case 'hover':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.rose['rose-12'],
+          backGroundColor: theme.primary.rose['rose-12'],
         });
         break;
     }
@@ -143,13 +156,27 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
       onHoverIn={() => handleChangeColor('hover', true)}
       onPressIn={() => handleChangeColor('press', true)}
       onPressOut={() => handleChangeColor('press', false)}>
-      <View style={buttonStyles.borderTopLeft}></View>
-      <View style={buttonStyles.borderBottomLeft}></View>
-      <View style={buttonStyles.buttonBackground}>
+      <View style={[buttonStyles.backGroundWrapper, buttonStyles.leftPosition]}>
+        <SvgXml
+          xml={
+            size === 'thin' || size === 'small'
+              ? borderSecondaryThin(buttonProps.backGroundColor, buttonProps.borderColor)
+              : borderSecondary(buttonProps.backGroundColor, buttonProps.borderColor)
+          }
+        />
+      </View>
+      <View style={buttonStyles.textWrapper}>
         <Text style={buttonStyles.text}>{text}</Text>
       </View>
-      <View style={buttonStyles.borderTopRight}></View>
-      <View style={buttonStyles.borderBottomRight}></View>
+      <View style={[buttonStyles.backGroundWrapper, buttonStyles.rightPosition]}>
+        <SvgXml
+          xml={
+            size === 'thin' || size === 'small'
+              ? borderSecondaryThin(buttonProps.backGroundColor, buttonProps.borderColor)
+              : borderSecondary(buttonProps.backGroundColor, buttonProps.borderColor)
+          }
+        />
+      </View>
     </Pressable>
   );
 };
@@ -158,15 +185,13 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 const TertiaryButton: React.FC<buttonDefaultProps> = props => {
   const { text, disabled, onClick, size } = props;
   const { theme, themeFonts } = useContext(themeContext);
-  const borderBackGround = theme.secondary.neutral['100'];
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    color: borderBackGround,
+    backGroundColor: theme.secondary.neutral[100],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
-    borderBackGround: borderBackGround,
   };
 
   const [buttonProps, setButtonProps] = useState<buttonDefaultStylesProps>(initialButtonProps);
@@ -177,56 +202,66 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
       case 'focus':
         setButtonProps({
           ...buttonProps,
-          color: theme.secondary.neutral['20066%'],
+          backGroundColor: theme.secondary.neutral['20066%'],
         });
         break;
 
       case 'press':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.rose['rose-11'],
+          backGroundColor: theme.primary.rose['rose-11'],
         });
         break;
       case 'hover':
         setButtonProps({
           ...buttonProps,
-          color: theme.primary.rose['rose-12'],
+          backGroundColor: theme.primary.rose['rose-12'],
         });
         break;
     }
   };
 
-  const buttonStyles = buttonDefaultStyles(buttonProps);
+  useEffect(() => {
+    setButtonProps(initialButtonProps);
+  }, [theme]);
 
   useMemo(() => {
-    setButtonProps(initialButtonProps);
-  }, [theme, disabled]);
+    setTimeout(() => {
+      setButtonProps(initialButtonProps);
+    }, 500);
+  }, [props.disabled]);
 
+  const buttonStyles = buttonDefaultStyles(buttonProps);
   return (
     <Pressable
-      style={[
-        buttonStyles.buttonPrimary,
-        {
-          elevation: 5,
-          shadowColor: '#000',
-          shadowOffset: { width: 0, height: 2 },
-          shadowOpacity: 0.1,
-          shadowRadius: 5,
-        },
-      ]}
+      style={buttonStyles.buttonPrimary}
       disabled={disabled}
       onPress={onClick}
       onHoverOut={() => handleChangeColor('hover', false)}
       onHoverIn={() => handleChangeColor('hover', true)}
       onPressIn={() => handleChangeColor('press', true)}
       onPressOut={() => handleChangeColor('press', false)}>
-      <View style={buttonStyles.borderTopLeft}></View>
-      <View style={buttonStyles.borderBottomLeft}></View>
-      <View style={buttonStyles.buttonBackground}>
+      <View style={[buttonStyles.backGroundWrapper, buttonStyles.leftPosition]}>
+        <SvgXml
+          xml={
+            size === 'thin' || size === 'small'
+              ? borderTertiaryThin(buttonProps.backGroundColor)
+              : borderTertiary(buttonProps.backGroundColor)
+          }
+        />
+      </View>
+      <View style={buttonStyles.textWrapper}>
         <Text style={buttonStyles.text}>{text}</Text>
       </View>
-      <View style={buttonStyles.borderTopRight}></View>
-      <View style={buttonStyles.borderBottomRight}></View>
+      <View style={[buttonStyles.backGroundWrapper, buttonStyles.rightPosition]}>
+        <SvgXml
+          xml={
+            size === 'thin' || size === 'small'
+              ? borderTertiaryThin(buttonProps.backGroundColor)
+              : borderTertiary(buttonProps.backGroundColor)
+          }
+        />
+      </View>
     </Pressable>
   );
 };

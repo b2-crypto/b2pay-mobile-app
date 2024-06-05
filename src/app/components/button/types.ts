@@ -16,10 +16,9 @@ export type buttonDefaultProps = {
 export type handleChangeColor = (type: 'focus' | 'press' | 'hover', pressed: boolean) => void;
 export type buttonDefaultStylesProps = {
   heigh: string;
-  color: string;
   fontFamily: string;
   textColor: string;
   fontSize: number;
-  borderBackGround: string;
+  backGroundColor: string;
   borderColor?: string;
 };
