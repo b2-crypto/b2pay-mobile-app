@@ -32,7 +32,7 @@ const LayoutRoot = (nav: navigationLayout, Component: React.FC<pageProps>) => {
 export const GlobalStack: React.FC = () => (
   <GlobalContextWrapper>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.RegisterStep3}>
+      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.InitPage}>
         {/* Start Init Page */}
         <Stack.Screen name={PagesNames.InitPage} options={{ headerShadowVisible: false }}>
           {nav => LayoutRoot(nav, pages.InitPage)}
