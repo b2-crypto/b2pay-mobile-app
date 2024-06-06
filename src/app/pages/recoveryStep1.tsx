@@ -81,7 +81,7 @@ const RecoveryStep1: React.FC<pageProps> = ({ navigation }) => {
               text={t?.pages.recoveryPasswordStep1['continue-button']}
               disabled={!canContinue}
               onClick={() => {
-                navigation.navigate('RegisterStep3');
+                navigation.navigate('RecoveryStep2');
               }}
             />
           </View>

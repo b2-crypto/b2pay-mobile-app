@@ -14,6 +14,7 @@ const RegisterStep: React.FC<RegisterStepProps> = props => {
     for (let i = 1; i <= numberOfSteps; i++) {
       steps.push(
         <Icon
+          key={i}
           name={selected === i ? 'stepSelected' : 'stepNoSelected'}
           height={16}
           width={selected === i ? 40 : 16}

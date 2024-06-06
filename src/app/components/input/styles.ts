@@ -36,7 +36,7 @@ export default () => {
     },
     container: {
       width: '100%',
-      marginBottom: 20,
+      marginBottom: 5,
     },
     danger: {
       flexDirection: 'column',

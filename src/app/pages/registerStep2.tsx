@@ -14,6 +14,7 @@ import { pageProps, pagesNameType } from './types';
 const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
   const [email, setEmail] = React.useState<string>('');
   const [termsAccepted, setTermsAccepted] = React.useState<boolean>(false);
+  const [emailExists, setEmailExists] = React.useState<boolean>(false);
 
   //Control states
   const [error, setError] = React.useState<string | undefined>('');
@@ -40,6 +41,9 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
       setError(t?.pages.registerStep2['no-email']);
     } else if (!emailRegex.test(email)) {
       setError(t?.pages.registerStep2['email-invalid']);
+    } else if (email === 'daniel@gg.com') {
+      setError(t?.pages.registerStep2['email-exists']);
+      setEmailExists(true);
     } else {
       setError('');
     }
@@ -73,6 +77,13 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
             errorMessage={error}
             onEndEditing={validateEmail}
           />
+          {emailExists && (
+            <View style={styles.link}>
+              <InternalLink link="Login" text="Login" />
+              <Text style={styles.text}> or </Text>
+              <InternalLink link="RecoveryStep1" text="Reset Password" />
+            </View>
+          )}
         </View>
       </ScrollView>
       {windowHeight < 800 && emailInputIsFocused ? (

@@ -4,7 +4,6 @@ import { TextInput } from 'react-native-paper';
 
 import { themeContext } from '../../../hooks/themeContext';
 import Icon from '../icon';
-import InternalLink from '../internalLink';
 import stylesInput from './styles';
 
 export type TextInputProps = {
@@ -19,7 +18,7 @@ const Input: React.FC<TextInputProps> = props => {
   const [value, setValue] = useState('');
   const [isFocused, setIsFocused] = useState(false);
 
-  const { label, onChangeText, onEndEditing, onFocus, errorMessage, emailExists } = props;
+  const { label, onChangeText, onEndEditing, onFocus, errorMessage } = props;
   const { theme } = useContext(themeContext);
 
   const handleTextChange = (text: string) => {
@@ -64,13 +63,6 @@ const Input: React.FC<TextInputProps> = props => {
             <Icon name="infoDanger" width={24} height={24} sx={styles.icon} />
             <Text style={styles.dangerText}>{errorMessage}</Text>
           </View>
-          {emailExists && (
-            <View style={styles.link}>
-              <InternalLink link="Home" text="Login" />
-              <Text style={styles.text}> or </Text>
-              <InternalLink link="Home" text="Reset Password" />
-            </View>
-          )}
         </View>
       )}
     </View>

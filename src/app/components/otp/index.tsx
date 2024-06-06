@@ -16,7 +16,7 @@ type OTPProps = {
 
 const OTP: React.FC<OTPProps> = props => {
   const [isFocused, setIsFocused] = useState(false);
-  const [focusedInput, setFocusedInput] = useState<number>(1);
+  const [focusedInput, setFocusedInput] = useState<number>(6);
   const [otp, setOtp] = useState<(string | undefined)[]>([undefined, undefined, undefined, undefined, undefined]);
 
   const styles = stylesOTP();

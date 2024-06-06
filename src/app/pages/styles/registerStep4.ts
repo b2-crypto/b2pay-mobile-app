@@ -86,6 +86,7 @@ export default () => {
       width: '100%',
       height: 8,
       backgroundColor: theme.secondary.neutral[200],
+      marginTop: 8,
     },
     bar: {
       width: '0%',

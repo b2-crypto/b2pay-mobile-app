@@ -80,5 +80,15 @@ export default () => {
       width: '100%',
       marginBottom: 16,
     },
+    link: {
+      flexDirection: 'row',
+      paddingLeft: 30,
+    },
+    text: {
+      color: theme.primary.darkPurple['700'],
+      fontSize: 13,
+      fontFamily: 'Geologica-Regular',
+      lineHeight: 18,
+    },
   });
 };

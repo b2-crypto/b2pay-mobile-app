@@ -32,7 +32,7 @@ const LayoutRoot = (nav: navigationLayout, Component: React.FC<pageProps>) => {
 export const GlobalStack: React.FC = () => (
   <GlobalContextWrapper>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.RecoveryStep1}>
+      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.InitPage}>
         {/* Start Init Page */}
         <Stack.Screen name={PagesNames.InitPage} options={{ headerShadowVisible: false }}>
           {nav => LayoutRoot(nav, pages.InitPage)}
@@ -76,13 +76,13 @@ export const GlobalStack: React.FC = () => (
 
         {/* recovery step 2 */}
         <Stack.Screen name={PagesNames.RecoveryStep2} options={{ headerShadowVisible: false }}>
-          {nav => LayoutRoot(nav, pages.login)}
+          {nav => LayoutRoot(nav, pages.RecoveryStep2)}
         </Stack.Screen>
         {/*  recovery step 2 */}
 
         {/* recovery step 3 */}
         <Stack.Screen name={PagesNames.RecoveryStep3} options={{ headerShadowVisible: false }}>
-          {nav => LayoutRoot(nav, pages.login)}
+          {nav => LayoutRoot(nav, pages.RecoveryStep3)}
         </Stack.Screen>
         {/*  recovery step 3 */}
 
