@@ -1,5 +1,6 @@
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
+
 import { themeContext } from '../../../hooks/themeContext';
 
 export default () => {
@@ -85,6 +86,7 @@ export default () => {
       width: '100%',
       height: 8,
       backgroundColor: theme.secondary.neutral[200],
+      marginTop: 8,
     },
     bar: {
       width: '0%',

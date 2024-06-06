@@ -5,16 +5,12 @@ import { headerParametersContext } from '../../hooks/headerParameters';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { Button } from '../components/button';
 import InputEmail from '../components/input';
-import InternalLink from '../components/internalLink';
 import RegisterStep from '../components/registerStep';
-import Switch from '../components/switch';
-import stylesStep2 from './styles/registerStep2';
-import { pageProps, pagesNameType } from './types';
+import stylesRecoveryStep from './styles/registerStep2';
+import { pageProps } from './types';
 
-const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
+const RecoveryStep1: React.FC<pageProps> = ({ navigation }) => {
   const [email, setEmail] = React.useState<string>('');
-  const [termsAccepted, setTermsAccepted] = React.useState<boolean>(false);
-  const [emailExists, setEmailExists] = React.useState<boolean>(false);
 
   //Control states
   const [error, setError] = React.useState<string | undefined>('');
@@ -41,9 +37,6 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
       setError(t?.pages.registerStep2['no-email']);
     } else if (!emailRegex.test(email)) {
       setError(t?.pages.registerStep2['email-invalid']);
-    } else if (email === 'daniel@gg.com') {
-      setError(t?.pages.registerStep2['email-exists']);
-      setEmailExists(true);
     } else {
       setError('');
     }
@@ -60,30 +53,23 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
     //   });
   };
 
-  const styles = stylesStep2();
+  const styles = stylesRecoveryStep();
 
-  const canContinue = emailRegex.test(email) && termsAccepted;
+  const canContinue = emailRegex.test(email);
   return (
     <View style={styles.parent}>
       <ScrollView style={styles.container}>
         <View style={styles.wrapper}>
-          <Text style={styles.title}>{t?.pages.registerStep2.title}</Text>
-          <Text style={styles.subtitle}>{t?.pages.registerStep2.subtitle}</Text>
-          <Text style={styles.description}>{t?.pages.registerStep2.description}</Text>
+          <Text style={styles.title}>{t?.pages.recoveryPasswordStep1.title}</Text>
+          <Text style={styles.subtitle}>{t?.pages.recoveryPasswordStep1.subtitle}</Text>
+          <Text style={styles.description}>{t?.pages.recoveryPasswordStep1.description}</Text>
           <InputEmail
-            label={t?.pages.registerStep2.email}
+            label={t?.pages.recoveryPasswordStep1.email}
             onChangeText={setEmail}
             onFocus={focus => setEmailInputIsFocused(focus)}
             errorMessage={error}
             onEndEditing={validateEmail}
           />
-          {emailExists && (
-            <View style={styles.link}>
-              <InternalLink link="Login" text="Login" />
-              <Text style={styles.text}> or </Text>
-              <InternalLink link="RecoveryStep1" text="Reset Password" />
-            </View>
-          )}
         </View>
       </ScrollView>
       {windowHeight < 800 && emailInputIsFocused ? (
@@ -91,29 +77,19 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
       ) : (
         <>
           <View style={styles.buttonWrapper}>
-            <View style={styles.policyWrapper}>
-              <Text style={styles.policyText}>{t?.pages.registerStep2['policy-description']}</Text>
-              <Switch onValueChange={setTermsAccepted} />
-            </View>
-            <View style={styles.policyLink}>
-              <InternalLink
-                text={t?.pages.registerStep2['policy-link'].label || ''}
-                link={(t?.pages.registerStep2['policy-link'].url as pagesNameType) || 'InitPage'}
-              />
-            </View>
             <Button
-              text={t?.pages.registerStep2['continue-button']}
+              text={t?.pages.recoveryPasswordStep1['continue-button']}
               disabled={!canContinue}
               onClick={() => {
-                navigation.navigate('RegisterStep3');
+                navigation.navigate('RecoveryStep2');
               }}
             />
           </View>
-          <RegisterStep selected={2} />
+          <RegisterStep selected={1} numberOfSteps={3} />
         </>
       )}
     </View>
   );
 };
 
-export default RegisterStep2;
+export default RecoveryStep1;

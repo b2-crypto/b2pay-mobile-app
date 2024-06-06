@@ -1,6 +1,5 @@
 import { useContext } from 'react';
 import { Pressable, StyleSheet } from 'react-native';
-import { themeContext } from '../../../hooks/themeContext';
 import Animated, {
   interpolateColor,
   useAnimatedStyle,
@@ -8,6 +7,8 @@ import Animated, {
   withSpring,
   withTiming,
 } from 'react-native-reanimated';
+
+import { themeContext } from '../../../hooks/themeContext';
 
 type SwitchProps = {
   onValueChange: (value: boolean) => void;

@@ -1,11 +1,12 @@
+import { useContext } from 'react';
 import { View } from 'react-native';
+
+import { parametrizationContext } from '../../../hooks/parametrizationContext';
+import { Language } from '../../../hooks/parametrizationContext/types';
+import { themeContext } from '../../../hooks/themeContext';
 import LanguageCheckBox from '../languageCheckbox';
 import stylesChange from './styles';
 import { ChangeLanguagePopUpProps, languageList } from './types';
-import { parametrizationContext } from '../../../hooks/parametrizationContext';
-import { useContext } from 'react';
-import { Language } from '../../../hooks/parametrizationContext/types';
-import { themeContext } from '../../../hooks/themeContext';
 
 const ChangeLanguagePopUp: React.FC<ChangeLanguagePopUpProps> = props => {
   const { show, close } = props;

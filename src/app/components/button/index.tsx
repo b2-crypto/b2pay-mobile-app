@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useMemo, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
-import { buttonDefaultStyles } from './styles';
-import { ButtonProps, buttonDefaultProps, buttonDefaultStylesProps, handleChangeColor } from './types';
-import { themeContext } from '../../../hooks/themeContext';
 import { SvgXml } from 'react-native-svg';
+
+import { themeContext } from '../../../hooks/themeContext';
 import borderDefault from './border/default';
 import borderDefaultThin from './border/default-thin';
 import borderSecondary from './border/secondary';
 import borderSecondaryThin from './border/secondary-thin';
 import borderTertiary from './border/tertiary-default';
 import borderTertiaryThin from './border/tertiary-thin';
+import { buttonDefaultStyles } from './styles';
+import { ButtonProps, buttonDefaultProps, buttonDefaultStylesProps, handleChangeColor } from './types';
 
 //Contains the button default
 const DefaultButton: React.FC<buttonDefaultProps> = props => {

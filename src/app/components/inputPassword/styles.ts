@@ -1,6 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { themeContext } from '../../../hooks/themeContext';
 import { useContext } from 'react';
+import { StyleSheet } from 'react-native';
+
+import { themeContext } from '../../../hooks/themeContext';
 
 export default () => {
   const { theme } = useContext(themeContext);
@@ -12,6 +13,10 @@ export default () => {
       width: '100%',
       borderWidth: 0,
       fontFamily: 'Tecktur-Regular',
+      elevation: 3,
+      borderRadius: 5,
+    },
+    shadow: {
       shadowColor: '#000',
       shadowOffset: {
         width: 0,
@@ -20,8 +25,11 @@ export default () => {
       shadowOpacity: 0.22,
       shadowRadius: 2.22,
       elevation: 3,
-      borderRadius: 5,
       marginBottom: 7,
+    },
+    borderError: {
+      borderColor: theme.informative.red,
+      borderWidth: 2,
     },
     underlineStyle: {
       borderWidth: 0,

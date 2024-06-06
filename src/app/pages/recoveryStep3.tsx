@@ -9,7 +9,7 @@ import { Button } from '../components/button';
 import Icon from '../components/icon';
 import Input from '../components/inputPassword';
 import RegisterStep from '../components/registerStep';
-import stylesStep4 from './styles/registerStep4';
+import recoveryStep3 from './styles/registerStep4';
 import { pageProps } from './types';
 
 const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
@@ -61,7 +61,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
-  const styles = stylesStep4();
+  const styles = recoveryStep3();
 
   const onPasswordChange = (text: string) => {
     setPassword(text);
@@ -85,12 +85,12 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
     <View style={styles.parent}>
       <ScrollView style={styles.container}>
         <View style={styles.wrapper}>
-          <Text style={styles.title}>{t?.pages.registerStep4.title}</Text>
-          <Text style={styles.subtitle}>{t?.pages.registerStep4.subtitle}</Text>
-          <Text style={styles.description}>{t?.pages.registerStep4.description}</Text>
+          <Text style={styles.title}>{t?.pages.recoveryPasswordStep3.title}</Text>
+          <Text style={styles.subtitle}>{t?.pages.recoveryPasswordStep3.subtitle}</Text>
+          <Text style={styles.description}>{t?.pages.recoveryPasswordStep3.description}</Text>
           <View style={[styles.passwordWrapper, { marginBottom: !isPasswordFocused ? 24 : 0 }]}>
             <Input
-              label={t?.pages.registerStep4['password-label']}
+              label={t?.pages.recoveryPasswordStep3['password-label']}
               onChangeText={onPasswordChange}
               onFocus={setIsPasswordFocused}
             />
@@ -105,7 +105,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
                 <View style={styles.securePasswordWrapper}>
                   <Icon name={'infoGreen'} width={24} height={24} />
                   <Text style={[styles.securePasswordText, styles.grate]}>
-                    {t?.pages.registerStep4['password-secure-3']}
+                    {t?.pages.recoveryPasswordStep3['password-secure-3']}
                   </Text>
                 </View>
               )}
@@ -113,7 +113,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
                 <View style={styles.securePasswordWrapper}>
                   <Icon name={'infoYellow'} width={24} height={24} />
                   <Text style={[styles.securePasswordText, styles.medium]}>
-                    {t?.pages.registerStep4['password-secure-2']}
+                    {t?.pages.recoveryPasswordStep3['password-secure-2']}
                   </Text>
                 </View>
               )}
@@ -121,7 +121,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
                 <View style={styles.securePasswordWrapper}>
                   <Icon name={'infoDanger'} width={24} height={24} />
                   <Text style={[styles.securePasswordText, styles.weak]}>
-                    {t?.pages.registerStep4['password-secure-1']}
+                    {t?.pages.recoveryPasswordStep3['password-secure-1']}
                   </Text>
                 </View>
               )}
@@ -133,37 +133,37 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
                 <View style={styles.iconWrapper}>
                   {passwordRules.length && <Icon name="checked" width={16} height={16} />}
                 </View>
-                <Text style={styles.ruleText}>{t?.pages.registerStep4['password-rule-1']}</Text>
+                <Text style={styles.ruleText}>{t?.pages.recoveryPasswordStep3['password-rule-1']}</Text>
               </View>
               <View style={styles.rule}>
                 <View style={styles.iconWrapper}>
                   {passwordRules.uppercase && <Icon name="checked" width={16} height={16} />}
                 </View>
-                <Text style={styles.ruleText}>{t?.pages.registerStep4['password-rule-2']}</Text>
+                <Text style={styles.ruleText}>{t?.pages.recoveryPasswordStep3['password-rule-2']}</Text>
               </View>
               <View style={styles.rule}>
                 <View style={styles.iconWrapper}>
                   {passwordRules.lowercase && <Icon name="checked" width={16} height={16} />}
                 </View>
-                <Text style={styles.ruleText}>{t?.pages.registerStep4['password-rule-3']}</Text>
+                <Text style={styles.ruleText}>{t?.pages.recoveryPasswordStep3['password-rule-3']}</Text>
               </View>
               <View style={styles.rule}>
                 <View style={styles.iconWrapper}>
                   {passwordRules.number && <Icon name="checked" width={16} height={16} />}
                 </View>
-                <Text style={styles.ruleText}>{t?.pages.registerStep4['password-rule-4']}</Text>
+                <Text style={styles.ruleText}>{t?.pages.recoveryPasswordStep3['password-rule-4']}</Text>
               </View>
               <View style={styles.rule}>
                 <View style={styles.iconWrapper}>
                   {passwordRules.special && <Icon name="checked" width={16} height={16} />}
                 </View>
-                <Text style={styles.ruleText}>{t?.pages.registerStep4['password-rule-5']}</Text>
+                <Text style={styles.ruleText}>{t?.pages.recoveryPasswordStep3['password-rule-5']}</Text>
               </View>
             </View>
           )}
 
           <Input
-            label={t?.pages.registerStep4['confirm-password-label']}
+            label={t?.pages.recoveryPasswordStep3['confirm-password-label']}
             onChangeText={t => setConfirmPassword(t)}
             onFocus={setIsConfirmPasswordFocused}
           />
@@ -171,7 +171,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
             <View style={styles.securePasswordWrapper}>
               <Icon name={'infoDanger'} width={24} height={24} />
               <Text style={[styles.securePasswordText, styles.weak]}>
-                {t?.pages.registerStep4['password-no-match']}
+                {t?.pages.recoveryPasswordStep3['password-no-match']}
               </Text>
             </View>
           )}
@@ -183,7 +183,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
         <>
           <View style={styles.buttonWrapper}>
             <Button
-              text={t?.pages.registerStep4['continue-button']}
+              text={t?.pages.recoveryPasswordStep3['continue-button']}
               disabled={!canRegister}
               // onPress={() => {
               //   navigation.navigate('RegisterStep4');
@@ -191,7 +191,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
             />
           </View>
 
-          <RegisterStep selected={4} />
+          <RegisterStep selected={3} numberOfSteps={3} />
         </>
       )}
     </View>

@@ -1,16 +1,16 @@
 import {
-  logo,
   back,
   bigLogo,
+  checked,
   config,
   expandLess,
-  stepSelected,
-  stepNoSelected,
   infoDanger,
-  infoGrey,
-  checked,
   infoGreen,
+  infoGrey,
   infoYellow,
+  logo,
+  stepNoSelected,
+  stepSelected,
 } from './light/index.ts';
 
 export default {

@@ -1,8 +1,9 @@
 import React, { ReactElement } from 'react';
-import ParametrizationProvider from './parametrizationContext';
-import ThemeProvider from './themeContext';
+
 import HeaderParametersProvider from './headerParameters';
 import { NavigationProvider } from './navigation';
+import ParametrizationProvider from './parametrizationContext';
+import ThemeProvider from './themeContext';
 
 type HooksWrapperProps = {
   children: React.ReactNode;

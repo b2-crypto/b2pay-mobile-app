@@ -1,10 +1,11 @@
 import React, { useContext, useEffect } from 'react';
 import { ScrollView, Text, View } from 'react-native';
-import Icon from '../components/icon';
-import { Button } from '../components/button';
-import styles from './styles/initPage';
-import { parametrizationContext } from '../../hooks/parametrizationContext';
+
 import { headerParametersContext } from '../../hooks/headerParameters';
+import { parametrizationContext } from '../../hooks/parametrizationContext';
+import { Button } from '../components/button';
+import Icon from '../components/icon';
+import styles from './styles/initPage';
 import { pageProps } from './types';
 
 const InitPage: React.FC<pageProps> = ({ navigation }) => {
@@ -30,7 +31,7 @@ const InitPage: React.FC<pageProps> = ({ navigation }) => {
         </View>
 
         <View style={styles.buttonWrapper}>
-          <Button text={t?.pages.initPage['login-button']} onClick={() => {}}></Button>
+          <Button text={t?.pages.initPage['login-button']} onClick={() => navigation.navigate('Login')}></Button>
           <View style={styles.registerButtonWrapper}>
             <Text style={styles.registerText}>{t?.pages.initPage['forget-title']}</Text>
             <Button

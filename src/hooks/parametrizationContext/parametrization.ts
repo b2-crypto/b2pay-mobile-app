@@ -1,13 +1,15 @@
 import RNFS from 'react-native-fs';
-import { Language, parametrizeText } from './types';
+
 import {
   ALWAYS_PARAMETRIZE_TEXT_VERSION,
   ALWAYS_PARAMETRIZE_TEXT_VERSION_ON_SERVER,
   BACKEND_ROUTES,
   BACKEND_URL,
 } from '../../constants/_backConstants';
-import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
 import localParametrizeFiles_EN from './localParametrizeFiles_EN.json';
+import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
+import { Language, parametrizeText } from './types';
+
 export default class Parametrization {
   path: string;
   language: Language;

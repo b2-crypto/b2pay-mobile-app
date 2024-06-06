@@ -1,8 +1,9 @@
 import React, { ReactElement, createContext, useEffect, useState } from 'react';
-import { themeContextProviderProps, themeContextType } from './types';
-import { dark, light } from './colors';
 import { useColorScheme } from 'react-native';
+
+import { dark, light } from './colors';
 import fonts from './fonts';
+import { themeContextProviderProps, themeContextType } from './types';
 
 const initContext: themeContextType = {
   theme: light,

@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import { Pressable, Text, View } from 'react-native';
+
 import { themeContext } from '../../../hooks/themeContext';
 import styleSheetFunc from './styles';
 

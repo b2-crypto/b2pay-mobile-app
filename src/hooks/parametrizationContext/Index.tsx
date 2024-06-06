@@ -1,9 +1,9 @@
 import React, { ReactElement, createContext, useEffect, useState } from 'react';
 import { NativeModules, Platform } from 'react-native';
 
-import { Language, parametrizationContextType, parametrizationProviderProps } from './types';
-import Parametrization from './parametrization';
 import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
+import Parametrization from './parametrization';
+import { Language, parametrizationContextType, parametrizationProviderProps } from './types';
 
 export const parametrizationContext = createContext<parametrizationContextType>({ t: undefined, language: 'es' });
 

@@ -1,4 +1,5 @@
-import { StyleSheet } from 'react-native';
+import { DimensionValue, StyleSheet } from 'react-native';
+
 import { buttonDefaultStylesProps } from './types';
 
 export const text = () => {
@@ -8,7 +9,7 @@ export const text = () => {
 export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
   const { heigh, fontFamily, textColor, fontSize, borderColor, backGroundColor } = props;
   const heightValues = {
-    width: 350,
+    width: '100%' as DimensionValue,
     height: 58,
     borderWidth: borderColor ? 2 : 0,
     fontSize: fontSize || 20,

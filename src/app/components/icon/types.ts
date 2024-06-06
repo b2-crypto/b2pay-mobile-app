@@ -1,4 +1,5 @@
 import { ViewStyle } from 'react-native';
+
 import light from './icons/light';
 
 export type IconProps = {
