@@ -1,16 +1,16 @@
 import {
-  logo,
   back,
   bigLogo,
+  checked,
   config,
   expandLess,
   infoDanger,
+  infoGreen,
   infoGrey,
+  infoYellow,
+  logo,
   stepNoSelected,
   stepSelected,
-  checked,
-  infoGreen,
-  infoYellow,
 } from './dark/index.ts';
 
 export default {

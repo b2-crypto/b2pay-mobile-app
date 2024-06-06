@@ -1,41 +1,29 @@
 import { View } from 'react-native';
+
 import Icon from '../icon';
 import styles from './styles';
 
 export type RegisterStepProps = {
   selected: number;
+  numberOfSteps?: number;
 };
 const RegisterStep: React.FC<RegisterStepProps> = props => {
-  const { selected = 1 } = props;
-
-  return (
-    <View style={styles.wrapper}>
-      <Icon
-        name={selected === 1 ? 'stepSelected' : 'stepNoSelected'}
-        height={16}
-        width={selected === 1 ? 40 : 16}
-        sx={{ marginRight: 5 }}
-      />
-      <Icon
-        name={selected === 2 ? 'stepSelected' : 'stepNoSelected'}
-        height={16}
-        width={selected === 2 ? 40 : 16}
-        sx={{ marginRight: 5 }}
-      />
-      <Icon
-        name={selected === 3 ? 'stepSelected' : 'stepNoSelected'}
-        height={16}
-        width={selected === 3 ? 40 : 16}
-        sx={{ marginRight: 5 }}
-      />
-      <Icon
-        name={selected === 4 ? 'stepSelected' : 'stepNoSelected'}
-        height={16}
-        width={selected === 4 ? 40 : 16}
-        sx={{ marginRight: 5 }}
-      />
-    </View>
-  );
+  const { selected = 1, numberOfSteps = 4 } = props;
+  const printIcons = () => {
+    const steps = [];
+    for (let i = 1; i <= numberOfSteps; i++) {
+      steps.push(
+        <Icon
+          name={selected === i ? 'stepSelected' : 'stepNoSelected'}
+          height={16}
+          width={selected === i ? 40 : 16}
+          sx={{ marginRight: 5 }}
+        />,
+      );
+    }
+    return steps;
+  };
+  return <View style={styles.wrapper}>{printIcons()}</View>;
 };
 
 export default RegisterStep;

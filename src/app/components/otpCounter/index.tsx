@@ -1,8 +1,9 @@
-import { parametrizationContext } from '../../../hooks/parametrizationContext';
 import { useContext, useEffect } from 'react';
-import Icon from '../icon';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
+
+import { parametrizationContext } from '../../../hooks/parametrizationContext';
 import { themeContext } from '../../../hooks/themeContext';
+import Icon from '../icon';
 
 const stylesCreate = () => {
   const { theme } = useContext(themeContext);

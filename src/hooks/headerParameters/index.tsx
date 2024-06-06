@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react';
+
 import { headerParametersContextType, headerParametersProps, headerParametersProviderProps } from './types';
 
 export const headerParametersContext = createContext<headerParametersContextType>({

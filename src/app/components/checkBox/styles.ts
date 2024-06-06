@@ -1,6 +1,7 @@
-import { StyleSheet } from 'react-native';
-import { themeContext } from '../../../hooks/themeContext';
 import { useContext } from 'react';
+import { StyleSheet } from 'react-native';
+
+import { themeContext } from '../../../hooks/themeContext';
 
 export default () => {
   const { theme } = useContext(themeContext);

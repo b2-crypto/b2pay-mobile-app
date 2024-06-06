@@ -1,4 +1,5 @@
 import { ParamListBase, RouteProp } from '@react-navigation/native';
+
 import { PagesNames } from '../../../navigation/pagesNames';
 
 export type pagesNameType = keyof typeof PagesNames;

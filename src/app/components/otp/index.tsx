@@ -1,8 +1,9 @@
 import { useContext, useRef, useState } from 'react';
 import { TextInput, View } from 'react-native';
-import stylesOTP from './styles';
 import { TextInputProps } from 'react-native-paper';
+
 import { themeContext } from '../../../hooks/themeContext';
+import stylesOTP from './styles';
 
 type OTPProps = {
   label?: string;

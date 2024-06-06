@@ -31,24 +31,11 @@ export default () => {
       color: theme.primary.darkPurple[700],
     },
     subtitle: {
-      fontFamily: 'Geologica-Regular',
+      fontFamily: 'Geologica-Thin',
       fontSize: 15,
       fontStyle: 'normal',
       lineHeight: 20,
-      color: theme.primary.rose[500],
-    },
-    description: {
-      fontFamily: 'Geologica-Thin',
-      fontSize: 13,
-      fontStyle: 'normal',
-      lineHeight: 20,
-      color: theme.primary.darkPurple[500],
-      marginTop: 16,
-      marginBottom: 32,
-    },
-    checkboxWrapper: {
-      marginTop: 40,
-      width: '100%',
+      color: theme.secondary.neutral[500],
     },
     buttonWrapper: {
       marginTop: 40,
@@ -61,24 +48,24 @@ export default () => {
       bottom: 0,
       backgroundColor: theme.secondary.neutral['navbar-bg'],
     },
-
-    policyWrapper: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
+    emailWrapper: {
+      width: '100%',
+      marginTop: 40,
+      marginBottom: 24,
+    },
+    passWrapper: {
+      width: '100%',
+      marginBottom: 10,
+    },
+    forgotPasswordWrapper: {
+      width: '100%',
+      alignItems: 'flex-end',
+    },
+    registerLinkWrapper: {
+      flexDirection: 'column',
       alignItems: 'center',
-      width: '100%',
-    },
-    policyText: {
-      fontFamily: 'Geologica-Regular',
-      fontSize: 10,
-      fontStyle: 'normal',
-      lineHeight: 20,
-      color: theme.primary.darkPurple[900],
-      width: '80%',
-    },
-    policyLink: {
-      width: '100%',
-      marginBottom: 16,
+      textAlign: 'center',
+      marginTop: 20,
     },
   });
 };

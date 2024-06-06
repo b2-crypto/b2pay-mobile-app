@@ -1,10 +1,11 @@
 import React, { useContext, useState } from 'react';
-import { TextInput } from 'react-native-paper';
-import { themeContext } from '../../../hooks/themeContext';
-import stylesInput from './styles';
 import { Text, View } from 'react-native';
+import { TextInput } from 'react-native-paper';
+
+import { themeContext } from '../../../hooks/themeContext';
 import Icon from '../icon';
 import InternalLink from '../internalLink';
+import stylesInput from './styles';
 
 export type TextInputProps = {
   label?: string;
@@ -45,7 +46,7 @@ const Input: React.FC<TextInputProps> = props => {
         }}
         onEndEditing={onEndEditing}
         mode="flat"
-        style={[styles.Input, { borderWidth: isFocused ? 1 : 0 }]}
+        style={[styles.Input, { borderWidth: isFocused ? 2 : 0 }, errorMessage ? styles.borderError : {}]}
         underlineStyle={styles.underlineStyle}
         contentStyle={{ color: theme.primary.darkPurple['500'] }}
         cursorColor={theme.primary.darkPurple['500']}
@@ -54,8 +55,8 @@ const Input: React.FC<TextInputProps> = props => {
         activeOutlineColor={theme.primary.darkPurple['500']}
         selectionColor={theme.primary.darkPurple['500']}
         selectionHandleColor={theme.primary.darkPurple['500']}
-        underlineColorAndroid={theme.primary.darkPurple['500']}
-        activeUnderlineColor={theme.primary.darkPurple['500']}
+        underlineColorAndroid={theme.primary.darkPurple['700']}
+        activeUnderlineColor={errorMessage ? theme.informative.red : theme.primary.darkPurple['500']}
       />
       {errorMessage && (
         <View style={styles.danger}>

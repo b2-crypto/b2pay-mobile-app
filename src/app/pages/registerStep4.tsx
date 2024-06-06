@@ -1,15 +1,16 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { DimensionValue, Dimensions, ScrollView, Text, View } from 'react-native';
-import { headerParametersContext } from '../../hooks/headerParameters';
-import { pageProps } from './types';
-import stylesStep4 from './styles/registerStep4';
-import { parametrizationContext } from '../../hooks/parametrizationContext';
-import { Button } from '../components/button';
-import RegisterStep from '../components/registerStep';
-import Input from '../components/inputPassword';
-import Icon from '../components/icon';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
+
+import { headerParametersContext } from '../../hooks/headerParameters';
+import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { themeContext } from '../../hooks/themeContext';
+import { Button } from '../components/button';
+import Icon from '../components/icon';
+import Input from '../components/inputPassword';
+import RegisterStep from '../components/registerStep';
+import stylesStep4 from './styles/registerStep4';
+import { pageProps } from './types';
 
 const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
   //Control states

@@ -1,11 +1,12 @@
 import { useContext } from 'react';
 import { Pressable } from 'react-native';
+import { Text } from 'react-native';
+
 import { navigationContext } from '../../../hooks/navigation';
 import { pagesNameType } from '../../pages/types';
-import { Text } from 'react-native';
 import stylesCreate from './styles';
 
-export type InternalLinkProps = { link: pagesNameType; text: string };
+export type InternalLinkProps = { link: pagesNameType; text: string | undefined };
 
 export const InternalLink: React.FC<InternalLinkProps> = props => {
   const { navigation } = useContext(navigationContext);

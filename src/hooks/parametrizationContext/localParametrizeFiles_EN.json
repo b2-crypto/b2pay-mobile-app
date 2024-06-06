@@ -65,6 +65,31 @@
             "password-secure-3": "Strong",
             "continue-button": "Register",
             "password-no-match": "Passwords do not match. Please try again."
+        },
+        "login": {
+            "title": "Login",
+            "subtitle": "Login to continue using the app.",
+            "email": "Email",
+            "password": "Password",
+            "login-button": "Login",
+            "forget-password": "Forgot Password?",
+            "dont-have-account": "Don’t have an account?",
+            "register": "Register",
+            "no-email": "Email is required.",
+            "email-invalid": "Invalid email address.",
+            "email-no-exists": "No email associated with this account. Please try again.",
+            "no-password": "Password is required.",
+            "invalid-account": "Wrong email or password."
+        },
+        "recoveryPasswordStep1": {
+            "title": "Password Recovery",
+            "subtitle": "Section 1: Contact Information.",
+            "description": "Enter your email address for account recovery.",
+            "email": "Email",
+            "email-exists": "An account is already associated with this email address.",
+            "email-invalid": "Invalid email address.",
+            "no-email": "Email is required.",
+            "continue-button": "Continue"
         }
     },
     "header": {

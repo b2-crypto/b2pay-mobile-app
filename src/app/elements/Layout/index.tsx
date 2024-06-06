@@ -1,10 +1,11 @@
 import { useIsFocused } from '@react-navigation/native';
+import { useContext } from 'react';
 import { StatusBar } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
-import { FocusAwareStatusBarProps, LayoutProps } from './types';
-import createStyles from './styles';
+
 import { themeContext } from '../../../hooks/themeContext';
-import { useContext } from 'react';
+import createStyles from './styles';
+import { FocusAwareStatusBarProps, LayoutProps } from './types';
 
 const FocusAwareStatusBar = (props: FocusAwareStatusBarProps) => {
   const { barStyle, backgroundColor } = props;

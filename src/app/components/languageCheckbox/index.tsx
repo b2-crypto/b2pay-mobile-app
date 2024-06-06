@@ -1,8 +1,9 @@
-import { Pressable, Text, View } from 'react-native';
-import { LanguageCheckboxProps } from './types';
-import styleSheetFunc from './styles';
 import { useContext } from 'react';
+import { Pressable, Text, View } from 'react-native';
+
 import { themeContext } from '../../../hooks/themeContext';
+import styleSheetFunc from './styles';
+import { LanguageCheckboxProps } from './types';
 
 const LanguageCheckBox: React.FC<LanguageCheckboxProps> = props => {
   const { checked = true, language, select } = props;

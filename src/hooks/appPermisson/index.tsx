@@ -1,5 +1,6 @@
-import { checkMultiple, PERMISSIONS, requestMultiple, RESULTS } from 'react-native-permissions';
 import { Platform } from 'react-native';
+import { PERMISSIONS, RESULTS, checkMultiple, requestMultiple } from 'react-native-permissions';
+
 import { AppPermissionType, PermissionType, PlatformType } from './type';
 
 const PLATFORM_WRITE_EXTERNAL_STORAGE_PERMISSION = {

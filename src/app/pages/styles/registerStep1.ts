@@ -1,10 +1,10 @@
 import { useContext } from 'react';
 import { StyleSheet } from 'react-native';
+
 import { themeContext } from '../../../hooks/themeContext';
 
-export default (subtitleFontColor: string, descriptionFontColor: string, titleFontColor: string) => {
+export default () => {
   const { theme } = useContext(themeContext);
-
   return StyleSheet.create({
     parent: {
       flex: 1,
@@ -28,21 +28,21 @@ export default (subtitleFontColor: string, descriptionFontColor: string, titleFo
       fontSize: 32,
       fontFamily: 'Tektur-Bold',
       fontStyle: 'normal',
-      color: titleFontColor,
+      color: theme.primary.darkPurple[700],
     },
     subtitle: {
       fontFamily: 'Geologica-Regular',
       fontSize: 15,
       fontStyle: 'normal',
       lineHeight: 20,
-      color: subtitleFontColor,
+      color: theme.primary.rose[500],
     },
     description: {
       fontFamily: 'Geologica-Thin',
       fontSize: 13,
       fontStyle: 'normal',
       lineHeight: 20,
-      color: descriptionFontColor,
+      color: theme.primary.darkPurple[500],
       marginTop: 16,
       marginBottom: 32,
     },

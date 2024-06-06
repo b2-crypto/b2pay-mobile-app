@@ -7,7 +7,7 @@ import { Button } from '../components/button';
 import OTP from '../components/otp';
 import OTPCounter from '../components/otpCounter';
 import RegisterStep from '../components/registerStep';
-import stylesStep3 from './styles/registerStep3';
+import recoveryStep2Styles from './styles/registerStep3';
 import { pageProps } from './types';
 
 const RegisterStep3: React.FC<pageProps> = ({ navigation }) => {
@@ -34,7 +34,7 @@ const RegisterStep3: React.FC<pageProps> = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
-  const styles = stylesStep3();
+  const styles = recoveryStep2Styles();
 
   const handleFinish = () => {
     setIsFirstTime(false);

@@ -1,20 +1,19 @@
 import React, { useContext, useEffect } from 'react';
 import { ScrollView, Text, View } from 'react-native';
+
 import { headerParametersContext } from '../../hooks/headerParameters';
-import { pageProps } from './types';
-import CheckBox from '../components/checkBox';
-import stylesStep1 from './styles/registerStep1';
-import { themeContext } from '../../hooks/themeContext';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { Button } from '../components/button';
+import CheckBox from '../components/checkBox';
 import RegisterStep from '../components/registerStep';
+import stylesStep1 from './styles/registerStep1';
+import { pageProps } from './types';
 
 export const pageName = 'RegisterStep1';
 const RegisterStep1: React.FC<pageProps> = ({ navigation }) => {
   const [selected, setSelected] = React.useState('');
 
   const { changeHeaderParameters } = useContext(headerParametersContext);
-  const { theme } = useContext(themeContext);
   const { t } = useContext(parametrizationContext);
 
   //Used when the component is focused
@@ -28,7 +27,7 @@ const RegisterStep1: React.FC<pageProps> = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
-  const styles = stylesStep1(theme.primary.rose[500], theme.primary.darkPurple[500], theme.primary.darkPurple[700]);
+  const styles = stylesStep1();
   return (
     <View style={styles.parent}>
       <ScrollView style={styles.container}>

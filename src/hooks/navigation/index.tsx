@@ -1,6 +1,8 @@
-import { createContext, useState } from 'react';
-import { pagesNameType } from '../../app/pages/types';
 import { ParamListBase, RouteProp } from '@react-navigation/native';
+import { createContext, useState } from 'react';
+
+import { pagesNameType } from '../../app/pages/types';
+
 type navigationType = {
   navigate: (route: pagesNameType) => void;
 };
