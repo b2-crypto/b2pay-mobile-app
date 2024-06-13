@@ -51,7 +51,6 @@ const Loading: React.FC<pageProps> = ({ navigation }) => {
   useEffect(() => {
     setTimeout(async () => {
       const onboarding = await AsyncStorage.getItem('onboarding');
-      console.log('onboarding', onboarding);
       if (!onboarding) navigation.navigate('OnBoarding');
       else navigation.navigate('InitPage');
     }, 3000);
