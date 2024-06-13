@@ -48,7 +48,7 @@ export default () => {
     },
     buttonWrapper: {
       marginTop: 40,
-      marginBottom: 40,
+      marginBottom: 60,
       paddingHorizontal: 40,
       width: '100%',
       alignItems: 'center',

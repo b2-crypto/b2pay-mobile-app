@@ -8,6 +8,8 @@ import {
   infoGreen,
   infoGrey,
   infoYellow,
+  loadingDot,
+  loadingSimple,
   logo,
   stepNoSelected,
   stepSelected,
@@ -26,4 +28,6 @@ export default {
   infoGreen,
   infoYellow,
   checked,
+  loadingDot,
+  loadingSimple,
 };

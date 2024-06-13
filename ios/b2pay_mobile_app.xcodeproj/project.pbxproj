@@ -39,6 +39,8 @@
 		BA13E80015AC48DCAB8C7A37 /* Tektur-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAB0FECCF2D947CAB91DDD58 /* Tektur-Medium.ttf */; };
 		63A73B615E944AAD9D7E6E6E /* Tektur-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */; };
 		4CEBABC284C149D2B61FE946 /* Tektur-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */; };
+		2A35C44D879846F0AD652364 /* loadingdark.gif in Resources */ = {isa = PBXBuildFile; fileRef = 6BC0B60B2C54464D86136E5E /* loadingdark.gif */; };
+		5B49AFAB67A04D238B89F61D /* loadinglight.gif in Resources */ = {isa = PBXBuildFile; fileRef = E9B38EFDFC3140A4B5B97E49 /* loadinglight.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +97,8 @@
 		AAB0FECCF2D947CAB91DDD58 /* Tektur-Medium.ttf */ = {isa = PBXFileReference; name = "Tektur-Medium.ttf"; path = "../assets/fonts/Tektur-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */ = {isa = PBXFileReference; name = "Tektur-Regular.ttf"; path = "../assets/fonts/Tektur-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */ = {isa = PBXFileReference; name = "Tektur-SemiBold.ttf"; path = "../assets/fonts/Tektur-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		6BC0B60B2C54464D86136E5E /* loadingdark.gif */ = {isa = PBXFileReference; name = "loadingdark.gif"; path = "../assets/images/loadingdark.gif"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		E9B38EFDFC3140A4B5B97E49 /* loadinglight.gif */ = {isa = PBXFileReference; name = "loadinglight.gif"; path = "../assets/images/loadinglight.gif"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,6 +233,8 @@
 				AAB0FECCF2D947CAB91DDD58 /* Tektur-Medium.ttf */,
 				67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */,
 				1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */,
+				6BC0B60B2C54464D86136E5E /* loadingdark.gif */,
+				E9B38EFDFC3140A4B5B97E49 /* loadinglight.gif */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -354,6 +360,8 @@
 				BA13E80015AC48DCAB8C7A37 /* Tektur-Medium.ttf in Resources */,
 				63A73B615E944AAD9D7E6E6E /* Tektur-Regular.ttf in Resources */,
 				4CEBABC284C149D2B61FE946 /* Tektur-SemiBold.ttf in Resources */,
+				2A35C44D879846F0AD652364 /* loadingdark.gif in Resources */,
+				5B49AFAB67A04D238B89F61D /* loadinglight.gif in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

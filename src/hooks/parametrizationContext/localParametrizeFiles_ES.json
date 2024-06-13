@@ -1,10 +1,11 @@
 {
     "version": "0.0.1",
+    "showOnboarding": true,
     "pages": {
         "initPage": {
-            "login-button": "Login",
-            "register-button": "Register",
-            "forget-title": "Don’t have an account?"
+            "login-button": "Iniciar sesión",
+            "register-button": "Registrarse",
+            "forget-title": "¿No tienes una cuenta?"
         },
         "registerStep1": {
             "title": "Register",
@@ -119,6 +120,17 @@
             "password-secure-3": "Fuerte",
             "continue-button": "Cambiar contraseña",
             "password-no-match": "Las contraseñas no coinciden. Por favor, inténtalo de nuevo."
+        },
+        "onBoarding": {
+            "skip": "Omitir",
+            "done": "Empezar",
+            "welcome": "Bienvenido a",
+            "description-step-1": "Somos una plataforma financiera global con licencias en moneda fiduciaria y criptomonedas.",
+            "description-step-2": "Nuestras licencias financieras nos permiten ofrecer servicios locales e internacionales",
+            "description-step-3": "Gestionamos transacciones seguras y eficientes con Mastercard"
+        },
+        "loadingPage": {
+            "loading": "Cargando"
         }
     },
     "header": {

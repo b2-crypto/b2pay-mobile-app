@@ -20,9 +20,14 @@ const getDeviceLanguage = (): Language => {
 const ParametrizationProvider: React.FC<parametrizationProviderProps> = ({ children }): ReactElement => {
   const [parametrization, setParametrization] = useState<typeof localParametrizeFiles_ES | undefined>(undefined);
   const [language, setLanguage] = useState<Language>(getDeviceLanguage());
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const ParametrizationClass = new Parametrization(language);
 
   const generateParametrization = async () => {
-    const ParametrizationClass = new Parametrization(language);
+    //Set Loading
+    setIsLoading(true);
+
+    // Check if the parametrization file exists
     const haveANewParametrization = await ParametrizationClass.checkIfTheVersionChanged();
     if (!haveANewParametrization && (await ParametrizationClass.exists()))
       return setParametrization(await ParametrizationClass.getText());
@@ -32,15 +37,19 @@ const ParametrizationProvider: React.FC<parametrizationProviderProps> = ({ child
     return newParametrization;
   };
 
+  const changeOnboardingState = async () => await ParametrizationClass.setOnboardingFalse();
   // // Find if the parametrization file have a new version
   useEffect(() => {
-    generateParametrization();
+    generateParametrization().then(() => setIsLoading(false));
   }, [language]);
 
   const value: parametrizationContextType = {
     t: parametrization,
     language,
     setLanguage,
+    changeOnboardingState,
+    showOnboarding: parametrization?.showOnboarding,
+    isLoading,
   };
 
   return <parametrizationContext.Provider value={value}>{children}</parametrizationContext.Provider>;

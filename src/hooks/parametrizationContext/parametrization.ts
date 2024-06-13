@@ -28,10 +28,10 @@ export default class Parametrization {
       .then(data => {
         return data;
       })
-      .catch(error => {
-        console.error('no read file ' + error);
+      .catch(() => {
         return undefined;
       });
+
     const json = data ? JSON.parse(data) : undefined;
     return json;
   }
@@ -45,8 +45,7 @@ export default class Parametrization {
       .then(data => {
         return JSON.parse(data);
       })
-      .catch(error => {
-        console.error('no read file ' + error);
+      .catch(() => {
         return { version: ALWAYS_PARAMETRIZE_TEXT_VERSION };
       });
     return data.version;
@@ -69,8 +68,7 @@ export default class Parametrization {
       .then(() => {
         return true;
       })
-      .catch(error => {
-        console.error('no write file' + error);
+      .catch(() => {
         return false;
       });
     return write;
@@ -113,5 +111,22 @@ export default class Parametrization {
     if (!fileExists) return false;
 
     return localVersion !== consultVersion;
+  }
+
+  //Show set onboarding in false
+  async setOnboardingFalse(): Promise<void> {
+    const data = await RNFS.readFile(this.path, 'utf8')
+      .then(data => {
+        return JSON.parse(data);
+      })
+      .catch(() => {
+        return undefined;
+      });
+
+    if (data) {
+      data.showOnboarding = false;
+      await RNFS.unlink(this.path);
+      await RNFS.writeFile(this.path, JSON.stringify(data, null, 2), 'utf8');
+    }
   }
 }

@@ -1,6 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ScrollView, Text, View } from 'react-native';
 
+import { headerParametersContext } from '../../hooks/headerParameters';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { Button } from '../components/button';
 import Input from '../components/input';
@@ -20,6 +21,7 @@ const Login: React.FC<pageProps> = ({ navigation }) => {
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
 
   const { t } = useContext(parametrizationContext);
+  const { changeHeaderParameters } = useContext(headerParametersContext);
 
   const styles = loginStyles();
 
@@ -44,6 +46,16 @@ const Login: React.FC<pageProps> = ({ navigation }) => {
       setPasswordError('');
     }
   };
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      changeHeaderParameters({
+        showLogo: true,
+        showBackButton: true,
+      });
+    });
+    return unsubscribe;
+  }, [navigation]);
 
   const canContinue = !emailError && !passwordError && data.email !== '' && data.password !== '';
 

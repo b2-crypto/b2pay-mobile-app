@@ -3,6 +3,7 @@ import { Pressable, Text, View } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
 import { themeContext } from '../../../hooks/themeContext';
+import LoadingDots from '../LoadingDots';
 import borderDefault from './border/default';
 import borderDefaultThin from './border/default-thin';
 import borderSecondary from './border/secondary';
@@ -14,14 +15,14 @@ import { ButtonProps, buttonDefaultProps, buttonDefaultStylesProps, handleChange
 
 //Contains the button default
 const DefaultButton: React.FC<buttonDefaultProps> = props => {
-  const { text, disabled, onClick, size } = props;
+  const { text, disabled, onClick, size, textColor, isLoading } = props;
   const { theme, themeFonts } = useContext(themeContext);
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
     backGroundColor: disabled ? theme.secondary.neutral[200] : theme.primary.rose[500],
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
-    textColor: disabled ? theme.secondary.neutral[500] : theme.secondary.neutral[100],
+    textColor: disabled ? theme.secondary.neutral[500] : textColor || theme.secondary.neutral[100],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
   };
 
@@ -61,11 +62,10 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
     }
   };
 
-  const buttonStyles = buttonDefaultStyles(buttonProps);
-
   useEffect(() => {
     setButtonProps(initialButtonProps);
   }, [theme, disabled]);
+  const buttonStyles = buttonDefaultStyles(buttonProps);
 
   return (
     <Pressable
@@ -86,7 +86,7 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
         />
       </View>
       <View style={buttonStyles.textWrapper}>
-        <Text style={buttonStyles.text}>{text}</Text>
+        {isLoading ? <LoadingDots /> : <Text style={buttonStyles.text}>{text}</Text>}
       </View>
       <View style={[buttonStyles.backGroundWrapper, buttonStyles.rightPosition]}>
         <SvgXml
@@ -103,7 +103,7 @@ const DefaultButton: React.FC<buttonDefaultProps> = props => {
 
 //Contains the button black
 const SecondaryButton: React.FC<buttonDefaultProps> = props => {
-  const { text, disabled, onClick, size } = props;
+  const { text, disabled, onClick, size, isLoading } = props;
   const { theme, themeFonts } = useContext(themeContext);
 
   const initialButtonProps: buttonDefaultStylesProps = {
@@ -167,7 +167,7 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
         />
       </View>
       <View style={buttonStyles.textWrapper}>
-        <Text style={buttonStyles.text}>{text}</Text>
+        {isLoading ? <LoadingDots /> : <Text style={buttonStyles.text}>{text}</Text>}
       </View>
       <View style={[buttonStyles.backGroundWrapper, buttonStyles.rightPosition]}>
         <SvgXml
@@ -184,12 +184,12 @@ const SecondaryButton: React.FC<buttonDefaultProps> = props => {
 
 //Contains the button default
 const TertiaryButton: React.FC<buttonDefaultProps> = props => {
-  const { text, disabled, onClick, size } = props;
-  const { theme, themeFonts } = useContext(themeContext);
+  const { text, disabled, onClick, size, backGroundColor, isLoading } = props;
+  const { theme, themeFonts, light } = useContext(themeContext);
 
   const initialButtonProps: buttonDefaultStylesProps = {
     heigh: size || 'large',
-    backGroundColor: theme.secondary.neutral[100],
+    backGroundColor: isLoading ? light.primary.rose[100] : backGroundColor || 'transparent',
     fontFamily: themeFonts.fontFamily.TekturExtraBold,
     textColor: disabled ? theme.secondary.neutral[500] : theme.primary.rose[600],
     fontSize: themeFonts.fontSize.mobile.ButtonLarge,
@@ -224,7 +224,7 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
 
   useEffect(() => {
     setButtonProps(initialButtonProps);
-  }, [theme]);
+  }, [theme, isLoading]);
 
   useMemo(() => {
     setTimeout(() => {
@@ -252,7 +252,7 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
         />
       </View>
       <View style={buttonStyles.textWrapper}>
-        <Text style={buttonStyles.text}>{text}</Text>
+        {isLoading ? <LoadingDots /> : <Text style={buttonStyles.text}>{text}</Text>}
       </View>
       <View style={[buttonStyles.backGroundWrapper, buttonStyles.rightPosition]}>
         <SvgXml
@@ -268,16 +268,53 @@ const TertiaryButton: React.FC<buttonDefaultProps> = props => {
 };
 
 export const CustomButton: React.FC<ButtonProps> = props => {
-  const { type, onClick, size, text, disabled } = props;
+  const { type, onClick, size, text, disabled, backGroundColor, textColor, isLoading } = props;
   switch (type) {
     case 'primary':
-      return <DefaultButton text={text} onClick={onClick} size={size} disabled={disabled} />;
+      return (
+        <DefaultButton
+          text={text}
+          onClick={onClick}
+          size={size}
+          disabled={disabled}
+          backGroundColor={backGroundColor}
+          textColor={textColor}
+          isLoading={isLoading}
+        />
+      );
     case 'secondary':
-      return <SecondaryButton text={text} onClick={onClick} size={size} disabled={disabled} />;
+      return (
+        <SecondaryButton
+          text={text}
+          onClick={onClick}
+          size={size}
+          disabled={disabled}
+          backGroundColor={backGroundColor}
+          isLoading={isLoading}
+        />
+      );
     case 'tertiary':
-      return <TertiaryButton text={text} onClick={onClick} size={size} disabled={disabled} />;
+      return (
+        <TertiaryButton
+          text={text}
+          onClick={onClick}
+          size={size}
+          disabled={disabled}
+          backGroundColor={backGroundColor}
+          isLoading={isLoading}
+        />
+      );
     default:
-      return <DefaultButton text={text} onClick={onClick} size={size} disabled={disabled} />;
+      return (
+        <DefaultButton
+          text={text}
+          onClick={onClick}
+          size={size}
+          disabled={disabled}
+          backGroundColor={backGroundColor}
+          isLoading={isLoading}
+        />
+      );
   }
 };
 

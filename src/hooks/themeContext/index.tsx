@@ -9,6 +9,8 @@ const initContext: themeContextType = {
   theme: light,
   themeFonts: fonts,
   isDarkMode: false,
+  dark,
+  light,
   setDarkMode: () => false,
 };
 
@@ -16,6 +18,7 @@ export const themeContext = createContext<themeContextType>(initContext);
 
 const ThemeProvider: React.FC<themeContextProviderProps> = ({ children }): ReactElement => {
   const [theme, setTheme] = useState<typeof light>(light);
+  const [statusBarColor, setStatusBarColor] = useState<string | undefined>(undefined);
   const themeFonts: typeof fonts = fonts;
   const [isDarkMode, setDarkMode] = useState<boolean>(useColorScheme() === 'dark');
 
@@ -27,7 +30,11 @@ const ThemeProvider: React.FC<themeContextProviderProps> = ({ children }): React
     theme,
     themeFonts,
     isDarkMode,
+    dark,
+    light,
+    statusBarColor,
     setDarkMode,
+    setStatusBarColor,
   };
 
   return <themeContext.Provider value={value}>{children}</themeContext.Provider>;

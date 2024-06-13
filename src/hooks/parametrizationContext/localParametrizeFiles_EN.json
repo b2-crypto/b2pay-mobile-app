@@ -1,5 +1,6 @@
 {
     "version": "0.0.1",
+    "showOnboarding": true,
     "pages": {
         "initPage": {
             "login-button": "Login",
@@ -117,6 +118,17 @@
             "password-secure-3": "Strong",
             "continue-button": "Change password",
             "password-no-match": "Passwords do not match. Please try again."
+        },
+        "onBoarding": {
+            "skip": "Skip",
+            "done": "Get started",
+            "welcome": "Welcome to",
+            "description-step-1": "We are a global financial platform with licenses in fiat currency and cryptocurrencies.",
+            "description-step-2": "Our financial licenses allow us to offer local and international services",
+            "description-step-3": "We manage secure and efficient transactions with Mastercard"
+        },
+        "loadingPage": {
+            "loading": "Loading"
         }
     },
     "header": {
