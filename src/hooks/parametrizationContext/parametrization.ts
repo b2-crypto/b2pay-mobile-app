@@ -2,9 +2,8 @@ import RNFS from 'react-native-fs';
 
 import {
   ALWAYS_PARAMETRIZE_TEXT_VERSION,
-  ALWAYS_PARAMETRIZE_TEXT_VERSION_ON_SERVER,
-  BACKEND_ROUTES,
-  BACKEND_URL,
+  ALWAYS_PARAMETRIZE_TEXT_VERSION_ON_SERVER, // BACKEND_ROUTES,
+  // BACKEND_URL,
 } from '../../constants/_backConstants';
 import localParametrizeFiles_EN from './localParametrizeFiles_EN.json';
 import localParametrizeFiles_ES from './localParametrizeFiles_ES.json';
@@ -77,7 +76,7 @@ export default class Parametrization {
   //Get the parametrization from the server in case of change
   async getParametrizationFromServer(): Promise<typeof localParametrizeFiles_ES> {
     //Lest consult to database
-    const data = await fetch(BACKEND_URL + BACKEND_ROUTES.v1.parametrize)
+    const data = await fetch('localhost:3000/v1/parametrize')
       .then(response => response.json())
       .then(data => data)
       .catch(() => {
@@ -99,7 +98,7 @@ export default class Parametrization {
   //Verify if the version of the parametrization file changed
   async checkIfTheVersionChanged(): Promise<boolean> {
     const localVersion = await this.getVersion();
-    const consultVersion = await fetch(BACKEND_URL + BACKEND_ROUTES.v1.parametrize + '/version')
+    const consultVersion = await fetch('localhost:3000/v1/parametrize')
       .then(response => response.json())
       .then(data => data.version)
       .catch(() => {

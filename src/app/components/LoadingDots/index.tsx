@@ -19,16 +19,16 @@ const LoadingDots: React.FC<LoadingDotsProps> = ({ isSimple }) => {
   const simpleDotTree = useSharedValue<number>(2);
 
   useEffect(() => {
-    dotOne.value = withRepeat(withTiming(dotOne.value - 10 * -1, { duration: 200 }), -1, true);
+    dotOne.value = withRepeat(withTiming(dotOne.value - 10 * -1, { duration: 800 }), -1, true);
     simpleDotOne.value = withRepeat(withTiming(simpleDotOne.value - 4 * -1, { duration: 1000 }), -1, true);
 
     setTimeout(() => {
-      dotTwo.value = withRepeat(withTiming(dotTwo.value - 10 * -1, { duration: 200 }), -1, true);
+      dotTwo.value = withRepeat(withTiming(dotTwo.value - 10 * -1, { duration: 800 }), -1, true);
       simpleDotTwo.value = withRepeat(withTiming(simpleDotTwo.value - 4 * -1, { duration: 1000 }), -1, true);
     }, 500);
 
     setTimeout(() => {
-      dotTree.value = withRepeat(withTiming(dotTree.value - 10 * -1, { duration: 200 }), -1, true);
+      dotTree.value = withRepeat(withTiming(dotTree.value - 10 * -1, { duration: 800 }), -1, true);
       simpleDotTree.value = withRepeat(withTiming(simpleDotTree.value - 4 * -1, { duration: 1000 }), -1, true);
     }, 1000);
   }, []);

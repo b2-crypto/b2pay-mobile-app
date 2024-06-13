@@ -1,5 +1,8 @@
 export type backendRoutesTypes = {
-  v1: {
-    parametrize: 'v1/parametrize';
-  };
+  auth: authRoutesType;
+};
+
+export type authRoutesType = {
+  'sing-in': string;
+  'refresh-token': string;
 };

@@ -3,6 +3,7 @@ import React, { useContext, useEffect } from 'react';
 import { StatusBar, StyleSheet, Text, View } from 'react-native';
 import Animated from 'react-native-reanimated';
 
+import { AuthContext } from '../../hooks/auth';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { themeContext } from '../../hooks/themeContext';
 import LoadingDots from '../components/LoadingDots';
@@ -46,15 +47,31 @@ const createStyles = () => {
 
 const Loading: React.FC<pageProps> = ({ navigation }) => {
   const { t, isLoading } = useContext(parametrizationContext);
+  const {
+    auth: { isLogged },
+  } = useContext(AuthContext);
   const { light } = useContext(themeContext);
 
+  const handleRedirect = async () => {
+    const onboarding = await AsyncStorage.getItem('onboarding');
+    if (isLoading) return;
+    if (!onboarding)
+      return setTimeout(async () => {
+        navigation.navigate('OnBoarding');
+      }, 1000);
+    if (!isLogged)
+      return setTimeout(async () => {
+        navigation.navigate('InitPage');
+      }, 1000);
+    if (isLogged)
+      return setTimeout(async () => {
+        navigation.navigate('Home');
+      }, 1000);
+  };
+
   useEffect(() => {
-    setTimeout(async () => {
-      const onboarding = await AsyncStorage.getItem('onboarding');
-      if (!onboarding) navigation.navigate('OnBoarding');
-      else navigation.navigate('InitPage');
-    }, 3000);
-  }, [isLoading]);
+    handleRedirect();
+  }, [isLoading, isLogged]);
 
   const styles = createStyles();
 
