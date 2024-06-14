@@ -161,6 +161,8 @@ export const dark = {
       '700': '#FFFFFF',
       '800': '#FFFFFF',
       '900': '#FFFFFF',
+      'text-input-default': '#ffffff70',
+      'text-input-focus': '#ffffff8c',
     },
     purple: {
       '100': '#FFFFFF',

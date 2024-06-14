@@ -1,10 +1,11 @@
 {
     "version": "0.0.1",
+    "showOnboarding": true,
     "pages": {
         "initPage": {
-            "login-button": "Login",
-            "register-button": "Register",
-            "forget-title": "Don’t have an account?"
+            "login-button": "Iniciar sesión",
+            "register-button": "Registrarse",
+            "forget-title": "¿No tienes una cuenta?"
         },
         "registerStep1": {
             "title": "Register",
@@ -87,6 +88,7 @@
             "subtitle": "Sección 1: Información de Contacto.",
             "description": "Ingresa tu dirección de correo electrónico para la recuperación de la cuenta.",
             "email": "Correo Electrónico",
+            "email-no-exists": "No pudimos encontrar una cuenta con esa dirección de correo electrónico. Por favor, verifica tu dirección de correo electrónico e intenta de nuevo.",
             "email-exists": "Ya existe una cuenta asociada con esta dirección de correo electrónico.",
             "email-invalid": "Dirección de correo electrónico inválida.",
             "no-email": "Se requiere correo electrónico.",
@@ -119,6 +121,17 @@
             "password-secure-3": "Fuerte",
             "continue-button": "Cambiar contraseña",
             "password-no-match": "Las contraseñas no coinciden. Por favor, inténtalo de nuevo."
+        },
+        "onBoarding": {
+            "skip": "Omitir",
+            "done": "Empezar",
+            "welcome": "Bienvenido a",
+            "description-step-1": "Somos una plataforma financiera global con licencias en moneda fiduciaria y criptomonedas.",
+            "description-step-2": "Nuestras licencias financieras nos permiten ofrecer servicios locales e internacionales",
+            "description-step-3": "Gestionamos transacciones seguras y eficientes con Mastercard"
+        },
+        "loadingPage": {
+            "loading": "Cargando"
         }
     },
     "header": {

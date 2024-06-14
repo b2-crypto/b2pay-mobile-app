@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Dimensions, Keyboard, ScrollView, Text, View } from 'react-native';
 
+import { AuthContext } from '../../hooks/auth';
+import { Auth } from '../../hooks/auth/utils';
 import { headerParametersContext } from '../../hooks/headerParameters';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { Button } from '../components/button';
@@ -15,14 +17,19 @@ const recoveryPasswordStep2: React.FC<pageProps> = ({ navigation }) => {
   const [changeOTP, setChangeOPT] = React.useState('');
   const [otpIsFocused, setOtpIsFocused] = React.useState(false);
   const [canRequest, setCanRequest] = useState(false);
-  const [counter, setCounter] = useState(3);
+  const [counter, setCounter] = useState(60);
   const [isFirstTime, setIsFirstTime] = useState(true);
   const [isKeyboardVisible, setKeyboardVisible] = useState(false);
+  const [loadingRequest, setLoadingRequest] = React.useState<boolean>(false);
 
   const windowHeight = Dimensions.get('window').height;
 
   const { changeHeaderParameters } = useContext(headerParametersContext);
   const { t } = useContext(parametrizationContext);
+  const { recovery } = useContext(AuthContext);
+
+  const authClass = new Auth();
+
   //Used when the component is focused
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -34,7 +41,11 @@ const recoveryPasswordStep2: React.FC<pageProps> = ({ navigation }) => {
     return unsubscribe;
   }, [navigation]);
 
-  const styles = recoveryStep2Styles();
+  const sendOPT = () => {
+    authClass.sendOPT(recovery.email).then(response => {
+      console.log(response);
+    });
+  };
 
   const handleFinish = () => {
     setIsFirstTime(false);
@@ -43,9 +54,35 @@ const recoveryPasswordStep2: React.FC<pageProps> = ({ navigation }) => {
 
   const handleNewRequest = () => {
     setCanRequest(false);
-    setCounter(3);
+    setCounter(60);
+    sendOPT();
   };
 
+  const handleValidateOpt = () => {
+    setLoadingRequest(true);
+    authClass
+      .validateOPT(recovery.email, changeOTP)
+      .then(response => {
+        console.log(response);
+        response.statusCode === 200 ? navigation.navigate('RegisterStep4') : console.log('Opt no validado');
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        setLoadingRequest(false);
+        //TODO: SALTAR MIENTRAS NO HAYA UNA PANTALLA DE ERROR
+        navigation.navigate('RegisterStep4');
+      });
+  };
+  //To send the OPT
+  useEffect(() => {
+    if (isFirstTime) {
+      sendOPT();
+    }
+  }, []);
+
+  //to control the keyboard
   useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
       setKeyboardVisible(true);
@@ -59,7 +96,10 @@ const recoveryPasswordStep2: React.FC<pageProps> = ({ navigation }) => {
       keyboardDidShowListener.remove();
     };
   }, []);
+
   const canContinue = changeOTP.length === 5;
+  const styles = recoveryStep2Styles();
+
   return (
     <View style={styles.parent}>
       <ScrollView style={styles.container}>
@@ -87,9 +127,8 @@ const recoveryPasswordStep2: React.FC<pageProps> = ({ navigation }) => {
             <Button
               text={t?.pages.recoveryPasswordStep2['continue-button']}
               disabled={!canContinue}
-              onClick={() => {
-                navigation.navigate('RecoveryStep3');
-              }}
+              isLoading={loadingRequest}
+              onClick={handleValidateOpt}
             />
             {!isKeyboardVisible && (
               <View style={styles.resendButton}>

@@ -48,7 +48,7 @@ export default () => {
     },
     buttonWrapper: {
       marginTop: 40,
-      marginBottom: 40,
+      marginBottom: 60,
       paddingHorizontal: 40,
       width: '100%',
       alignItems: 'center',
@@ -103,6 +103,7 @@ export default () => {
       fontSize: 13,
       fontStyle: 'normal',
       lineHeight: 20,
+      marginLeft: 15,
     },
     grate: {
       color: theme.informative.green,

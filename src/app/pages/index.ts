@@ -8,3 +8,5 @@ export { default as login } from './login';
 export { default as RecoveryStep1 } from './recoveryStep1';
 export { default as RecoveryStep2 } from './recoveryStep2';
 export { default as RecoveryStep3 } from './recoveryStep3';
+export { default as OnBoarding } from './onBoarding';
+export { default as Loading } from './loading';

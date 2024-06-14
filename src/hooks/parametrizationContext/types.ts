@@ -6,6 +6,9 @@ export type parametrizationContextType = {
   t?: typeof localParametrizeFiles_ES | undefined;
   language: Language;
   setLanguage?: Dispatch<SetStateAction<Language>>;
+  changeOnboardingState?: () => Promise<void>;
+  showOnboarding?: boolean;
+  isLoading?: boolean;
 };
 
 export type parametrizationProviderProps = {
