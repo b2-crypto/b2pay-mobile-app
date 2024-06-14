@@ -1,13 +1,21 @@
 export type authContextProps = {
   auth: authState;
   setAuth: (value: authState) => void;
-  login?: loginState;
-  setLogin: (value: loginState) => void;
-  register?: registerState;
-  setRegister: (value: registerState) => void;
+  login: loginState;
+  setLogin: React.Dispatch<React.SetStateAction<loginState>>;
+  register: registerState;
+  setRegister: React.Dispatch<React.SetStateAction<registerState>>;
   LoginUser?: (data: loginState) => Promise<void>;
+  RegisterUser?: (password: string) => Promise<void>;
   loading?: boolean;
-  setLoading?: (value: boolean) => void;
+  setLoading?: React.Dispatch<React.SetStateAction<boolean>>;
+  recovery: recoveryState;
+  setRecovery: React.Dispatch<React.SetStateAction<recoveryState>>;
+};
+export type recoveryState = {
+  email: string;
+  code?: string;
+  password?: string;
 };
 export type authProvider = {
   children: React.ReactNode;
@@ -24,6 +32,7 @@ export type loginState = {
 };
 
 export type registerState = {
+  name: string;
   email: string;
   password: string;
 };
@@ -36,6 +45,29 @@ export type loginConsultSuccess = {
     refresh_token: string;
   };
 };
+
+export type registerConsultSuccess = {
+  statusCode: number;
+  message: string;
+  data: {
+    email: string;
+    name: string;
+    slug: string;
+    password: string;
+    active: true;
+    apiKey: string;
+    twoFactorSecret: string;
+    twoFactorQr: string;
+    twoFactorIsActive: boolean;
+    authorizations: string[];
+    permissions: string[];
+    _id: string;
+    createdAt: string;
+    updatedAt: string;
+    __v: number;
+  };
+};
+
 export type JWTType = {
   email: string;
   exp: number;

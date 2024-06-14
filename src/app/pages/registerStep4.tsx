@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { DimensionValue, Dimensions, ScrollView, Text, View } from 'react-native';
 import Animated, { useAnimatedStyle, useSharedValue, withTiming } from 'react-native-reanimated';
 
+import { AuthContext } from '../../hooks/auth';
 import { headerParametersContext } from '../../hooks/headerParameters';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { themeContext } from '../../hooks/themeContext';
@@ -18,6 +19,7 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
   const [confirmPassword, setConfirmPassword] = useState('');
 
   const { theme } = useContext(themeContext);
+  const { RegisterUser, loading } = useContext(AuthContext);
 
   const [passwordRules, setPasswordRules] = useState({
     length: false,
@@ -185,9 +187,8 @@ const RegisterStep4: React.FC<pageProps> = ({ navigation }) => {
             <Button
               text={t?.pages.registerStep4['continue-button']}
               disabled={!canRegister}
-              // onPress={() => {
-              //   navigation.navigate('RegisterStep4');
-              // }}
+              isLoading={loading}
+              onClick={() => RegisterUser && RegisterUser(password)}
             />
           </View>
 

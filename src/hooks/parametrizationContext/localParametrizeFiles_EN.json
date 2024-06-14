@@ -85,6 +85,7 @@
             "title": "Password Recovery",
             "subtitle": "Section 1: Contact Information.",
             "description": "Enter your email address for account recovery.",
+            "email-no-exists": "We couldn't find an account with that email address. Please check your email address and try again.",
             "email": "Email",
             "email-exists": "An account is already associated with this email address.",
             "email-invalid": "Invalid email address.",

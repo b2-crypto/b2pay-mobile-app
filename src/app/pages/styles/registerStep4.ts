@@ -103,6 +103,7 @@ export default () => {
       fontSize: 13,
       fontStyle: 'normal',
       lineHeight: 20,
+      marginLeft: 15,
     },
     grate: {
       color: theme.informative.green,

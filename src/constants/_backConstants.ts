@@ -4,7 +4,11 @@ export const BACKEND_URL: string = 'https://stage.b2fintech.com';
 export const BACKEND_ROUTES: backendRoutesTypes = {
   auth: {
     'sing-in': '/auth/sign-in',
+    'registry-user': '/auth/registry',
     'refresh-token': '/auth/refresh-token',
+    'validate-email': '/users/email/{emailToVerify}',
+    'send-opt': '/auth/otp/{emailToVerify}',
+    'validate-opt': '/auth/otp/{emailToVerify}/{otp}',
   },
 };
 export const API_NAME: string = 'b2crypto-key';
@@ -12,8 +16,7 @@ export const API_VALUE: string = '$2b$10$AFwQ00do4OJVuW9Lm/Di7eeZ3lpIYh7pw7YHNm3
 export const CONTENT_TYPE: string = 'application/json';
 export const HEADERS = {
   'Content-Type': CONTENT_TYPE,
-  'apiKey-name': API_NAME,
-  'apiKey-value': API_VALUE,
+  [API_NAME]: API_VALUE,
 };
 
 export const METHOD = ['GET', 'POST', 'PUT', 'DELETE'];
