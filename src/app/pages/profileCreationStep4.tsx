@@ -9,7 +9,7 @@ import { Button } from '../components/button';
 import Icon from '../components/icon';
 import Input from '../components/inputPassword';
 import RegisterStep from '../components/registerStep';
-import stylesStep4 from './styles/registerStep4';
+import stylesStep4 from './styles/profileCreationStep4';
 import { pageProps } from './types';
 
 const ProfileCreationStep4: React.FC<pageProps> = ({ navigation }) => {

@@ -67,16 +67,28 @@
         },
         "profileCreationStep1": {
             "title": "Profile Creation",
-            "subtitle": "Section 1: Registration type.",
-            "description": "To open your account, please choose the registration type.",
-            "checkBox-List": [
+            "subtitle": "Section 1: Personal Information.",
+            "description": "Please, provide your basic personal details.",
+            "firstname":"First Name",
+            "lastname":"Last Name",
+            "nationality":"Nationality",
+            "birthdate":"Birthdate",
+            "gender":"Gender",
+            "dd":"DD",
+            "mm":"MM",
+            "yyyy":"YYYY",
+            "checkBox-List-gender": [
+               
                 {
-                    "label": "individual",
-                    "value": "individual"
+                    "label": "Female",
+                    "value": "female"
+                }, {
+                    "label": "Male",
+                    "value": "male"
                 },
                 {
-                    "label": "corporate",
-                    "value": "company"
+                    "label": "Prefer not to say",
+                    "value": "prefernottosay"
                 }
             ],
             "continue-button": "Continue"

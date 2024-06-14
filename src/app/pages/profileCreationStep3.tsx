@@ -7,7 +7,7 @@ import { Button } from '../components/button';
 import OTP from '../components/otp';
 import OTPCounter from '../components/otpCounter';
 import RegisterStep from '../components/registerStep';
-import stylesStep3 from './styles/registerStep3';
+import stylesStep3 from './styles/profileCreationStep3';
 import { pageProps } from './types';
 
 const ProfileCreationStep3: React.FC<pageProps> = ({ navigation }) => {

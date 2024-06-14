@@ -67,23 +67,33 @@
             "continue-button": "Registrarse",
             "password-no-match": "Las contraseñas no coinciden. Por favor, inténtalo de nuevo."
         },
-        "profileCreationStep1": {
-            "title": "Creación de Perfil",
-            "subtitle": "Name",
-            "description": "Para abrir tu cuenta, por favor elige el tipo de registro.",
-            "password": "Password",
-            "checkBox-List": [
-                {
-                    "label": "individual",
-                    "value": "individual"
-                },
-                {
-                    "label": "Cooporativo",
-                    "value": "company"
-                }
-            ],
-            "continue-button": "Continue"
-        },
+        "profileCreationStep1": { 
+            "title": "Creación de Perfil", 
+            "subtitle": "Sección 1: Información Personal.", 
+            "description": "Por favor, proporcione sus datos personales básicos.", 
+            "firstname": "Nombre", 
+            "lastname": "Apellido", 
+            "nationality": "Nacionalidad", 
+            "birthdate": "Fecha de Nacimiento", 
+            "gender": "Género",  
+            "dd":"DD",
+            "mm":"MM",
+            "yyyy":"YYYY",
+            "checkBox-List-gender": [
+            {
+                "label": "Femenino",
+                "value": "female"
+            }, {
+                "label": "Masculino",
+                "value": "male"
+            },
+            
+            {
+                "label": "Prefiero no decir",
+                "value": "prefernottosay"
+            }
+        ],
+         "continue-button": "Continuar" },
         "profileCreationStep2": {
             "title": "Creación de Perfil",
             "subtitle": "Sección 2: Información de Contacto.",
