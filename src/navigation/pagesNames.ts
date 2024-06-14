@@ -9,4 +9,8 @@ export const PagesNames = {
   RecoveryStep1: 'RecoveryStep1',
   RecoveryStep2: 'RecoveryStep2',
   RecoveryStep3: 'RecoveryStep3',
+  ProfileCreationStep1: 'ProfileCreationStep1',
+  ProfileCreationStep2: 'ProfileCreationStep2',
+  ProfileCreationStep3: 'ProfileCreationStep3',
+  ProfileCreationStep4: 'ProfileCreationStep4',
 };

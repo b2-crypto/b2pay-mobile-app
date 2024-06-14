@@ -2,11 +2,12 @@ import { NativeStackHeaderProps } from '@react-navigation/native-stack';
 import { useContext, useState } from 'react';
 import { Pressable, Text, View } from 'react-native';
 
-import { headerParametersContext } from '../../../hooks/headerParameters';
-import { parametrizationContext } from '../../../hooks/parametrizationContext';
+
 import ChangeLanguagePopUp from '../changeLanguageCheckbox';
 import Icon from '../icon';
 import stylesCreate from './styles';
+import { headerParametersContext } from '../../../hooks/headerParameters';
+import { parametrizationContext } from '../../../hooks/parametrizationContext';
 
 const Header: React.FC<NativeStackHeaderProps> = props => {
   const { navigation } = props;

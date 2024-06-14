@@ -38,6 +38,10 @@ const InitPage: React.FC<pageProps> = ({ navigation }) => {
               text={t?.pages.initPage['register-button']}
               onClick={() => navigation.navigate('RegisterStep1')}
               type="secondary"></Button>
+            <Button
+              text={'Profile Creation'}
+              onClick={() => navigation.navigate('ProfileCreationStep1')}
+              type="secondary"></Button>
           </View>
         </View>
       </View>

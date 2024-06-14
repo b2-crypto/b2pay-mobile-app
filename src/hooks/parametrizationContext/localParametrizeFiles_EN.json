@@ -65,6 +65,65 @@
             "continue-button": "Register",
             "password-no-match": "Passwords do not match. Please try again."
         },
+        "profileCreationStep1": {
+            "title": "Profile Creation",
+            "subtitle": "Section 1: Registration type.",
+            "description": "To open your account, please choose the registration type.",
+            "checkBox-List": [
+                {
+                    "label": "individual",
+                    "value": "individual"
+                },
+                {
+                    "label": "corporate",
+                    "value": "company"
+                }
+            ],
+            "continue-button": "Continue"
+        },
+        "profileCreationStep2": {
+            "title": "Profile Creation",
+            "subtitle": "Section 2: Contact Information.",
+            "description": "Enter your email address for account notifications and recovery.",
+            "policy-description": "I have read and fully understand the contents of this document:",
+            "email": "Email",
+            "email-exists": "An account is already associated with this email address.",
+            "email-invalid": "Invalid email address.",
+            "no-email": "Email is required.",
+            "policy-link": {
+                "label": "Privacy Policy",
+                "url": "InitPage"
+            },
+            "continue-button": "Continue"
+        },
+        "profileCreationStep3": {
+            "title": "Profile Creation",
+            "subtitle": "Section 3: Email verification.",
+            "description": "Enter the verification code we just sent to your email address.",
+            "continue-button": "Verify",
+            "resend-button": "Resend code",
+            "code": "Verification code",
+            "counter-alert": "If you haven't received an email by the time the timer expires, please request a new email below.",
+            "counter-error": "Now you're able to request a new email.",
+            "counter-alert-2": "You will be able to request a new code once it expires."
+        },
+        "profileCreationStep4": {
+            "title": "Profile Creation",
+            "subtitle": "Section 4: Password set up.",
+            "description": "Please create a password and confirm it below to continue.",
+            "password-label": "Password",
+            "confirm-password-label": "Confirm Password",
+            "password-rule-1": "At least 8 characters",
+            "password-rule-2": "At least 1 uppercase letter",
+            "password-rule-3": "At least 1 lowercase letter",
+            "password-rule-4": "At least 1 number",
+            "password-rule-5": "At least 1 special character",
+            "password-secure-1": "Weak",
+            "password-secure-2": "Medium",
+            "password-secure-3": "Strong",
+            "continue-button": "Register",
+            "password-no-match": "Passwords do not match. Please try again."
+        },
         "login": {
             "title": "Login",
             "subtitle": "Login to continue using the app.",

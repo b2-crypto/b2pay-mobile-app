@@ -8,37 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* b2pay_mobile_appTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* b2pay_mobile_appTests.m */; };
+		06657221814E4CCD9C794B36 /* Tektur-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E92683CA08DB4ED29D4820E7 /* Tektur-Black.ttf */; };
 		0C80B921A6F3F58F76C31292 /* libPods-b2pay_mobile_app.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-b2pay_mobile_app.a */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-b2pay_mobile_app-b2pay_mobile_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-b2pay_mobile_app-b2pay_mobile_appTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		67CC61ED448444CC9E489798 /* Geologica-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5C71E5A3D6E41DA9A18F82E /* Geologica-Black.ttf */; };
+		142FC5B74576B34DDB007613 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 2B4B850784E0C86766883CA9 /* PrivacyInfo.xcprivacy */; };
+		214048A74DCB42648705FC82 /* Geologica-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69C26AF2D5F942329234B71E /* Geologica-SemiBoldItalic.ttf */; };
+		41049F2D0C7541309CFFA512 /* Geologica-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076DFD571F174231B073ABCD /* Geologica-ExtraLightItalic.ttf */; };
+		41D2666CA54B4ED7AD28FBBA /* Geologica-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AC28887A4EC410DB718DAC9 /* Geologica-MediumItalic.ttf */; };
+		454164FDBBA647ACBB6CCDFA /* Geologica-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A0211D1B74D42891F7A5A /* Geologica-ExtraLight.ttf */; };
+		4BF96B9DAD9049AC9B5A6820 /* Geologica-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 616F95E99E224B0B8DD9077E /* Geologica-ExtraBoldItalic.ttf */; };
+		4CEBABC284C149D2B61FE946 /* Tektur-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */; };
 		4D6DB058D3B8460495FCEB34 /* Geologica-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F748F85A0CBD484A8FDCC5CF /* Geologica-BlackItalic.ttf */; };
+		5431186EAF42400FB1D4B6A0 /* Geologica-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA5C986C85944572B67B8E0C /* Geologica-ExtraBold.ttf */; };
+		63A73B615E944AAD9D7E6E6E /* Tektur-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */; };
+		67CC61ED448444CC9E489798 /* Geologica-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C5C71E5A3D6E41DA9A18F82E /* Geologica-Black.ttf */; };
+		6C1E198DFE4C466294B71050 /* Geologica-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F6AA6A21FE34B42817CA8FC /* Geologica-Light.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-b2pay_mobile_app-b2pay_mobile_appTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-b2pay_mobile_app-b2pay_mobile_appTests.a */; };
 		7E1D4E42F8A9460DA9513317 /* Geologica-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 534F99D6CE5D4477BF496459 /* Geologica-Bold.ttf */; };
 		81021F13E84947C59AC954D8 /* Geologica-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A69C8EA8464B828ABD1A0C /* Geologica-BoldItalic.ttf */; };
-		5431186EAF42400FB1D4B6A0 /* Geologica-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA5C986C85944572B67B8E0C /* Geologica-ExtraBold.ttf */; };
-		4BF96B9DAD9049AC9B5A6820 /* Geologica-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 616F95E99E224B0B8DD9077E /* Geologica-ExtraBoldItalic.ttf */; };
-		454164FDBBA647ACBB6CCDFA /* Geologica-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6D6A0211D1B74D42891F7A5A /* Geologica-ExtraLight.ttf */; };
-		41049F2D0C7541309CFFA512 /* Geologica-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 076DFD571F174231B073ABCD /* Geologica-ExtraLightItalic.ttf */; };
-		F4CCAE83C8ED4505BECF138B /* Geologica-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE47814DBBF5495EBFEB8081 /* Geologica-Italic.ttf */; };
-		6C1E198DFE4C466294B71050 /* Geologica-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3F6AA6A21FE34B42817CA8FC /* Geologica-Light.ttf */; };
-		A37CE577983546A992BD9A6C /* Geologica-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 680FFDFA2722498D8597DC6F /* Geologica-LightItalic.ttf */; };
-		9A712817B3884E82BF4D1D04 /* Geologica-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A31AAA2F26BE444FB527D5FA /* Geologica-Medium.ttf */; };
-		41D2666CA54B4ED7AD28FBBA /* Geologica-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AC28887A4EC410DB718DAC9 /* Geologica-MediumItalic.ttf */; };
-		AE138D71703644FFA9B84184 /* Geologica-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 963851DC777C441990C8AAE4 /* Geologica-Regular.ttf */; };
+		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		995F78060EFE49FCA7DA874F /* Geologica-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57906E15DE514D2D889DE72E /* Geologica-SemiBold.ttf */; };
-		214048A74DCB42648705FC82 /* Geologica-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 69C26AF2D5F942329234B71E /* Geologica-SemiBoldItalic.ttf */; };
-		AF188991A5EB4D0BBC08B84F /* Geologica-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F041E72B3F9840A3BFB9F2C3 /* Geologica-Thin.ttf */; };
+		9A712817B3884E82BF4D1D04 /* Geologica-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A31AAA2F26BE444FB527D5FA /* Geologica-Medium.ttf */; };
 		A201017B0D594E7F857FE484 /* Geologica-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D4D9F884CE844117848DD565 /* Geologica-ThinItalic.ttf */; };
-		FB237B7CA9574C2EBC233DE6 /* GeologicaCRSVSHRPslntwght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FFC01C698144F1DB618F1F6 /* GeologicaCRSVSHRPslntwght.ttf */; };
-		06657221814E4CCD9C794B36 /* Tektur-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E92683CA08DB4ED29D4820E7 /* Tektur-Black.ttf */; };
+		A37CE577983546A992BD9A6C /* Geologica-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 680FFDFA2722498D8597DC6F /* Geologica-LightItalic.ttf */; };
 		A3AD29EC894E4FDAAC04F24F /* Tektur-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 887B3D7FFA77445B848D7CD5 /* Tektur-Bold.ttf */; };
-		C6C3667451F542B8ADA2FF59 /* Tektur-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE42B10857ED4231B063158B /* Tektur-ExtraBold.ttf */; };
+		AE138D71703644FFA9B84184 /* Geologica-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 963851DC777C441990C8AAE4 /* Geologica-Regular.ttf */; };
+		AF188991A5EB4D0BBC08B84F /* Geologica-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F041E72B3F9840A3BFB9F2C3 /* Geologica-Thin.ttf */; };
 		BA13E80015AC48DCAB8C7A37 /* Tektur-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AAB0FECCF2D947CAB91DDD58 /* Tektur-Medium.ttf */; };
-		63A73B615E944AAD9D7E6E6E /* Tektur-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */; };
-		4CEBABC284C149D2B61FE946 /* Tektur-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */; };
+		C6C3667451F542B8ADA2FF59 /* Tektur-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE42B10857ED4231B063158B /* Tektur-ExtraBold.ttf */; };
+		F4CCAE83C8ED4505BECF138B /* Geologica-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FE47814DBBF5495EBFEB8081 /* Geologica-Italic.ttf */; };
+		FB237B7CA9574C2EBC233DE6 /* GeologicaCRSVSHRPslntwght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2FFC01C698144F1DB618F1F6 /* GeologicaCRSVSHRPslntwght.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		00E356EE1AD99517003FC87E /* b2pay_mobile_appTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = b2pay_mobile_appTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* b2pay_mobile_appTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = b2pay_mobile_appTests.m; sourceTree = "<group>"; };
+		076DFD571F174231B073ABCD /* Geologica-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-ExtraLightItalic.ttf"; path = "../assets/fonts/Geologica-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* b2pay_mobile_app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = b2pay_mobile_app.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = b2pay_mobile_app/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = b2pay_mobile_app/AppDelegate.mm; sourceTree = "<group>"; };
@@ -62,39 +64,39 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = b2pay_mobile_app/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = b2pay_mobile_app/main.m; sourceTree = "<group>"; };
 		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = b2pay_mobile_app/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tektur-SemiBold.ttf"; path = "../assets/fonts/Tektur-SemiBold.ttf"; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-b2pay_mobile_app-b2pay_mobile_appTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-b2pay_mobile_app-b2pay_mobile_appTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B4B850784E0C86766883CA9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = b2pay_mobile_app/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		2FFC01C698144F1DB618F1F6 /* GeologicaCRSVSHRPslntwght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = GeologicaCRSVSHRPslntwght.ttf; path = ../assets/fonts/GeologicaCRSVSHRPslntwght.ttf; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-b2pay_mobile_app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-b2pay_mobile_app.debug.xcconfig"; path = "Target Support Files/Pods-b2pay_mobile_app/Pods-b2pay_mobile_app.debug.xcconfig"; sourceTree = "<group>"; };
+		3F6AA6A21FE34B42817CA8FC /* Geologica-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Light.ttf"; path = "../assets/fonts/Geologica-Light.ttf"; sourceTree = "<group>"; };
+		534F99D6CE5D4477BF496459 /* Geologica-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Bold.ttf"; path = "../assets/fonts/Geologica-Bold.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-b2pay_mobile_app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-b2pay_mobile_app.release.xcconfig"; path = "Target Support Files/Pods-b2pay_mobile_app/Pods-b2pay_mobile_app.release.xcconfig"; sourceTree = "<group>"; };
+		57906E15DE514D2D889DE72E /* Geologica-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-SemiBold.ttf"; path = "../assets/fonts/Geologica-SemiBold.ttf"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-b2pay_mobile_app-b2pay_mobile_appTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-b2pay_mobile_app-b2pay_mobile_appTests.debug.xcconfig"; path = "Target Support Files/Pods-b2pay_mobile_app-b2pay_mobile_appTests/Pods-b2pay_mobile_app-b2pay_mobile_appTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-b2pay_mobile_app.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-b2pay_mobile_app.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		616F95E99E224B0B8DD9077E /* Geologica-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-ExtraBoldItalic.ttf"; path = "../assets/fonts/Geologica-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tektur-Regular.ttf"; path = "../assets/fonts/Tektur-Regular.ttf"; sourceTree = "<group>"; };
+		680FFDFA2722498D8597DC6F /* Geologica-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-LightItalic.ttf"; path = "../assets/fonts/Geologica-LightItalic.ttf"; sourceTree = "<group>"; };
+		69C26AF2D5F942329234B71E /* Geologica-SemiBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-SemiBoldItalic.ttf"; path = "../assets/fonts/Geologica-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		6AC28887A4EC410DB718DAC9 /* Geologica-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-MediumItalic.ttf"; path = "../assets/fonts/Geologica-MediumItalic.ttf"; sourceTree = "<group>"; };
+		6D6A0211D1B74D42891F7A5A /* Geologica-ExtraLight.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-ExtraLight.ttf"; path = "../assets/fonts/Geologica-ExtraLight.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = b2pay_mobile_app/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		887B3D7FFA77445B848D7CD5 /* Tektur-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tektur-Bold.ttf"; path = "../assets/fonts/Tektur-Bold.ttf"; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-b2pay_mobile_app-b2pay_mobile_appTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-b2pay_mobile_app-b2pay_mobile_appTests.release.xcconfig"; path = "Target Support Files/Pods-b2pay_mobile_app-b2pay_mobile_appTests/Pods-b2pay_mobile_app-b2pay_mobile_appTests.release.xcconfig"; sourceTree = "<group>"; };
+		963851DC777C441990C8AAE4 /* Geologica-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Regular.ttf"; path = "../assets/fonts/Geologica-Regular.ttf"; sourceTree = "<group>"; };
+		A31AAA2F26BE444FB527D5FA /* Geologica-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Medium.ttf"; path = "../assets/fonts/Geologica-Medium.ttf"; sourceTree = "<group>"; };
+		A6A69C8EA8464B828ABD1A0C /* Geologica-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-BoldItalic.ttf"; path = "../assets/fonts/Geologica-BoldItalic.ttf"; sourceTree = "<group>"; };
+		AA5C986C85944572B67B8E0C /* Geologica-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-ExtraBold.ttf"; path = "../assets/fonts/Geologica-ExtraBold.ttf"; sourceTree = "<group>"; };
+		AAB0FECCF2D947CAB91DDD58 /* Tektur-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tektur-Medium.ttf"; path = "../assets/fonts/Tektur-Medium.ttf"; sourceTree = "<group>"; };
+		C5C71E5A3D6E41DA9A18F82E /* Geologica-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Black.ttf"; path = "../assets/fonts/Geologica-Black.ttf"; sourceTree = "<group>"; };
+		D4D9F884CE844117848DD565 /* Geologica-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-ThinItalic.ttf"; path = "../assets/fonts/Geologica-ThinItalic.ttf"; sourceTree = "<group>"; };
+		DE42B10857ED4231B063158B /* Tektur-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tektur-ExtraBold.ttf"; path = "../assets/fonts/Tektur-ExtraBold.ttf"; sourceTree = "<group>"; };
+		E92683CA08DB4ED29D4820E7 /* Tektur-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Tektur-Black.ttf"; path = "../assets/fonts/Tektur-Black.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		C5C71E5A3D6E41DA9A18F82E /* Geologica-Black.ttf */ = {isa = PBXFileReference; name = "Geologica-Black.ttf"; path = "../assets/fonts/Geologica-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F748F85A0CBD484A8FDCC5CF /* Geologica-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-BlackItalic.ttf"; path = "../assets/fonts/Geologica-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		534F99D6CE5D4477BF496459 /* Geologica-Bold.ttf */ = {isa = PBXFileReference; name = "Geologica-Bold.ttf"; path = "../assets/fonts/Geologica-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A6A69C8EA8464B828ABD1A0C /* Geologica-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-BoldItalic.ttf"; path = "../assets/fonts/Geologica-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AA5C986C85944572B67B8E0C /* Geologica-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Geologica-ExtraBold.ttf"; path = "../assets/fonts/Geologica-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		616F95E99E224B0B8DD9077E /* Geologica-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-ExtraBoldItalic.ttf"; path = "../assets/fonts/Geologica-ExtraBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6D6A0211D1B74D42891F7A5A /* Geologica-ExtraLight.ttf */ = {isa = PBXFileReference; name = "Geologica-ExtraLight.ttf"; path = "../assets/fonts/Geologica-ExtraLight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		076DFD571F174231B073ABCD /* Geologica-ExtraLightItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-ExtraLightItalic.ttf"; path = "../assets/fonts/Geologica-ExtraLightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		FE47814DBBF5495EBFEB8081 /* Geologica-Italic.ttf */ = {isa = PBXFileReference; name = "Geologica-Italic.ttf"; path = "../assets/fonts/Geologica-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		3F6AA6A21FE34B42817CA8FC /* Geologica-Light.ttf */ = {isa = PBXFileReference; name = "Geologica-Light.ttf"; path = "../assets/fonts/Geologica-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		680FFDFA2722498D8597DC6F /* Geologica-LightItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-LightItalic.ttf"; path = "../assets/fonts/Geologica-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A31AAA2F26BE444FB527D5FA /* Geologica-Medium.ttf */ = {isa = PBXFileReference; name = "Geologica-Medium.ttf"; path = "../assets/fonts/Geologica-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		6AC28887A4EC410DB718DAC9 /* Geologica-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-MediumItalic.ttf"; path = "../assets/fonts/Geologica-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		963851DC777C441990C8AAE4 /* Geologica-Regular.ttf */ = {isa = PBXFileReference; name = "Geologica-Regular.ttf"; path = "../assets/fonts/Geologica-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		57906E15DE514D2D889DE72E /* Geologica-SemiBold.ttf */ = {isa = PBXFileReference; name = "Geologica-SemiBold.ttf"; path = "../assets/fonts/Geologica-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		69C26AF2D5F942329234B71E /* Geologica-SemiBoldItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-SemiBoldItalic.ttf"; path = "../assets/fonts/Geologica-SemiBoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		F041E72B3F9840A3BFB9F2C3 /* Geologica-Thin.ttf */ = {isa = PBXFileReference; name = "Geologica-Thin.ttf"; path = "../assets/fonts/Geologica-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		D4D9F884CE844117848DD565 /* Geologica-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Geologica-ThinItalic.ttf"; path = "../assets/fonts/Geologica-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2FFC01C698144F1DB618F1F6 /* GeologicaCRSVSHRPslntwght.ttf */ = {isa = PBXFileReference; name = "GeologicaCRSVSHRPslntwght.ttf"; path = "../assets/fonts/GeologicaCRSVSHRPslntwght.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		E92683CA08DB4ED29D4820E7 /* Tektur-Black.ttf */ = {isa = PBXFileReference; name = "Tektur-Black.ttf"; path = "../assets/fonts/Tektur-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		887B3D7FFA77445B848D7CD5 /* Tektur-Bold.ttf */ = {isa = PBXFileReference; name = "Tektur-Bold.ttf"; path = "../assets/fonts/Tektur-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		DE42B10857ED4231B063158B /* Tektur-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Tektur-ExtraBold.ttf"; path = "../assets/fonts/Tektur-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AAB0FECCF2D947CAB91DDD58 /* Tektur-Medium.ttf */ = {isa = PBXFileReference; name = "Tektur-Medium.ttf"; path = "../assets/fonts/Tektur-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		67860224F4BD4B26B9FEF17F /* Tektur-Regular.ttf */ = {isa = PBXFileReference; name = "Tektur-Regular.ttf"; path = "../assets/fonts/Tektur-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */ = {isa = PBXFileReference; name = "Tektur-SemiBold.ttf"; path = "../assets/fonts/Tektur-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F041E72B3F9840A3BFB9F2C3 /* Geologica-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Thin.ttf"; path = "../assets/fonts/Geologica-Thin.ttf"; sourceTree = "<group>"; };
+		F748F85A0CBD484A8FDCC5CF /* Geologica-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-BlackItalic.ttf"; path = "../assets/fonts/Geologica-BlackItalic.ttf"; sourceTree = "<group>"; };
+		FE47814DBBF5495EBFEB8081 /* Geologica-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = "Geologica-Italic.ttf"; path = "../assets/fonts/Geologica-Italic.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +146,7 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
+				2B4B850784E0C86766883CA9 /* PrivacyInfo.xcprivacy */,
 			);
 			name = b2pay_mobile_app;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 			sourceTree = "<group>";
 		};
 		E743567749734D80A318E823 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				C5C71E5A3D6E41DA9A18F82E /* Geologica-Black.ttf */,
 				F748F85A0CBD484A8FDCC5CF /* Geologica-BlackItalic.ttf */,
@@ -231,8 +234,8 @@
 				1992FE6A74594939BA3523DE /* Tektur-SemiBold.ttf */,
 			);
 			name = Resources;
-			sourceTree = "<group>";
 			path = "";
+			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
@@ -354,6 +357,7 @@
 				BA13E80015AC48DCAB8C7A37 /* Tektur-Medium.ttf in Resources */,
 				63A73B615E944AAD9D7E6E6E /* Tektur-Regular.ttf in Resources */,
 				4CEBABC284C149D2B61FE946 /* Tektur-SemiBold.ttf in Resources */,
+				142FC5B74576B34DDB007613 /* PrivacyInfo.xcprivacy in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -626,6 +630,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -653,6 +658,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				CXX = "";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -672,6 +678,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -691,7 +699,13 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 			};
 			name = Debug;
 		};
@@ -699,6 +713,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CC = "";
 				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "c++20";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -726,6 +741,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
+				CXX = "";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = "";
@@ -738,6 +754,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
+				LD = "";
+				LDPLUSPLUS = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -756,7 +774,13 @@
 					"-DFOLLY_CFG_NO_COROUTINES=1",
 					"-DFOLLY_HAVE_CLOCK_GETTIME=1",
 				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					" ",
+				);
+				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
+				USE_HERMES = true;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;

@@ -62,6 +62,29 @@ export const GlobalStack: React.FC = () => (
         </Stack.Screen>
         {/* Register Step 4 */}
 
+        {/* Profile Creation Step 1 */}
+        <Stack.Screen name={PagesNames.ProfileCreationStep1} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.ProfileCreationStep1)}
+        </Stack.Screen>
+        {/* Profile Creation Step 1 */}
+
+        {/* Profile Creation Step 2 */}
+        <Stack.Screen name={PagesNames.ProfileCreationStep2} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.ProfileCreationStep2)}
+        </Stack.Screen>
+        {/* Profile Creation Step 2 */}
+
+        {/* Profile Creation Step 3 */}
+        <Stack.Screen name={PagesNames.ProfileCreationStep3} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.ProfileCreationStep3)}
+        </Stack.Screen>
+        {/* Profile Creation Step 3 */}
+        {/* Profile Creation Step 4 */}
+        <Stack.Screen name={PagesNames.ProfileCreationStep4} options={{ headerShadowVisible: false }}>
+          {nav => LayoutRoot(nav, pages.ProfileCreationStep4)}
+        </Stack.Screen>
+        {/* Profile Creation Step 4 */}
+
         {/* Login */}
         <Stack.Screen name={PagesNames.Login} options={{ headerShadowVisible: false }}>
           {nav => LayoutRoot(nav, pages.login)}
