@@ -1,5 +1,6 @@
 import React, { ReactElement } from 'react';
 
+import AuthContextProvider from './auth';
 import HeaderParametersProvider from './headerParameters';
 import { NavigationProvider } from './navigation';
 
@@ -15,7 +16,9 @@ const GlobalContextWrapper: React.FC<HooksWrapperProps> = ({ children }): ReactE
     <ThemeProvider>
       <ParametrizationProvider>
         <HeaderParametersProvider>
-          <NavigationProvider>{children}</NavigationProvider>
+          <NavigationProvider>
+            <AuthContextProvider>{children}</AuthContextProvider>
+          </NavigationProvider>
         </HeaderParametersProvider>
       </ParametrizationProvider>
     </ThemeProvider>

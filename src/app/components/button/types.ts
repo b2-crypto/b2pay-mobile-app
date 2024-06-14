@@ -4,6 +4,9 @@ export type ButtonProps = {
   size?: 'extra small' | 'small' | 'medium' | 'large' | 'thin';
   text?: string;
   disabled?: boolean;
+  backGroundColor?: string;
+  textColor?: string;
+  isLoading?: boolean;
 };
 
 export type buttonDefaultProps = {
@@ -11,6 +14,9 @@ export type buttonDefaultProps = {
   onClick?: () => void;
   disabled?: boolean;
   size?: 'extra small' | 'small' | 'medium' | 'large' | 'thin';
+  backGroundColor?: string;
+  textColor?: string;
+  isLoading?: boolean;
 };
 
 export type handleChangeColor = (type: 'focus' | 'press' | 'hover', pressed: boolean) => void;

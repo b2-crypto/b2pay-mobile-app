@@ -13,6 +13,11 @@ export type pageProps = {
   };
 };
 
+export type validateEmailResponseType = {
+  statusCode: number;
+  message: string;
+};
+
 export type navigationLayout = {
   route: RouteProp<ParamListBase, string>;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any

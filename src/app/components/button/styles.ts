@@ -13,6 +13,7 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
     height: 58,
     borderWidth: borderColor ? 2 : 0,
     fontSize: fontSize || 20,
+    maxWidth: 1000 as DimensionValue,
   };
 
   switch (heigh) {
@@ -23,9 +24,8 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       heightValues.width = 100;
       break;
     case 'small':
-      heightValues.width = 100;
       heightValues.height = 40;
-
+      heightValues.maxWidth = 150;
       break;
     case 'extra small':
       heightValues.width = 71;
@@ -49,10 +49,12 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
     },
     buttonPrimary: {
       width: heightValues.width,
+      maxWidth: heightValues.maxWidth,
       height: heightValues.height,
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
+      textAlign: 'center',
       overflow: 'hidden',
       flexDirection: 'row',
     },
@@ -69,7 +71,7 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       left: 0,
     },
     rightPosition: {
-      right: 0,
+      right: 0.1,
       transform: [{ rotate: '180deg' }],
     },
     textWrapper: {
@@ -82,6 +84,20 @@ export const buttonDefaultStyles = (props: buttonDefaultStylesProps) => {
       borderTopWidth: heightValues.borderWidth,
       borderBottomWidth: heightValues.borderWidth,
       borderColor: borderColor,
+    },
+    dotsWrapper: {
+      width: '100%',
+      height: '100%',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      flexDirection: 'row',
+    },
+    dot: {
+      width: 10,
+      height: 12,
+      borderRadius: 5,
+      marginHorizontal: 4,
     },
   });
 };

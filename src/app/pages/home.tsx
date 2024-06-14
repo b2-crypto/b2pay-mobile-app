@@ -5,7 +5,7 @@ export const pageName = 'Home';
 const Home: React.FC = () => {
   return (
     <View>
-      <Text>DAniel</Text>
+      <Text>Home</Text>
     </View>
   );
 };

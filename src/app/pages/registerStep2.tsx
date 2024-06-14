@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Dimensions, ScrollView, Text, View } from 'react-native';
 
+import { AuthContext } from '../../hooks/auth';
+import { Auth } from '../../hooks/auth/utils';
 import { headerParametersContext } from '../../hooks/headerParameters';
 import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { Button } from '../components/button';
@@ -9,12 +11,13 @@ import InternalLink from '../components/internalLink';
 import RegisterStep from '../components/registerStep';
 import Switch from '../components/switch';
 import stylesStep2 from './styles/registerStep2';
-import { pageProps, pagesNameType } from './types';
+import { pageProps, pagesNameType, validateEmailResponseType } from './types';
 
 const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
-  const [email, setEmail] = React.useState<string>('');
+  const [loadingValidation, setLoadingValidation] = React.useState<boolean>(false);
   const [termsAccepted, setTermsAccepted] = React.useState<boolean>(false);
   const [emailExists, setEmailExists] = React.useState<boolean>(false);
+  const [emailIsValid, setEmailIsValid] = React.useState<boolean>(false);
 
   //Control states
   const [error, setError] = React.useState<string | undefined>('');
@@ -22,8 +25,11 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
   const windowHeight = Dimensions.get('window').height;
 
   const { changeHeaderParameters } = useContext(headerParametersContext);
+  const { register, setRegister } = useContext(AuthContext);
   const { t } = useContext(parametrizationContext);
   const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+  const authClass = new Auth();
 
   //Used when the component is focused
   useEffect(() => {
@@ -37,32 +43,39 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
   }, [navigation]);
 
   const validateEmail = async () => {
-    if (email === '' || email === undefined) {
-      setError(t?.pages.registerStep2['no-email']);
-    } else if (!emailRegex.test(email)) {
-      setError(t?.pages.registerStep2['email-invalid']);
-    } else if (email === 'daniel@gg.com') {
-      setError(t?.pages.registerStep2['email-exists']);
-      setEmailExists(true);
-    } else {
-      setError('');
-    }
+    setEmailIsValid(false);
+    setLoadingValidation(true);
 
-    // await fetch('https://api.example.com/validate-email', {
-    //   method: 'POST',
-    //   body: JSON.stringify({ email }),
-    // })
-    //   .then(response => response.json())
-    //   .then(data => {
-    //     if (data.emailExists) {
-    //       setError(t?.pages.registerStep2['email-exists']);
-    //     }
-    //   });
+    if (register?.email === '' || register?.email === undefined) return setError(t?.pages.registerStep2['no-email']);
+    if (!emailRegex.test(register?.email)) return setError(t?.pages.registerStep2['email-invalid']);
+    authClass
+      .validateEmail(register?.email)
+      .then((response: validateEmailResponseType) => {
+        if (response.statusCode === 200) {
+          setEmailExists(true);
+          setEmailIsValid(false);
+          setError(t?.pages.registerStep2['email-exists']);
+        } else {
+          setEmailExists(false);
+          setEmailIsValid(true);
+          setError('');
+        }
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      })
+      .finally(() => {
+        setLoadingValidation(false);
+      });
+  };
+
+  const handleChangeEmail = (email: string) => {
+    setRegister({ ...register, email });
   };
 
   const styles = stylesStep2();
 
-  const canContinue = emailRegex.test(email) && termsAccepted;
+  const canContinue = emailRegex.test(register.email) && termsAccepted && emailIsValid && !emailInputIsFocused;
   return (
     <View style={styles.parent}>
       <ScrollView style={styles.container}>
@@ -72,7 +85,7 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
           <Text style={styles.description}>{t?.pages.registerStep2.description}</Text>
           <InputEmail
             label={t?.pages.registerStep2.email}
-            onChangeText={setEmail}
+            onChangeText={handleChangeEmail}
             onFocus={focus => setEmailInputIsFocused(focus)}
             errorMessage={error}
             onEndEditing={validateEmail}
@@ -104,6 +117,7 @@ const RegisterStep2: React.FC<pageProps> = ({ navigation }) => {
             <Button
               text={t?.pages.registerStep2['continue-button']}
               disabled={!canContinue}
+              isLoading={loadingValidation}
               onClick={() => {
                 navigation.navigate('RegisterStep3');
               }}

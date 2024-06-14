@@ -1,5 +1,6 @@
 {
     "version": "0.0.1",
+    "showOnboarding": true,
     "pages": {
         "initPage": {
             "login-button": "Login",
@@ -150,6 +151,7 @@
             "title": "Password Recovery",
             "subtitle": "Section 1: Contact Information.",
             "description": "Enter your email address for account recovery.",
+            "email-no-exists": "We couldn't find an account with that email address. Please check your email address and try again.",
             "email": "Email",
             "email-exists": "An account is already associated with this email address.",
             "email-invalid": "Invalid email address.",
@@ -183,6 +185,17 @@
             "password-secure-3": "Strong",
             "continue-button": "Change password",
             "password-no-match": "Passwords do not match. Please try again."
+        },
+        "onBoarding": {
+            "skip": "Skip",
+            "done": "Get started",
+            "welcome": "Welcome to",
+            "description-step-1": "We are a global financial platform with licenses in fiat currency and cryptocurrencies.",
+            "description-step-2": "Our financial licenses allow us to offer local and international services",
+            "description-step-3": "We manage secure and efficient transactions with Mastercard"
+        },
+        "loadingPage": {
+            "loading": "Loading"
         }
     },
     "header": {

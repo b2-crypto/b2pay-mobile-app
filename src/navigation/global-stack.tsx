@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { useContext, useEffect } from 'react';
+import { StatusBar } from 'react-native';
 
 import Header from '../app/components/header';
 import Layout from '../app/elements/Layout';
@@ -9,14 +10,18 @@ import * as pages from '../app/pages';
 import { navigationLayout, pageProps } from '../app/pages/types';
 import GlobalContextWrapper from '../hooks';
 import { navigationContext } from '../hooks/navigation';
+import { themeContext } from '../hooks/themeContext';
 import { PagesNames } from './pagesNames';
 
 const Stack = createNativeStackNavigator();
 
 const LayoutRoot = (nav: navigationLayout, Component: React.FC<pageProps>) => {
+  const { isDarkMode, theme } = useContext(themeContext);
+
   const { route, navigation } = nav;
 
   const { setNavigation, setRoute } = useContext(navigationContext);
+
   useEffect(() => {
     setNavigation && setNavigation(navigation);
     setRoute && setRoute(route);
@@ -24,6 +29,10 @@ const LayoutRoot = (nav: navigationLayout, Component: React.FC<pageProps>) => {
 
   return (
     <Layout navigation={nav.navigation}>
+      <StatusBar
+        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
+        backgroundColor={theme.secondary.neutral[100]}
+      />
       <Component navigation={nav.navigation} route={nav.route}></Component>
     </Layout>
   );
@@ -32,7 +41,19 @@ const LayoutRoot = (nav: navigationLayout, Component: React.FC<pageProps>) => {
 export const GlobalStack: React.FC = () => (
   <GlobalContextWrapper>
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.InitPage}>
+      <Stack.Navigator screenOptions={{ header: Header }} initialRouteName={PagesNames.Loading}>
+        {/* Start Onboarding */}
+        <Stack.Screen name={PagesNames.Loading} options={{ headerShadowVisible: false, headerShown: false }}>
+          {nav => LayoutRoot(nav, pages.Loading)}
+        </Stack.Screen>
+        {/* End Onboarding */}
+
+        {/* Start Onboarding */}
+        <Stack.Screen name={PagesNames.OnBoarding} options={{ headerShadowVisible: false, headerShown: false }}>
+          {nav => LayoutRoot(nav, pages.OnBoarding)}
+        </Stack.Screen>
+        {/* End Onboarding */}
+
         {/* Start Init Page */}
         <Stack.Screen name={PagesNames.InitPage} options={{ headerShadowVisible: false }}>
           {nav => LayoutRoot(nav, pages.InitPage)}

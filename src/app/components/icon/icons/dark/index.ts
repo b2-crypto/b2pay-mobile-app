@@ -10,3 +10,5 @@ export { default as infoGrey } from './infoGrey';
 export { default as checked } from './checked';
 export { default as infoGreen } from './infoGreen';
 export { default as infoYellow } from './infoYellow';
+export { default as loadingDot } from './loadingDot';
+export { default as loadingSimple } from './loadingSimple';

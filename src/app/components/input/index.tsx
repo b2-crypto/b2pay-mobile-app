@@ -49,12 +49,11 @@ const Input: React.FC<TextInputProps> = props => {
         underlineStyle={styles.underlineStyle}
         contentStyle={{ color: theme.primary.darkPurple['500'] }}
         cursorColor={theme.primary.darkPurple['500']}
-        underlineColor={theme.primary.darkPurple['500']}
-        textColor={theme.primary.darkPurple['500']}
-        activeOutlineColor={theme.primary.darkPurple['500']}
+        underlineColor={theme.secondary.neutral[100]}
+        textColor={errorMessage ? theme.informative.red : theme.primary.darkPurple['500']}
         selectionColor={theme.primary.darkPurple['500']}
         selectionHandleColor={theme.primary.darkPurple['500']}
-        underlineColorAndroid={theme.primary.darkPurple['700']}
+        underlineColorAndroid={theme.secondary.neutral[100]}
         activeUnderlineColor={errorMessage ? theme.informative.red : theme.primary.darkPurple['500']}
       />
       {errorMessage && (

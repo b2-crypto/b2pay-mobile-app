@@ -51,14 +51,11 @@ export default () => {
       width: '100%',
     },
     buttonWrapper: {
-      marginTop: 40,
-      marginBottom: 40,
+      marginTop: 10,
       paddingHorizontal: 40,
       width: '100%',
       alignItems: 'center',
       justifyContent: 'center',
-      position: 'absolute',
-      bottom: 0,
       backgroundColor: theme.secondary.neutral['navbar-bg'],
     },
 
@@ -92,8 +89,6 @@ export default () => {
     },
     resendButton: {
       width: '100%',
-      marginTop: 16,
-      marginBottom: 16,
       justifyContent: 'center',
       alignItems: 'center',
     },
