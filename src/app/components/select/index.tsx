@@ -1,10 +1,17 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-ignore
+// @ts-nocheck
 import React, { useContext, useState } from 'react';
 import { Text, View } from 'react-native';
-import { TextInput } from 'react-native-paper';
+import { LogBox } from 'react-native';
+import DropDownPicker from 'react-native-dropdown-picker';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { themeContext } from '../../../hooks/themeContext';
 import Icon from '../icon';
 import stylesInput from './styles';
+
+LogBox.ignoreLogs(['VirtualizedLists should never be nested']);
 
 export type TextInputProps = {
   label?: string;
@@ -14,8 +21,7 @@ export type TextInputProps = {
   errorMessage?: string;
   emailExists?: boolean;
 };
-const Input: React.FC<TextInputProps> = props => {
-  const [value, setValue] = useState('');
+const Select: React.FC<TextInputProps> = props => {
   const [isFocused, setIsFocused] = useState(false);
 
   const { label, onChangeText, onEndEditing, onFocus, errorMessage } = props;
@@ -27,35 +33,26 @@ const Input: React.FC<TextInputProps> = props => {
   };
 
   const styles = stylesInput();
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState(null);
+  const [items, setItems] = useState([
+    { label: 'Citizenship ID', value: 'citizenid' },
+    { label: 'Foreigner ID', value: 'foreignerid' },
+    { label: 'Passport', value: 'passport' },
+    { label: 'Identity Card', value: 'nationalid' },
+  ]);
 
   return (
     <View style={styles.container}>
-      <TextInput
-        label={label}
+      <DropDownPicker
+        open={open}
         value={value}
-        placeholderTextColor={theme.primary.darkPurple['500']}
-        onChangeText={text => handleTextChange(text)}
-        onFocus={() => {
-          setIsFocused(true);
-          onFocus && onFocus(true);
-        }}
-        onBlur={() => {
-          setIsFocused(false);
-          onFocus && onFocus(false);
-        }}
-        onEndEditing={onEndEditing}
-        mode="flat"
+        items={items}
+        setOpen={setOpen}
+        setValue={setValue}
+        setItems={setItems}
+        placeholder="ID Type"
         style={[styles.Input, { borderWidth: isFocused ? 2 : 0 }, errorMessage ? styles.borderError : {}]}
-        underlineStyle={styles.underlineStyle}
-        contentStyle={{ color: theme.primary.darkPurple['500'] }}
-        cursorColor={theme.primary.darkPurple['500']}
-        underlineColor={theme.primary.darkPurple['500']}
-        textColor={theme.primary.darkPurple['500']}
-        activeOutlineColor={theme.primary.darkPurple['500']}
-        selectionColor={theme.primary.darkPurple['500']}
-        selectionHandleColor={theme.primary.darkPurple['500']}
-        underlineColorAndroid={theme.primary.darkPurple['700']}
-        activeUnderlineColor={errorMessage ? theme.informative.red : theme.primary.darkPurple['500']}
       />
       {errorMessage && (
         <View style={styles.danger}>
@@ -69,4 +66,4 @@ const Input: React.FC<TextInputProps> = props => {
   );
 };
 
-export default Input;
+export default Select;

@@ -11,6 +11,7 @@ import ProfileCreationStep from '../components/profileCreationStep';
 import Switch from '../components/switch';
 import stylesStep2 from './styles/profileCreationStep2';
 import { pageProps, pagesNameType } from './types';
+import Select from '../components/select';
 
 const ProfileCreationStep2: React.FC<pageProps> = ({ navigation }) => {
   const [email, setEmail] = React.useState<string>('');
@@ -48,7 +49,7 @@ const ProfileCreationStep2: React.FC<pageProps> = ({ navigation }) => {
           <Text style={styles.subtitle}>{t?.pages.profileCreationStep2.subtitle}</Text>
           <Text style={styles.description}>{t?.pages.profileCreationStep2.description}</Text>
           <View style={styles.containerInputs}>
-            <Input
+            <Select
               label={t?.pages.profileCreationStep2.idtype}
               onChangeText={setEmail}
               onFocus={focus => setIDType(focus)}
@@ -78,8 +79,8 @@ const ProfileCreationStep2: React.FC<pageProps> = ({ navigation }) => {
           <View style={styles.buttonWrapper}>
             <Button
               text={t?.pages.profileCreationStep2['continue-button']}
-              disabled={!canContinue}
-              onClick={() => {
+/*               disabled={!canContinue}
+ */              onClick={() => {
                 navigation.navigate('ProfileCreationStep3');
               }}
             />
