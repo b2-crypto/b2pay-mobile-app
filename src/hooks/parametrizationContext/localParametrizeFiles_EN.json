@@ -100,26 +100,19 @@
             "policy-description": "I have read and fully understand the contents of this document:",
             "idtype": "ID Type",
             "idnumber": "ID Number",
-            "email": "ID Type",
-            "email-exists": "An account is already associated with this email address.",
-            "email-invalid": "Invalid email address.",
-            "no-email": "Email is required.",
-            "policy-link": {
-                "label": "Privacy Policy",
-                "url": "InitPage"
-            },
+            
             "continue-button": "Continue"
         },
         "profileCreationStep3": {
             "title": "Profile Creation",
-            "subtitle": "Section 3: Email verification.",
-            "description": "Enter the verification code we just sent to your email address.",
-            "continue-button": "Verify",
-            "resend-button": "Resend code",
-            "code": "Verification code",
-            "counter-alert": "If you haven't received an email by the time the timer expires, please request a new email below.",
-            "counter-error": "Now you're able to request a new email.",
-            "counter-alert-2": "You will be able to request a new code once it expires."
+            "subtitle": "Section 3: Contact Information.",
+            "description": "Share your contact details.",
+            "continue-button": "Create Profile",
+            "country-residence":"Country of Residence",
+            "state":"State",
+            "city":"City",
+            "postalcode":"Postal Code",
+            "phonenumber":"Phone Number"
         },
         "profileCreationStep4": {
             "title": "Profile Creation",

@@ -9,6 +9,7 @@ import OTPCounter from '../components/otpCounter';
 import ProfileCreationStep from '../components/profileCreationStep';
 import stylesStep3 from './styles/profileCreationStep3';
 import { pageProps } from './types';
+import Input from '../components/input';
 
 const ProfileCreationStep3: React.FC<pageProps> = ({ navigation }) => {
   //Control states
@@ -23,6 +24,11 @@ const ProfileCreationStep3: React.FC<pageProps> = ({ navigation }) => {
 
   const { changeHeaderParameters } = useContext(headerParametersContext);
   const { t } = useContext(parametrizationContext);
+
+  const [isFirstNameFocused, setIsFirstNameFocused] = useState(false);
+
+
+  const [firstName, setFirstName] = useState('');
   //Used when the component is focused
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -67,16 +73,33 @@ const ProfileCreationStep3: React.FC<pageProps> = ({ navigation }) => {
           <Text style={styles.title}>{t?.pages.profileCreationStep3.title}</Text>
           <Text style={styles.subtitle}>{t?.pages.profileCreationStep3.subtitle}</Text>
           <Text style={styles.description}>{t?.pages.profileCreationStep3.description}</Text>
-          <OTP onChangeText={t => setChangeOPT(t)} onFocus={setOtpIsFocused} />
-          <Text style={styles.resend}>{t?.pages.profileCreationStep3.code}</Text>
-
-          <OTPCounter
-            handleFinish={handleFinish}
-            counter={counter}
-            setCounter={setCounter}
-            isFirstTime={isFirstTime}
-            setIsFirstTime={setIsFirstTime}
-          />
+          <View style={styles.checkboxWrapper}>
+            <Input
+              label={t?.pages.profileCreationStep3['country-residence']}
+              onChangeText={t => setFirstName(t)}
+              onFocus={setIsFirstNameFocused}
+            />
+            <Input
+              label={t?.pages.profileCreationStep3['state']}
+              onChangeText={t => setFirstName(t)}
+              onFocus={setIsFirstNameFocused}
+            />
+            <Input
+              label={t?.pages.profileCreationStep3['city']}
+              onChangeText={t => setFirstName(t)}
+              onFocus={setIsFirstNameFocused}
+            />
+            <Input
+              label={t?.pages.profileCreationStep3['postalcode']}
+              onChangeText={t => setFirstName(t)}
+              onFocus={setIsFirstNameFocused}
+            />
+            <Input
+              label={t?.pages.profileCreationStep3['phonenumber']}
+              onChangeText={t => setFirstName(t)}
+              onFocus={setIsFirstNameFocused}
+            />
+          </View>
         </View>
       </ScrollView>
       {windowHeight < 800 && otpIsFocused ? (
@@ -86,21 +109,12 @@ const ProfileCreationStep3: React.FC<pageProps> = ({ navigation }) => {
           <View style={styles.buttonWrapper}>
             <Button
               text={t?.pages.profileCreationStep3['continue-button']}
-              disabled={!canContinue}
-              onClick={() => {
+/*               disabled={!canContinue}
+ */              onClick={() => {
                 navigation.navigate('ProfileCreationStep4');
               }}
             />
-            {!isKeyboardVisible && (
-              <View style={styles.resendButton}>
-                <Button
-                  type="tertiary"
-                  text={t?.pages.profileCreationStep3['resend-button']}
-                  disabled={!canRequest}
-                  onClick={handleNewRequest}
-                />
-              </View>
-            )}
+            
           </View>
 
           <ProfileCreationStep selected={3} />

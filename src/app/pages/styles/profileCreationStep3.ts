@@ -47,8 +47,9 @@ export default () => {
       marginBottom: 32,
     },
     checkboxWrapper: {
-      marginTop: 40,
+      marginTop: 0,
       width: '100%',
+      gap:15
     },
     buttonWrapper: {
       marginTop: 40,

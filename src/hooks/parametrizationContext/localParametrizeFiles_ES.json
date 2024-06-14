@@ -101,15 +101,7 @@
             "idtype": "Tipo de Identificación",
             "idnumber": "Número de Identificación",
 
-            "email": "Correo",
-            "email-exists": "Ya existe una cuenta asociada a esta dirección de correo electrónico.",
-            "email-invalid": "Dirección de correo electrónico inválida.",
-            "no-email": "Se requiere correo electrónico.",
-            "policy-description": "He leído y comprendido completamente el contenido de este documento:",
-            "policy-link": {
-                "label": "Política de Privacidad",
-                "url": "http://www.example.com/privacy-policy"
-            },
+         
             "continue-button": "Continuar"
         },
         "profileCreationStep3": {
@@ -117,12 +109,13 @@
             "subtitle": "Sección 3: Verificación de correo electrónico.",
             "description": "Ingrese el código de verificación que acabamos de enviar a su dirección de correo electrónico.",
             "policy-description": "He leído y comprendido completamente el contenido de este documento:",
-            "continue-button": "Verificar",
-            "resend-button": "Reenviar código",
-            "code": "Código de verificación",
-            "counter-alert": "Si no ha recibido un correo electrónico cuando el temporizador expire, solicite un nuevo correo electrónico a continuación.",
-            "counter-error": "Ahora puedes solicitar un nuevo correo electrónico.",
-            "counter-alert-2": "Podrás solicitar un nuevo código una vez que expire."
+            "continue-button": "Crear Perfil",
+           "country-residence": "País de Residencia",
+"state": "Estado",
+"city": "Ciudad",
+"postalcode": "Código Postal",
+"phonenumber": "Número de Teléfono"
+
         },
         "profileCreationStep4": {
             "title": "Creación de Perfil",
