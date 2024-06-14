@@ -7,10 +7,10 @@ import { Button } from '../components/button';
 import CheckBox from '../components/checkBox';
 import Input from '../components/input';
 import MiniCheckBox from '../components/miniCheckBox';
-import RegisterStep from '../components/registerStep';
+import MiniInput from '../components/miniInput';
+import ProfileCreationStep from '../components/profileCreationStep';
 import stylesStep1 from './styles/profileCreationStep1';
 import { pageProps } from './types';
-import MiniInput from '../components/miniInput';
 
 export const pageName = 'ProfileCreationStep1';
 const ProfileCreationStep1: React.FC<pageProps> = ({ navigation }) => {
@@ -66,18 +66,17 @@ const ProfileCreationStep1: React.FC<pageProps> = ({ navigation }) => {
           </View>
           <Text style={styles.description}>{t?.pages.profileCreationStep1['birthdate']}</Text>
           <View style={styles.birthdateContainer}>
-
             <MiniInput
               label={t?.pages.profileCreationStep1['dd']}
               onChangeText={t => setNationality(t)}
               onFocus={setIsNationalityFocused}
             />
-             <MiniInput
+            <MiniInput
               label={t?.pages.profileCreationStep1['mm']}
               onChangeText={t => setNationality(t)}
               onFocus={setIsNationalityFocused}
             />
-             <MiniInput
+            <MiniInput
               label={t?.pages.profileCreationStep1['yyyy']}
               onChangeText={t => setNationality(t)}
               onFocus={setIsNationalityFocused}
@@ -85,27 +84,30 @@ const ProfileCreationStep1: React.FC<pageProps> = ({ navigation }) => {
           </View>
           <Text style={styles.description}>{t?.pages.profileCreationStep1['gender']}</Text>
           <View style={styles.checkboxWrapperGender}>
-          <View style={styles.checkboxWrapperGenderFirstRow}>
-  {t?.pages.profileCreationStep1['checkBox-List-gender'].slice(0, 2).map((item, index) => (
-    <MiniCheckBox
-      key={index}
-      checked={selected === item.value}
-      label={item.label}
-      select={() => setSelected(item.value)}
-    />
-  ))}
-</View>
-<View>
-  {t?.pages.profileCreationStep1['checkBox-List-gender'].slice(2, 3).map((item, index) => (
-    <CheckBox
-      key={index}
-      checked={selected === item.value}
-      label={item.label}
-      select={() => setSelected(item.value)}
-    />
-  ))}
-</View>
-
+            <View style={styles.checkboxWrapperGenderFirstRow}>
+              {t?.pages.profileCreationStep1['checkBox-List-gender']
+                .slice(0, 2)
+                .map((item, index) => (
+                  <MiniCheckBox
+                    key={index}
+                    checked={selected === item.value}
+                    label={item.label}
+                    select={() => setSelected(item.value)}
+                  />
+                ))}
+            </View>
+            <View>
+              {t?.pages.profileCreationStep1['checkBox-List-gender']
+                .slice(2, 3)
+                .map((item, index) => (
+                  <CheckBox
+                    key={index}
+                    checked={selected === item.value}
+                    label={item.label}
+                    select={() => setSelected(item.value)}
+                  />
+                ))}
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -118,7 +120,7 @@ const ProfileCreationStep1: React.FC<pageProps> = ({ navigation }) => {
           }}
         />
       </View>
-      <RegisterStep selected={1} />
+      <ProfileCreationStep selected={1} />
     </View>
   );
 };

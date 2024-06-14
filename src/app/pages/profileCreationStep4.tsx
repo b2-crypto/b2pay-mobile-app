@@ -8,7 +8,7 @@ import { themeContext } from '../../hooks/themeContext';
 import { Button } from '../components/button';
 import Icon from '../components/icon';
 import Input from '../components/inputPassword';
-import RegisterStep from '../components/registerStep';
+import ProfileCreationStep from '../components/profileCreationStep';
 import stylesStep4 from './styles/profileCreationStep4';
 import { pageProps } from './types';
 
@@ -191,7 +191,7 @@ const ProfileCreationStep4: React.FC<pageProps> = ({ navigation }) => {
             />
           </View>
 
-          <RegisterStep selected={4} />
+          <ProfileCreationStep selected={4} />
         </>
       )}
     </View>

@@ -98,6 +98,9 @@
             "title": "Creación de Perfil",
             "subtitle": "Sección 2: Información de Contacto.",
             "description": "Ingresa tu dirección de correo electrónico para notificaciones de la cuenta y recuperación.",
+            "idtype": "Tipo de Identificación",
+            "idnumber": "Número de Identificación",
+
             "email": "Correo",
             "email-exists": "Ya existe una cuenta asociada a esta dirección de correo electrónico.",
             "email-invalid": "Dirección de correo electrónico inválida.",

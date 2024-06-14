@@ -66,7 +66,7 @@ export default () => {
       display: 'flex',
       flexDirection: 'row',
       justifyContent: 'space-between',
-      width:'100%'
+      width: '100%',
     },
     buttonWrapper: {
       marginTop: 40,

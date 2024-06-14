@@ -6,7 +6,7 @@ import { parametrizationContext } from '../../hooks/parametrizationContext';
 import { Button } from '../components/button';
 import OTP from '../components/otp';
 import OTPCounter from '../components/otpCounter';
-import RegisterStep from '../components/registerStep';
+import ProfileCreationStep from '../components/profileCreationStep';
 import stylesStep3 from './styles/profileCreationStep3';
 import { pageProps } from './types';
 
@@ -103,7 +103,7 @@ const ProfileCreationStep3: React.FC<pageProps> = ({ navigation }) => {
             )}
           </View>
 
-          <RegisterStep selected={3} />
+          <ProfileCreationStep selected={3} />
         </>
       )}
     </View>

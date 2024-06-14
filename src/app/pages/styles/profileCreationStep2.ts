@@ -24,6 +24,12 @@ export default () => {
       width: '100%',
       height: '100%',
     },
+    containerInputs:{
+      display:'flex',
+      flexDirection:'column',
+      width:'100%',
+      gap:15
+    },
     title: {
       fontSize: 32,
       fontFamily: 'Tektur-Bold',
